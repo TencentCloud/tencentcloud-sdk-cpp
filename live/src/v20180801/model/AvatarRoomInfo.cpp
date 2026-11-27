@@ -36,7 +36,9 @@ AvatarRoomInfo::AvatarRoomInfo() :
     m_speechSpeedHasBeenSet(false),
     m_speechVolumeHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_roomTypeHasBeenSet(false),
+    m_avatarAigcImageUrlHasBeenSet(false)
 {
 }
 
@@ -205,6 +207,26 @@ CoreInternalOutcome AvatarRoomInfo::Deserialize(const rapidjson::Value &value)
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("RoomType") && !value["RoomType"].IsNull())
+    {
+        if (!value["RoomType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AvatarRoomInfo.RoomType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_roomType = string(value["RoomType"].GetString());
+        m_roomTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AvatarAigcImageUrl") && !value["AvatarAigcImageUrl"].IsNull())
+    {
+        if (!value["AvatarAigcImageUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AvatarRoomInfo.AvatarAigcImageUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_avatarAigcImageUrl = string(value["AvatarAigcImageUrl"].GetString());
+        m_avatarAigcImageUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -338,6 +360,22 @@ void AvatarRoomInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_roomTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoomType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_roomType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_avatarAigcImageUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AvatarAigcImageUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_avatarAigcImageUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -597,5 +635,37 @@ void AvatarRoomInfo::SetUpdateTime(const string& _updateTime)
 bool AvatarRoomInfo::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+string AvatarRoomInfo::GetRoomType() const
+{
+    return m_roomType;
+}
+
+void AvatarRoomInfo::SetRoomType(const string& _roomType)
+{
+    m_roomType = _roomType;
+    m_roomTypeHasBeenSet = true;
+}
+
+bool AvatarRoomInfo::RoomTypeHasBeenSet() const
+{
+    return m_roomTypeHasBeenSet;
+}
+
+string AvatarRoomInfo::GetAvatarAigcImageUrl() const
+{
+    return m_avatarAigcImageUrl;
+}
+
+void AvatarRoomInfo::SetAvatarAigcImageUrl(const string& _avatarAigcImageUrl)
+{
+    m_avatarAigcImageUrl = _avatarAigcImageUrl;
+    m_avatarAigcImageUrlHasBeenSet = true;
+}
+
+bool AvatarRoomInfo::AvatarAigcImageUrlHasBeenSet() const
+{
+    return m_avatarAigcImageUrlHasBeenSet;
 }
 

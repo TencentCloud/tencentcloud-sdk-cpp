@@ -43,31 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取0：打开立即下发开关；
-
-1：关闭立即下发开关；
-
-2：关闭立即下发开关情况下，触发开始下发
-                     * @return Status 0：打开立即下发开关；
-
-1：关闭立即下发开关；
-
-2：关闭立即下发开关情况下，触发开始下发
+                     * 获取<p>0：打开立即下发开关；</p><p>1：关闭立即下发开关；</p><p>2：关闭立即下发开关情况下，触发开始下发</p>
+                     * @return Status <p>0：打开立即下发开关；</p><p>1：关闭立即下发开关；</p><p>2：关闭立即下发开关情况下，触发开始下发</p>
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置0：打开立即下发开关；
-
-1：关闭立即下发开关；
-
-2：关闭立即下发开关情况下，触发开始下发
-                     * @param _status 0：打开立即下发开关；
-
-1：关闭立即下发开关；
-
-2：关闭立即下发开关情况下，触发开始下发
+                     * 设置<p>0：打开立即下发开关；</p><p>1：关闭立即下发开关；</p><p>2：关闭立即下发开关情况下，触发开始下发</p>
+                     * @param _status <p>0：打开立即下发开关；</p><p>1：关闭立即下发开关；</p><p>2：关闭立即下发开关情况下，触发开始下发</p>
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -79,17 +63,40 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取<p>开启自动下发时，注明本次修改是否为空绑资产绑定兜底安全组</p>
+                     * @return BindFallbackOnce <p>开启自动下发时，注明本次修改是否为空绑资产绑定兜底安全组</p>
+                     * 
+                     */
+                    int64_t GetBindFallbackOnce() const;
+
+                    /**
+                     * 设置<p>开启自动下发时，注明本次修改是否为空绑资产绑定兜底安全组</p>
+                     * @param _bindFallbackOnce <p>开启自动下发时，注明本次修改是否为空绑资产绑定兜底安全组</p>
+                     * 
+                     */
+                    void SetBindFallbackOnce(const int64_t& _bindFallbackOnce);
+
+                    /**
+                     * 判断参数 BindFallbackOnce 是否已赋值
+                     * @return BindFallbackOnce 是否已赋值
+                     * 
+                     */
+                    bool BindFallbackOnceHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 0：打开立即下发开关；
-
-1：关闭立即下发开关；
-
-2：关闭立即下发开关情况下，触发开始下发
+                     * <p>0：打开立即下发开关；</p><p>1：关闭立即下发开关；</p><p>2：关闭立即下发开关情况下，触发开始下发</p>
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * <p>开启自动下发时，注明本次修改是否为空绑资产绑定兜底安全组</p>
+                     */
+                    int64_t m_bindFallbackOnce;
+                    bool m_bindFallbackOnceHasBeenSet;
 
                 };
             }

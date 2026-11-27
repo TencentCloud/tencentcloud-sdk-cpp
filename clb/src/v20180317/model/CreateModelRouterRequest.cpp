@@ -44,7 +44,8 @@ CreateModelRouterRequest::CreateModelRouterRequest() :
     m_videoConfigHasBeenSet(false),
     m_rerankConfigHasBeenSet(false),
     m_decisionsConfigHasBeenSet(false),
-    m_imageConfigHasBeenSet(false)
+    m_imageConfigHasBeenSet(false),
+    m_realtimeConfigHasBeenSet(false)
 {
 }
 
@@ -245,6 +246,15 @@ string CreateModelRouterRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_imageConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_realtimeConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RealtimeConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_realtimeConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -605,6 +615,22 @@ void CreateModelRouterRequest::SetImageConfig(const ImageConfig& _imageConfig)
 bool CreateModelRouterRequest::ImageConfigHasBeenSet() const
 {
     return m_imageConfigHasBeenSet;
+}
+
+RealtimeConfig CreateModelRouterRequest::GetRealtimeConfig() const
+{
+    return m_realtimeConfig;
+}
+
+void CreateModelRouterRequest::SetRealtimeConfig(const RealtimeConfig& _realtimeConfig)
+{
+    m_realtimeConfig = _realtimeConfig;
+    m_realtimeConfigHasBeenSet = true;
+}
+
+bool CreateModelRouterRequest::RealtimeConfigHasBeenSet() const
+{
+    return m_realtimeConfigHasBeenSet;
 }
 
 

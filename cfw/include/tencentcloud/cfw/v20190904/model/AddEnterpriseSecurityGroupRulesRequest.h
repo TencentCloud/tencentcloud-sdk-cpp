@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取待创建的规则数组，不能为空。每条规则必须提供访问源、访问目的、动作、非空描述和字符串 OrderIndex。未使用 ServiceTemplateId 时必须提供 Protocol 和 Port；使用 ServiceTemplateId 时二者可同时省略或留空，如填写非空值则必须为 Protocol=ANY、Port=-1/-1。Scope 可省略，默认使用 SG。
-                     * @return Data 待创建的规则数组，不能为空。每条规则必须提供访问源、访问目的、动作、非空描述和字符串 OrderIndex。未使用 ServiceTemplateId 时必须提供 Protocol 和 Port；使用 ServiceTemplateId 时二者可同时省略或留空，如填写非空值则必须为 Protocol=ANY、Port=-1/-1。Scope 可省略，默认使用 SG。
+                     * 获取<p>创建规则数据</p>
+                     * @return Data <p>创建规则数据</p>
                      * 
                      */
                     std::vector<SecurityGroupRule> GetData() const;
 
                     /**
-                     * 设置待创建的规则数组，不能为空。每条规则必须提供访问源、访问目的、动作、非空描述和字符串 OrderIndex。未使用 ServiceTemplateId 时必须提供 Protocol 和 Port；使用 ServiceTemplateId 时二者可同时省略或留空，如填写非空值则必须为 Protocol=ANY、Port=-1/-1。Scope 可省略，默认使用 SG。
-                     * @param _data 待创建的规则数组，不能为空。每条规则必须提供访问源、访问目的、动作、非空描述和字符串 OrderIndex。未使用 ServiceTemplateId 时必须提供 Protocol 和 Port；使用 ServiceTemplateId 时二者可同时省略或留空，如填写非空值则必须为 Protocol=ANY、Port=-1/-1。Scope 可省略，默认使用 SG。
+                     * 设置<p>创建规则数据</p>
+                     * @param _data <p>创建规则数据</p>
                      * 
                      */
                     void SetData(const std::vector<SecurityGroupRule>& _data);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool CfwAiAgentOperationSourceHasBeenSet() const;
 
                     /**
-                     * 获取保留字段，不提供幂等保证；重复请求仍可能重复创建规则，建议省略。
-                     * @return ClientToken 保留字段，不提供幂等保证；重复请求仍可能重复创建规则，建议省略。
+                     * 获取<p>保证请求幂等性。从您的客户端生成一个参数值，确保不同请求间该参数值唯一。ClientToken只支持ASCII字符，且不能超过64个字符。</p>
+                     * @return ClientToken <p>保证请求幂等性。从您的客户端生成一个参数值，确保不同请求间该参数值唯一。ClientToken只支持ASCII字符，且不能超过64个字符。</p>
                      * 
                      */
                     std::string GetClientToken() const;
 
                     /**
-                     * 设置保留字段，不提供幂等保证；重复请求仍可能重复创建规则，建议省略。
-                     * @param _clientToken 保留字段，不提供幂等保证；重复请求仍可能重复创建规则，建议省略。
+                     * 设置<p>保证请求幂等性。从您的客户端生成一个参数值，确保不同请求间该参数值唯一。ClientToken只支持ASCII字符，且不能超过64个字符。</p>
+                     * @param _clientToken <p>保证请求幂等性。从您的客户端生成一个参数值，确保不同请求间该参数值唯一。ClientToken只支持ASCII字符，且不能超过64个字符。</p>
                      * 
                      */
                     void SetClientToken(const std::string& _clientToken);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool ClientTokenHasBeenSet() const;
 
                     /**
-                     * 获取添加方式。batch_import 表示非覆盖批量导入；batch_import_cover 表示覆盖导入，会删除当前账号的全部可操作企业安全组规则后再添加 Data，添加失败时已删除的规则不会恢复，风险极高。两种批量导入都会使用 Data.Enable。其它值按普通新增处理。
-                     * @return From 添加方式。batch_import 表示非覆盖批量导入；batch_import_cover 表示覆盖导入，会删除当前账号的全部可操作企业安全组规则后再添加 Data，添加失败时已删除的规则不会恢复，风险极高。两种批量导入都会使用 Data.Enable。其它值按普通新增处理。
+                     * 获取<p>来源 默认空 覆盖导入是 batch_import_cover</p>
+                     * @return From <p>来源 默认空 覆盖导入是 batch_import_cover</p>
                      * 
                      */
                     std::string GetFrom() const;
 
                     /**
-                     * 设置添加方式。batch_import 表示非覆盖批量导入；batch_import_cover 表示覆盖导入，会删除当前账号的全部可操作企业安全组规则后再添加 Data，添加失败时已删除的规则不会恢复，风险极高。两种批量导入都会使用 Data.Enable。其它值按普通新增处理。
-                     * @param _from 添加方式。batch_import 表示非覆盖批量导入；batch_import_cover 表示覆盖导入，会删除当前账号的全部可操作企业安全组规则后再添加 Data，添加失败时已删除的规则不会恢复，风险极高。两种批量导入都会使用 Data.Enable。其它值按普通新增处理。
+                     * 设置<p>来源 默认空 覆盖导入是 batch_import_cover</p>
+                     * @param _from <p>来源 默认空 覆盖导入是 batch_import_cover</p>
                      * 
                      */
                     void SetFrom(const std::string& _from);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool FromHasBeenSet() const;
 
                     /**
-                     * 获取延迟生效标记。1 表示将规则保留为待生效状态，0 表示按账号当前发布设置处理；省略等同于 0。账号停止自动发布时，规则仍保持待生效。
-                     * @return IsDelay 延迟生效标记。1 表示将规则保留为待生效状态，0 表示按账号当前发布设置处理；省略等同于 0。账号停止自动发布时，规则仍保持待生效。
+                     * 获取<p>（IsDelay为老版参数，新版无需输入）是否延迟下发，1则延迟下发，否则立即下发</p>
+                     * @return IsDelay <p>（IsDelay为老版参数，新版无需输入）是否延迟下发，1则延迟下发，否则立即下发</p>
                      * 
                      */
                     uint64_t GetIsDelay() const;
 
                     /**
-                     * 设置延迟生效标记。1 表示将规则保留为待生效状态，0 表示按账号当前发布设置处理；省略等同于 0。账号停止自动发布时，规则仍保持待生效。
-                     * @param _isDelay 延迟生效标记。1 表示将规则保留为待生效状态，0 表示按账号当前发布设置处理；省略等同于 0。账号停止自动发布时，规则仍保持待生效。
+                     * 设置<p>（IsDelay为老版参数，新版无需输入）是否延迟下发，1则延迟下发，否则立即下发</p>
+                     * @param _isDelay <p>（IsDelay为老版参数，新版无需输入）是否延迟下发，1则延迟下发，否则立即下发</p>
                      * 
                      */
                     void SetIsDelay(const uint64_t& _isDelay);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool IsDelayHasBeenSet() const;
 
                     /**
-                     * 获取规则 ID 复用标记。1 表示使用每条规则的 Data.Id，此时 Data.Id 传十进制数字字符串；其它值由系统分配 ID。重复 ID 会导致创建失败。
-                     * @return IsUseId 规则 ID 复用标记。1 表示使用每条规则的 Data.Id，此时 Data.Id 传十进制数字字符串；其它值由系统分配 ID。重复 ID 会导致创建失败。
+                     * 获取<p>是否复用rule id，1为是，默认不需要</p>
+                     * @return IsUseId <p>是否复用rule id，1为是，默认不需要</p>
                      * 
                      */
                     int64_t GetIsUseId() const;
 
                     /**
-                     * 设置规则 ID 复用标记。1 表示使用每条规则的 Data.Id，此时 Data.Id 传十进制数字字符串；其它值由系统分配 ID。重复 ID 会导致创建失败。
-                     * @param _isUseId 规则 ID 复用标记。1 表示使用每条规则的 Data.Id，此时 Data.Id 传十进制数字字符串；其它值由系统分配 ID。重复 ID 会导致创建失败。
+                     * 设置<p>是否复用rule id，1为是，默认不需要</p>
+                     * @param _isUseId <p>是否复用rule id，1为是，默认不需要</p>
                      * 
                      */
                     void SetIsUseId(const int64_t& _isUseId);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool IsUseIdHasBeenSet() const;
 
                     /**
-                     * 获取添加位置类型，可省略，默认为 0：0 添加到末尾，1 添加到最前，2 从指定顺序插入。Type=0 或 1 按 Data 数组顺序确定最终顺序；Type=2 使用首条 Data.OrderIndex 作为插入位置，超过当前最大顺序时添加到末尾。
-                     * @return Type 添加位置类型，可省略，默认为 0：0 添加到末尾，1 添加到最前，2 从指定顺序插入。Type=0 或 1 按 Data 数组顺序确定最终顺序；Type=2 使用首条 Data.OrderIndex 作为插入位置，超过当前最大顺序时添加到末尾。
+                     * 获取<p>添加类型，0：添加到最后，1：添加到最前；2：中间插入；默认0添加到最后</p>
+                     * @return Type <p>添加类型，0：添加到最后，1：添加到最前；2：中间插入；默认0添加到最后</p>
                      * 
                      */
                     uint64_t GetType() const;
 
                     /**
-                     * 设置添加位置类型，可省略，默认为 0：0 添加到末尾，1 添加到最前，2 从指定顺序插入。Type=0 或 1 按 Data 数组顺序确定最终顺序；Type=2 使用首条 Data.OrderIndex 作为插入位置，超过当前最大顺序时添加到末尾。
-                     * @param _type 添加位置类型，可省略，默认为 0：0 添加到末尾，1 添加到最前，2 从指定顺序插入。Type=0 或 1 按 Data 数组顺序确定最终顺序；Type=2 使用首条 Data.OrderIndex 作为插入位置，超过当前最大顺序时添加到末尾。
+                     * 设置<p>添加类型，0：添加到最后，1：添加到最前；2：中间插入；默认0添加到最后</p>
+                     * @param _type <p>添加类型，0：添加到最后，1：添加到最前；2：中间插入；默认0添加到最后</p>
                      * 
                      */
                     void SetType(const uint64_t& _type);
@@ -193,7 +193,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 待创建的规则数组，不能为空。每条规则必须提供访问源、访问目的、动作、非空描述和字符串 OrderIndex。未使用 ServiceTemplateId 时必须提供 Protocol 和 Port；使用 ServiceTemplateId 时二者可同时省略或留空，如填写非空值则必须为 Protocol=ANY、Port=-1/-1。Scope 可省略，默认使用 SG。
+                     * <p>创建规则数据</p>
                      */
                     std::vector<SecurityGroupRule> m_data;
                     bool m_dataHasBeenSet;
@@ -205,31 +205,31 @@ namespace TencentCloud
                     bool m_cfwAiAgentOperationSourceHasBeenSet;
 
                     /**
-                     * 保留字段，不提供幂等保证；重复请求仍可能重复创建规则，建议省略。
+                     * <p>保证请求幂等性。从您的客户端生成一个参数值，确保不同请求间该参数值唯一。ClientToken只支持ASCII字符，且不能超过64个字符。</p>
                      */
                     std::string m_clientToken;
                     bool m_clientTokenHasBeenSet;
 
                     /**
-                     * 添加方式。batch_import 表示非覆盖批量导入；batch_import_cover 表示覆盖导入，会删除当前账号的全部可操作企业安全组规则后再添加 Data，添加失败时已删除的规则不会恢复，风险极高。两种批量导入都会使用 Data.Enable。其它值按普通新增处理。
+                     * <p>来源 默认空 覆盖导入是 batch_import_cover</p>
                      */
                     std::string m_from;
                     bool m_fromHasBeenSet;
 
                     /**
-                     * 延迟生效标记。1 表示将规则保留为待生效状态，0 表示按账号当前发布设置处理；省略等同于 0。账号停止自动发布时，规则仍保持待生效。
+                     * <p>（IsDelay为老版参数，新版无需输入）是否延迟下发，1则延迟下发，否则立即下发</p>
                      */
                     uint64_t m_isDelay;
                     bool m_isDelayHasBeenSet;
 
                     /**
-                     * 规则 ID 复用标记。1 表示使用每条规则的 Data.Id，此时 Data.Id 传十进制数字字符串；其它值由系统分配 ID。重复 ID 会导致创建失败。
+                     * <p>是否复用rule id，1为是，默认不需要</p>
                      */
                     int64_t m_isUseId;
                     bool m_isUseIdHasBeenSet;
 
                     /**
-                     * 添加位置类型，可省略，默认为 0：0 添加到末尾，1 添加到最前，2 从指定顺序插入。Type=0 或 1 按 Data 数组顺序确定最终顺序；Type=2 使用首条 Data.OrderIndex 作为插入位置，超过当前最大顺序时添加到末尾。
+                     * <p>添加类型，0：添加到最后，1：添加到最前；2：中间插入；默认0添加到最后</p>
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;

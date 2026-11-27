@@ -20,11 +20,11 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <memory>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/cls/v20201016/model/KeyValueInfo.h>
 
 
 namespace TencentCloud
@@ -35,6 +35,7 @@ namespace TencentCloud
         {
             namespace Model
             {
+                class KeyValueInfo;
                 /**
                 * 需要开启键值索引的字段的索引描述信息
                 */
@@ -200,7 +201,7 @@ long及double类型字段需为空；
 注意：仅json类型字段可配置该参数
                      * 
                      */
-                    std::vector<KeyValueInfo> GetChildNode() const;
+                    std::vector<std::shared_ptr<KeyValueInfo>> GetChildNode() const;
 
                     /**
                      * 设置json子节点列表
@@ -209,7 +210,7 @@ long及double类型字段需为空；
 注意：仅json类型字段可配置该参数
                      * 
                      */
-                    void SetChildNode(const std::vector<KeyValueInfo>& _childNode);
+                    void SetChildNode(const std::vector<std::shared_ptr<KeyValueInfo>>& _childNode);
 
                     /**
                      * 判断参数 ChildNode 是否已赋值
@@ -265,7 +266,7 @@ long及double类型字段需为空；
                      * json子节点列表
 注意：仅json类型字段可配置该参数
                      */
-                    std::vector<KeyValueInfo> m_childNode;
+                    std::vector<std::shared_ptr<KeyValueInfo>> m_childNode;
                     bool m_childNodeHasBeenSet;
 
                 };

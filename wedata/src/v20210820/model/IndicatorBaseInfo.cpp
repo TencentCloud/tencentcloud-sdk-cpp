@@ -390,8 +390,8 @@ CoreInternalOutcome IndicatorBaseInfo::Deserialize(const rapidjson::Value &value
         const rapidjson::Value &tmpValue = value["AllSourceIndicatorIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            IndicatorBaseInfo item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<IndicatorBaseInfo>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -440,8 +440,8 @@ CoreInternalOutcome IndicatorBaseInfo::Deserialize(const rapidjson::Value &value
         const rapidjson::Value &tmpValue = value["RelatedIndicatorIds"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            IndicatorBaseInfo item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<IndicatorBaseInfo>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -844,7 +844,10 @@ void IndicatorBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         for (auto itr = m_allSourceIndicatorIds.begin(); itr != m_allSourceIndicatorIds.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -883,7 +886,10 @@ void IndicatorBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         for (auto itr = m_relatedIndicatorIds.begin(); itr != m_relatedIndicatorIds.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -1422,12 +1428,12 @@ bool IndicatorBaseInfo::TableColumnsHasBeenSet() const
     return m_tableColumnsHasBeenSet;
 }
 
-vector<IndicatorBaseInfo> IndicatorBaseInfo::GetAllSourceIndicatorIds() const
+vector<shared_ptr<IndicatorBaseInfo>> IndicatorBaseInfo::GetAllSourceIndicatorIds() const
 {
     return m_allSourceIndicatorIds;
 }
 
-void IndicatorBaseInfo::SetAllSourceIndicatorIds(const vector<IndicatorBaseInfo>& _allSourceIndicatorIds)
+void IndicatorBaseInfo::SetAllSourceIndicatorIds(const vector<shared_ptr<IndicatorBaseInfo>>& _allSourceIndicatorIds)
 {
     m_allSourceIndicatorIds = _allSourceIndicatorIds;
     m_allSourceIndicatorIdsHasBeenSet = true;
@@ -1486,12 +1492,12 @@ bool IndicatorBaseInfo::AssetCodeHasBeenSet() const
     return m_assetCodeHasBeenSet;
 }
 
-vector<IndicatorBaseInfo> IndicatorBaseInfo::GetRelatedIndicatorIds() const
+vector<shared_ptr<IndicatorBaseInfo>> IndicatorBaseInfo::GetRelatedIndicatorIds() const
 {
     return m_relatedIndicatorIds;
 }
 
-void IndicatorBaseInfo::SetRelatedIndicatorIds(const vector<IndicatorBaseInfo>& _relatedIndicatorIds)
+void IndicatorBaseInfo::SetRelatedIndicatorIds(const vector<shared_ptr<IndicatorBaseInfo>>& _relatedIndicatorIds)
 {
     m_relatedIndicatorIds = _relatedIndicatorIds;
     m_relatedIndicatorIdsHasBeenSet = true;

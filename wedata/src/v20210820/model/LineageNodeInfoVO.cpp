@@ -98,8 +98,8 @@ CoreInternalOutcome LineageNodeInfoVO::Deserialize(const rapidjson::Value &value
         const rapidjson::Value &tmpValue = value["ParentSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            LineageNodeInfoVO item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<LineageNodeInfoVO>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -118,8 +118,8 @@ CoreInternalOutcome LineageNodeInfoVO::Deserialize(const rapidjson::Value &value
         const rapidjson::Value &tmpValue = value["ChildSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            LineageNodeInfoVO item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<LineageNodeInfoVO>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -192,7 +192,10 @@ void LineageNodeInfoVO::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         for (auto itr = m_parentSet.begin(); itr != m_parentSet.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -207,7 +210,10 @@ void LineageNodeInfoVO::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         for (auto itr = m_childSet.begin(); itr != m_childSet.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -286,12 +292,12 @@ bool LineageNodeInfoVO::UpStreamCountHasBeenSet() const
     return m_upStreamCountHasBeenSet;
 }
 
-vector<LineageNodeInfoVO> LineageNodeInfoVO::GetParentSet() const
+vector<shared_ptr<LineageNodeInfoVO>> LineageNodeInfoVO::GetParentSet() const
 {
     return m_parentSet;
 }
 
-void LineageNodeInfoVO::SetParentSet(const vector<LineageNodeInfoVO>& _parentSet)
+void LineageNodeInfoVO::SetParentSet(const vector<shared_ptr<LineageNodeInfoVO>>& _parentSet)
 {
     m_parentSet = _parentSet;
     m_parentSetHasBeenSet = true;
@@ -302,12 +308,12 @@ bool LineageNodeInfoVO::ParentSetHasBeenSet() const
     return m_parentSetHasBeenSet;
 }
 
-vector<LineageNodeInfoVO> LineageNodeInfoVO::GetChildSet() const
+vector<shared_ptr<LineageNodeInfoVO>> LineageNodeInfoVO::GetChildSet() const
 {
     return m_childSet;
 }
 
-void LineageNodeInfoVO::SetChildSet(const vector<LineageNodeInfoVO>& _childSet)
+void LineageNodeInfoVO::SetChildSet(const vector<shared_ptr<LineageNodeInfoVO>>& _childSet)
 {
     m_childSet = _childSet;
     m_childSetHasBeenSet = true;

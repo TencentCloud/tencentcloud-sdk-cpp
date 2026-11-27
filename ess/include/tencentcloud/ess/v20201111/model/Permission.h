@@ -20,11 +20,11 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <memory>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/ess/v20201111/model/Permission.h>
 
 
 namespace TencentCloud
@@ -35,6 +35,7 @@ namespace TencentCloud
         {
             namespace Model
             {
+                class Permission;
                 /**
                 * 权限树节点权限
                 */
@@ -262,14 +263,14 @@ namespace TencentCloud
                      * @return Children 子权限集合
                      * 
                      */
-                    std::vector<Permission> GetChildren() const;
+                    std::vector<std::shared_ptr<Permission>> GetChildren() const;
 
                     /**
                      * 设置子权限集合
                      * @param _children 子权限集合
                      * 
                      */
-                    void SetChildren(const std::vector<Permission>& _children);
+                    void SetChildren(const std::vector<std::shared_ptr<Permission>>& _children);
 
                     /**
                      * 判断参数 Children 是否已赋值
@@ -343,7 +344,7 @@ namespace TencentCloud
                     /**
                      * 子权限集合
                      */
-                    std::vector<Permission> m_children;
+                    std::vector<std::shared_ptr<Permission>> m_children;
                     bool m_childrenHasBeenSet;
 
                 };

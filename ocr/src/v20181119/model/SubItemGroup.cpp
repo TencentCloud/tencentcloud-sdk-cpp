@@ -15,6 +15,7 @@
  */
 
 #include <tencentcloud/ocr/v20181119/model/SubItemGroup.h>
+#include <tencentcloud/ocr/v20181119/model/FieldsInfo.h>
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ocr::V20181119::Model;
@@ -38,8 +39,8 @@ CoreInternalOutcome SubItemGroup::Deserialize(const rapidjson::Value &value)
         const rapidjson::Value &tmpValue = value["Groups"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            FieldsInfo item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<FieldsInfo>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -68,19 +69,22 @@ void SubItemGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         for (auto itr = m_groups.begin(); itr != m_groups.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
 }
 
 
-vector<FieldsInfo> SubItemGroup::GetGroups() const
+vector<shared_ptr<FieldsInfo>> SubItemGroup::GetGroups() const
 {
     return m_groups;
 }
 
-void SubItemGroup::SetGroups(const vector<FieldsInfo>& _groups)
+void SubItemGroup::SetGroups(const vector<shared_ptr<FieldsInfo>>& _groups)
 {
     m_groups = _groups;
     m_groupsHasBeenSet = true;

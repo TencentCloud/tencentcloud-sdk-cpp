@@ -20,11 +20,11 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <memory>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/ioa/v20220601/model/RulePayloadItem.h>
 
 
 namespace TencentCloud
@@ -35,6 +35,7 @@ namespace TencentCloud
         {
             namespace Model
             {
+                class RulePayloadItem;
                 /**
                 * 条件
                 */
@@ -129,7 +130,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::vector<RulePayloadItem> GetGroups() const;
+                    std::vector<std::shared_ptr<RulePayloadItem>> GetGroups() const;
 
                     /**
                      * 设置嵌套条件组
@@ -138,7 +139,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetGroups(const std::vector<RulePayloadItem>& _groups);
+                    void SetGroups(const std::vector<std::shared_ptr<RulePayloadItem>>& _groups);
 
                     /**
                      * 判断参数 Groups 是否已赋值
@@ -224,7 +225,7 @@ namespace TencentCloud
                      * 嵌套条件组
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<RulePayloadItem> m_groups;
+                    std::vector<std::shared_ptr<RulePayloadItem>> m_groups;
                     bool m_groupsHasBeenSet;
 
                     /**

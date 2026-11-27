@@ -396,6 +396,20 @@ namespace TencentCloud
                      */
                     bool MultiAccountUsedCountHasBeenSet() const;
 
+                    /**
+                     * 获取<p>根密钥的扩展包数量</p><p>单位：个</p>
+                     * @return CmkExtPackCount <p>根密钥的扩展包数量</p><p>单位：个</p>
+                     * 
+                     */
+                    uint64_t GetCmkExtPackCount() const;
+
+                    /**
+                     * 判断参数 CmkExtPackCount 是否已赋值
+                     * @return CmkExtPackCount 是否已赋值
+                     * 
+                     */
+                    bool CmkExtPackCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -547,6 +561,12 @@ namespace TencentCloud
                      */
                     uint64_t m_multiAccountUsedCount;
                     bool m_multiAccountUsedCountHasBeenSet;
+
+                    /**
+                     * <p>根密钥的扩展包数量</p><p>单位：个</p>
+                     */
+                    uint64_t m_cmkExtPackCount;
+                    bool m_cmkExtPackCountHasBeenSet;
 
                 };
             }

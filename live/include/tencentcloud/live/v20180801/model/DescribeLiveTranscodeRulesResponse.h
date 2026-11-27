@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取转码规则列表。
-                     * @return Rules 转码规则列表。
+                     * 获取<p>转码规则列表。</p>
+                     * @return Rules <p>转码规则列表。</p>
                      * 
                      */
                     std::vector<RuleInfo> GetRules() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 转码规则列表。
+                     * <p>转码规则列表。</p>
                      */
                     std::vector<RuleInfo> m_rules;
                     bool m_rulesHasBeenSet;

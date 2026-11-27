@@ -145,6 +145,8 @@
 #include <tencentcloud/cdb/v20170320/model/DescribeBinlogsResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeCPUExpandStrategyInfoRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeCPUExpandStrategyInfoResponse.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeCageListRequest.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeCageListResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeCdbProxyInfoRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeCdbProxyInfoResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeCdbZoneConfigRequest.h>
@@ -578,6 +580,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCPUExpandStrategyInfoResponse> DescribeCPUExpandStrategyInfoOutcome;
                 typedef std::future<DescribeCPUExpandStrategyInfoOutcome> DescribeCPUExpandStrategyInfoOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeCPUExpandStrategyInfoRequest&, DescribeCPUExpandStrategyInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCPUExpandStrategyInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCageListResponse> DescribeCageListOutcome;
+                typedef std::future<DescribeCageListOutcome> DescribeCageListOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::DescribeCageListRequest&, DescribeCageListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCageListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCdbProxyInfoResponse> DescribeCdbProxyInfoOutcome;
                 typedef std::future<DescribeCdbProxyInfoOutcome> DescribeCdbProxyInfoOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeCdbProxyInfoRequest&, DescribeCdbProxyInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCdbProxyInfoAsyncHandler;
@@ -1507,6 +1512,15 @@ namespace TencentCloud
                 DescribeCPUExpandStrategyInfoOutcome DescribeCPUExpandStrategyInfo(const Model::DescribeCPUExpandStrategyInfoRequest &request);
                 void DescribeCPUExpandStrategyInfoAsync(const Model::DescribeCPUExpandStrategyInfoRequest& request, const DescribeCPUExpandStrategyInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCPUExpandStrategyInfoOutcomeCallable DescribeCPUExpandStrategyInfoCallable(const Model::DescribeCPUExpandStrategyInfoRequest& request);
+
+                /**
+                 *本接口（DescribeCageList）用于查询金融围拢、独享集群列表。
+                 * @param req DescribeCageListRequest
+                 * @return DescribeCageListOutcome
+                 */
+                DescribeCageListOutcome DescribeCageList(const Model::DescribeCageListRequest &request);
+                void DescribeCageListAsync(const Model::DescribeCageListRequest& request, const DescribeCageListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCageListOutcomeCallable DescribeCageListCallable(const Model::DescribeCageListRequest& request);
 
                 /**
                  *本接口（DescribeCdbProxyInfo）用于查询数据库代理详情信息。

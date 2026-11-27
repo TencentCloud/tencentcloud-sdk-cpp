@@ -193,7 +193,8 @@ CoreInternalOutcome WorkflowTaskNodeBrief::Deserialize(const rapidjson::Value &v
             return CoreInternalOutcome(Core::Error("response `WorkflowTaskNodeBrief.InnerTask` is not object type").SetRequestId(requestId));
         }
 
-        CoreInternalOutcome outcome = m_innerTask.Deserialize(value["InnerTask"]);
+        m_innerTask = std::make_shared<WorkflowTaskNodeBrief>();
+        CoreInternalOutcome outcome = m_innerTask->Deserialize(value["InnerTask"]);
         if (!outcome.IsSuccess())
         {
             outcome.GetError().SetRequestId(requestId);
@@ -321,7 +322,10 @@ void WorkflowTaskNodeBrief::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "InnerTask";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_innerTask.ToJsonObject(value[key.c_str()], allocator);
+        if (m_innerTask)
+        {
+            m_innerTask->ToJsonObject(value[key.c_str()], allocator);
+        }
     }
 
 }
@@ -519,12 +523,12 @@ bool WorkflowTaskNodeBrief::AdvancedDependencyConfigHasBeenSet() const
     return m_advancedDependencyConfigHasBeenSet;
 }
 
-WorkflowTaskNodeBrief WorkflowTaskNodeBrief::GetInnerTask() const
+shared_ptr<WorkflowTaskNodeBrief> WorkflowTaskNodeBrief::GetInnerTask() const
 {
     return m_innerTask;
 }
 
-void WorkflowTaskNodeBrief::SetInnerTask(const WorkflowTaskNodeBrief& _innerTask)
+void WorkflowTaskNodeBrief::SetInnerTask(const shared_ptr<WorkflowTaskNodeBrief>& _innerTask)
 {
     m_innerTask = _innerTask;
     m_innerTaskHasBeenSet = true;

@@ -222,7 +222,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/UpdateDictionariesRequest.h
   include/tencentcloud/es/v20180416/model/DescribeUserCosSnapshotListRequest.h
   include/tencentcloud/es/v20180416/model/OperationDuration.h
-  include/tencentcloud/es/v20180416/model/UpgradeLicenseRequest.h
+  include/tencentcloud/es/v20180416/model/SearchServerlessSpaceDataRequest.h
   include/tencentcloud/es/v20180416/model/DescribeIndexListRequest.h
   include/tencentcloud/es/v20180416/model/NodeInfo.h
   include/tencentcloud/es/v20180416/model/CosBackup.h
@@ -273,6 +273,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/UpdateLogstashInstanceResponse.h
   include/tencentcloud/es/v20180416/model/UpdateIndexRequest.h
   include/tencentcloud/es/v20180416/model/RestartNodesResponse.h
+  include/tencentcloud/es/v20180416/model/UpgradeLicenseRequest.h
   include/tencentcloud/es/v20180416/model/ExportIpTraceLogResponse.h
   include/tencentcloud/es/v20180416/model/DescribeRegionsRequest.h
   include/tencentcloud/es/v20180416/model/EventDataInfoOverview.h
@@ -323,6 +324,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/ServerlessDi.h
   include/tencentcloud/es/v20180416/model/DescribeServerlessMetricsResponse.h
   include/tencentcloud/es/v20180416/model/ExportIpTraceLogRequest.h
+  include/tencentcloud/es/v20180416/model/SearchServerlessSpaceDataResponse.h
   include/tencentcloud/es/v20180416/model/DescribeServerlessInstancesRequest.h
   include/tencentcloud/es/v20180416/model/InstallInstanceModelResponse.h
   include/tencentcloud/es/v20180416/model/KibanaNodeInfo.h
@@ -552,7 +554,7 @@ set(es_src
   src/v20180416/model/UpdateDictionariesRequest.cpp
   src/v20180416/model/DescribeUserCosSnapshotListRequest.cpp
   src/v20180416/model/OperationDuration.cpp
-  src/v20180416/model/UpgradeLicenseRequest.cpp
+  src/v20180416/model/SearchServerlessSpaceDataRequest.cpp
   src/v20180416/model/DescribeIndexListRequest.cpp
   src/v20180416/model/NodeInfo.cpp
   src/v20180416/model/CosBackup.cpp
@@ -603,6 +605,7 @@ set(es_src
   src/v20180416/model/UpdateLogstashInstanceResponse.cpp
   src/v20180416/model/UpdateIndexRequest.cpp
   src/v20180416/model/RestartNodesResponse.cpp
+  src/v20180416/model/UpgradeLicenseRequest.cpp
   src/v20180416/model/ExportIpTraceLogResponse.cpp
   src/v20180416/model/DescribeRegionsRequest.cpp
   src/v20180416/model/EventDataInfoOverview.cpp
@@ -653,6 +656,7 @@ set(es_src
   src/v20180416/model/ServerlessDi.cpp
   src/v20180416/model/DescribeServerlessMetricsResponse.cpp
   src/v20180416/model/ExportIpTraceLogRequest.cpp
+  src/v20180416/model/SearchServerlessSpaceDataResponse.cpp
   src/v20180416/model/DescribeServerlessInstancesRequest.cpp
   src/v20180416/model/InstallInstanceModelResponse.cpp
   src/v20180416/model/KibanaNodeInfo.cpp

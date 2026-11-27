@@ -48,15 +48,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>日期类型，默认为每天</p><p>枚举值：</p><ul><li>EveryDay： 每天</li><li>BusinessDay： 法定工作日</li><li>Holiday： 法定休息日</li><li>Custom： 自定义</li></ul>
-                     * @return DayType <p>日期类型，默认为每天</p><p>枚举值：</p><ul><li>EveryDay： 每天</li><li>BusinessDay： 法定工作日</li><li>Holiday： 法定休息日</li><li>Custom： 自定义</li></ul>
+                     * 获取<p>日期类型，默认为每天</p><p>枚举值：</p><ul><li>EveryDay： 每天</li><li>BusinessDay： 法定工作日（只支持中国大陆）</li><li>Holiday： 法定休息日（只支持中国大陆）</li><li>Custom： 自定义</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DayType <p>日期类型，默认为每天</p><p>枚举值：</p><ul><li>EveryDay： 每天</li><li>BusinessDay： 法定工作日（只支持中国大陆）</li><li>Holiday： 法定休息日（只支持中国大陆）</li><li>Custom： 自定义</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDayType() const;
 
                     /**
-                     * 设置<p>日期类型，默认为每天</p><p>枚举值：</p><ul><li>EveryDay： 每天</li><li>BusinessDay： 法定工作日</li><li>Holiday： 法定休息日</li><li>Custom： 自定义</li></ul>
-                     * @param _dayType <p>日期类型，默认为每天</p><p>枚举值：</p><ul><li>EveryDay： 每天</li><li>BusinessDay： 法定工作日</li><li>Holiday： 法定休息日</li><li>Custom： 自定义</li></ul>
+                     * 设置<p>日期类型，默认为每天</p><p>枚举值：</p><ul><li>EveryDay： 每天</li><li>BusinessDay： 法定工作日（只支持中国大陆）</li><li>Holiday： 法定休息日（只支持中国大陆）</li><li>Custom： 自定义</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dayType <p>日期类型，默认为每天</p><p>枚举值：</p><ul><li>EveryDay： 每天</li><li>BusinessDay： 法定工作日（只支持中国大陆）</li><li>Holiday： 法定休息日（只支持中国大陆）</li><li>Custom： 自定义</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDayType(const std::string& _dayType);
@@ -70,14 +74,18 @@ namespace TencentCloud
 
                     /**
                      * 获取<p>仅在 DayType 为 Custom 时生效，指定适用的星期几</p><p>枚举值：</p><ul><li>Monday： 星期一</li><li>Tuesday： 星期二</li><li>Wednesday： 星期三</li><li>Thursday： 星期四</li><li>Friday： 星期五</li><li>Saturday： 星期六</li><li>Sunday： 星期日</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return DaysOfWeek <p>仅在 DayType 为 Custom 时生效，指定适用的星期几</p><p>枚举值：</p><ul><li>Monday： 星期一</li><li>Tuesday： 星期二</li><li>Wednesday： 星期三</li><li>Thursday： 星期四</li><li>Friday： 星期五</li><li>Saturday： 星期六</li><li>Sunday： 星期日</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetDaysOfWeek() const;
 
                     /**
                      * 设置<p>仅在 DayType 为 Custom 时生效，指定适用的星期几</p><p>枚举值：</p><ul><li>Monday： 星期一</li><li>Tuesday： 星期二</li><li>Wednesday： 星期三</li><li>Thursday： 星期四</li><li>Friday： 星期五</li><li>Saturday： 星期六</li><li>Sunday： 星期日</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _daysOfWeek <p>仅在 DayType 为 Custom 时生效，指定适用的星期几</p><p>枚举值：</p><ul><li>Monday： 星期一</li><li>Tuesday： 星期二</li><li>Wednesday： 星期三</li><li>Thursday： 星期四</li><li>Friday： 星期五</li><li>Saturday： 星期六</li><li>Sunday： 星期日</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDaysOfWeek(const std::vector<std::string>& _daysOfWeek);
@@ -91,14 +99,18 @@ namespace TencentCloud
 
                     /**
                      * 获取<p>该日期类型下的时间段列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeRanges <p>该日期类型下的时间段列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TimeRange> GetTimeRanges() const;
 
                     /**
                      * 设置<p>该日期类型下的时间段列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timeRanges <p>该日期类型下的时间段列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimeRanges(const std::vector<TimeRange>& _timeRanges);
@@ -113,19 +125,22 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>日期类型，默认为每天</p><p>枚举值：</p><ul><li>EveryDay： 每天</li><li>BusinessDay： 法定工作日</li><li>Holiday： 法定休息日</li><li>Custom： 自定义</li></ul>
+                     * <p>日期类型，默认为每天</p><p>枚举值：</p><ul><li>EveryDay： 每天</li><li>BusinessDay： 法定工作日（只支持中国大陆）</li><li>Holiday： 法定休息日（只支持中国大陆）</li><li>Custom： 自定义</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dayType;
                     bool m_dayTypeHasBeenSet;
 
                     /**
                      * <p>仅在 DayType 为 Custom 时生效，指定适用的星期几</p><p>枚举值：</p><ul><li>Monday： 星期一</li><li>Tuesday： 星期二</li><li>Wednesday： 星期三</li><li>Thursday： 星期四</li><li>Friday： 星期五</li><li>Saturday： 星期六</li><li>Sunday： 星期日</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_daysOfWeek;
                     bool m_daysOfWeekHasBeenSet;
 
                     /**
                      * <p>该日期类型下的时间段列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TimeRange> m_timeRanges;
                     bool m_timeRangesHasBeenSet;

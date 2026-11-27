@@ -105,7 +105,8 @@ CoreInternalOutcome CNAPIGwMCPToolParam::Deserialize(const rapidjson::Value &val
             return CoreInternalOutcome(Core::Error("response `CNAPIGwMCPToolParam.Items` is not object type").SetRequestId(requestId));
         }
 
-        CoreInternalOutcome outcome = m_items.Deserialize(value["Items"]);
+        m_items = std::make_shared<CNAPIGwMCPToolParam>();
+        CoreInternalOutcome outcome = m_items->Deserialize(value["Items"]);
         if (!outcome.IsSuccess())
         {
             outcome.GetError().SetRequestId(requestId);
@@ -123,8 +124,8 @@ CoreInternalOutcome CNAPIGwMCPToolParam::Deserialize(const rapidjson::Value &val
         const rapidjson::Value &tmpValue = value["Properties"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            CNAPIGwMCPToolParam item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<CNAPIGwMCPToolParam>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -206,7 +207,10 @@ void CNAPIGwMCPToolParam::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "Items";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_items.ToJsonObject(value[key.c_str()], allocator);
+        if (m_items)
+        {
+            m_items->ToJsonObject(value[key.c_str()], allocator);
+        }
     }
 
     if (m_propertiesHasBeenSet)
@@ -220,7 +224,10 @@ void CNAPIGwMCPToolParam::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         for (auto itr = m_properties.begin(); itr != m_properties.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -331,12 +338,12 @@ bool CNAPIGwMCPToolParam::DefaultHasBeenSet() const
     return m_defaultHasBeenSet;
 }
 
-CNAPIGwMCPToolParam CNAPIGwMCPToolParam::GetItems() const
+shared_ptr<CNAPIGwMCPToolParam> CNAPIGwMCPToolParam::GetItems() const
 {
     return m_items;
 }
 
-void CNAPIGwMCPToolParam::SetItems(const CNAPIGwMCPToolParam& _items)
+void CNAPIGwMCPToolParam::SetItems(const shared_ptr<CNAPIGwMCPToolParam>& _items)
 {
     m_items = _items;
     m_itemsHasBeenSet = true;
@@ -347,12 +354,12 @@ bool CNAPIGwMCPToolParam::ItemsHasBeenSet() const
     return m_itemsHasBeenSet;
 }
 
-vector<CNAPIGwMCPToolParam> CNAPIGwMCPToolParam::GetProperties() const
+vector<shared_ptr<CNAPIGwMCPToolParam>> CNAPIGwMCPToolParam::GetProperties() const
 {
     return m_properties;
 }
 
-void CNAPIGwMCPToolParam::SetProperties(const vector<CNAPIGwMCPToolParam>& _properties)
+void CNAPIGwMCPToolParam::SetProperties(const vector<shared_ptr<CNAPIGwMCPToolParam>>& _properties)
 {
     m_properties = _properties;
     m_propertiesHasBeenSet = true;

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源 ID：账单中出账对象 ID，不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID
-                     * @return ResourceId 资源 ID：账单中出账对象 ID，不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID
+                     * 获取<p>资源 ID：账单中出账对象 ID，不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID</p>
+                     * @return ResourceId <p>资源 ID：账单中出账对象 ID，不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID</p>
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置资源 ID：账单中出账对象 ID，不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID
-                     * @param _resourceId 资源 ID：账单中出账对象 ID，不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID
+                     * 设置<p>资源 ID：账单中出账对象 ID，不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID</p>
+                     * @param _resourceId <p>资源 ID：账单中出账对象 ID，不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID</p>
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取地域ID
-                     * @return RegionId 地域ID
+                     * 获取<p>地域ID</p>
+                     * @return RegionId <p>地域ID</p>
                      * 
                      */
                     uint64_t GetRegionId() const;
 
                     /**
-                     * 设置地域ID
-                     * @param _regionId 地域ID
+                     * 设置<p>地域ID</p>
+                     * @param _regionId <p>地域ID</p>
                      * 
                      */
                     void SetRegionId(const uint64_t& _regionId);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool RegionIdHasBeenSet() const;
 
                     /**
-                     * 获取产品编码
-                     * @return ProductCode 产品编码
+                     * 获取<p>产品编码</p>
+                     * @return ProductCode <p>产品编码</p>
                      * 
                      */
                     std::string GetProductCode() const;
 
                     /**
-                     * 设置产品编码
-                     * @param _productCode 产品编码
+                     * 设置<p>产品编码</p>
+                     * @param _productCode <p>产品编码</p>
                      * 
                      */
                     void SetProductCode(const std::string& _productCode);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool ProductCodeHasBeenSet() const;
 
                     /**
-                     * 获取子产品编码
-                     * @return SubProductCode 子产品编码
+                     * 获取<p>子产品编码</p>
+                     * @return SubProductCode <p>子产品编码</p>
                      * 
                      */
                     std::string GetSubProductCode() const;
 
                     /**
-                     * 设置子产品编码
-                     * @param _subProductCode 子产品编码
+                     * 设置<p>子产品编码</p>
+                     * @param _subProductCode <p>子产品编码</p>
                      * 
                      */
                     void SetSubProductCode(const std::string& _subProductCode);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool SubProductCodeHasBeenSet() const;
 
                     /**
-                     * 获取费用起始日期，格式yyyy-MM-dd
-                     * @return StartDate 费用起始日期，格式yyyy-MM-dd
+                     * 获取<p>费用起始日期，格式yyyy-MM-dd</p>
+                     * @return StartDate <p>费用起始日期，格式yyyy-MM-dd</p>
                      * 
                      */
                     std::string GetStartDate() const;
 
                     /**
-                     * 设置费用起始日期，格式yyyy-MM-dd
-                     * @param _startDate 费用起始日期，格式yyyy-MM-dd
+                     * 设置<p>费用起始日期，格式yyyy-MM-dd</p>
+                     * @param _startDate <p>费用起始日期，格式yyyy-MM-dd</p>
                      * 
                      */
                     void SetStartDate(const std::string& _startDate);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool StartDateHasBeenSet() const;
 
                     /**
-                     * 获取费用结束日期，格式yyyy-MM-dd，目前与StartDate相等
-                     * @return EndDate 费用结束日期，格式yyyy-MM-dd，目前与StartDate相等
+                     * 获取<p>费用结束日期，格式yyyy-MM-dd，目前与StartDate相等</p>
+                     * @return EndDate <p>费用结束日期，格式yyyy-MM-dd，目前与StartDate相等</p>
                      * 
                      */
                     std::string GetEndDate() const;
 
                     /**
-                     * 设置费用结束日期，格式yyyy-MM-dd，目前与StartDate相等
-                     * @param _endDate 费用结束日期，格式yyyy-MM-dd，目前与StartDate相等
+                     * 设置<p>费用结束日期，格式yyyy-MM-dd，目前与StartDate相等</p>
+                     * @param _endDate <p>费用结束日期，格式yyyy-MM-dd，目前与StartDate相等</p>
                      * 
                      */
                     void SetEndDate(const std::string& _endDate);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool EndDateHasBeenSet() const;
 
                     /**
-                     * 获取节省计划覆盖金额（即节省计划支付金额）
-                     * @return SpCoveredAmount 节省计划覆盖金额（即节省计划支付金额）
+                     * 获取<p>节省计划覆盖金额（即节省计划支付金额）</p>
+                     * @return SpCoveredAmount <p>节省计划覆盖金额（即节省计划支付金额）</p>
                      * 
                      */
                     double GetSpCoveredAmount() const;
 
                     /**
-                     * 设置节省计划覆盖金额（即节省计划支付金额）
-                     * @param _spCoveredAmount 节省计划覆盖金额（即节省计划支付金额）
+                     * 设置<p>节省计划覆盖金额（即节省计划支付金额）</p>
+                     * @param _spCoveredAmount <p>节省计划覆盖金额（即节省计划支付金额）</p>
                      * 
                      */
                     void SetSpCoveredAmount(const double& _spCoveredAmount);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool SpCoveredAmountHasBeenSet() const;
 
                     /**
-                     * 获取节省计划未覆盖金额（即优惠后总价）
-                     * @return SpUncoveredAmount 节省计划未覆盖金额（即优惠后总价）
+                     * 获取<p>节省计划未覆盖金额（即优惠后总价）</p>
+                     * @return SpUncoveredAmount <p>节省计划未覆盖金额（即优惠后总价）</p>
                      * 
                      */
                     double GetSpUncoveredAmount() const;
 
                     /**
-                     * 设置节省计划未覆盖金额（即优惠后总价）
-                     * @param _spUncoveredAmount 节省计划未覆盖金额（即优惠后总价）
+                     * 设置<p>节省计划未覆盖金额（即优惠后总价）</p>
+                     * @param _spUncoveredAmount <p>节省计划未覆盖金额（即优惠后总价）</p>
                      * 
                      */
                     void SetSpUncoveredAmount(const double& _spUncoveredAmount);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool SpUncoveredAmountHasBeenSet() const;
 
                     /**
-                     * 获取总支出（即节省计划未覆盖金额 + 节省计划覆盖金额）
-                     * @return TotalRealAmount 总支出（即节省计划未覆盖金额 + 节省计划覆盖金额）
+                     * 获取<p>总支出（即节省计划未覆盖金额 + 节省计划覆盖金额）</p>
+                     * @return TotalRealAmount <p>总支出（即节省计划未覆盖金额 + 节省计划覆盖金额）</p>
                      * 
                      */
                     double GetTotalRealAmount() const;
 
                     /**
-                     * 设置总支出（即节省计划未覆盖金额 + 节省计划覆盖金额）
-                     * @param _totalRealAmount 总支出（即节省计划未覆盖金额 + 节省计划覆盖金额）
+                     * 设置<p>总支出（即节省计划未覆盖金额 + 节省计划覆盖金额）</p>
+                     * @param _totalRealAmount <p>总支出（即节省计划未覆盖金额 + 节省计划覆盖金额）</p>
                      * 
                      */
                     void SetTotalRealAmount(const double& _totalRealAmount);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool TotalRealAmountHasBeenSet() const;
 
                     /**
-                     * 获取按量计费预期金额（即折前价 * 折扣）
-                     * @return ExpectedAmount 按量计费预期金额（即折前价 * 折扣）
+                     * 获取<p>按量计费预期金额（即折前价 * 折扣）</p>
+                     * @return ExpectedAmount <p>按量计费预期金额（即折前价 * 折扣）</p>
                      * 
                      */
                     double GetExpectedAmount() const;
 
                     /**
-                     * 设置按量计费预期金额（即折前价 * 折扣）
-                     * @param _expectedAmount 按量计费预期金额（即折前价 * 折扣）
+                     * 设置<p>按量计费预期金额（即折前价 * 折扣）</p>
+                     * @param _expectedAmount <p>按量计费预期金额（即折前价 * 折扣）</p>
                      * 
                      */
                     void SetExpectedAmount(const double& _expectedAmount);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool ExpectedAmountHasBeenSet() const;
 
                     /**
-                     * 获取覆盖率结果，取值[0, 100]
-                     * @return SpCoverage 覆盖率结果，取值[0, 100]
+                     * 获取<p>覆盖率结果，取值为百分比值，取值范围[0,100]</p>
+                     * @return SpCoverage <p>覆盖率结果，取值为百分比值，取值范围[0,100]</p>
                      * 
                      */
                     double GetSpCoverage() const;
 
                     /**
-                     * 设置覆盖率结果，取值[0, 100]
-                     * @param _spCoverage 覆盖率结果，取值[0, 100]
+                     * 设置<p>覆盖率结果，取值为百分比值，取值范围[0,100]</p>
+                     * @param _spCoverage <p>覆盖率结果，取值为百分比值，取值范围[0,100]</p>
                      * 
                      */
                     void SetSpCoverage(const double& _spCoverage);
@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool SpCoverageHasBeenSet() const;
 
                     /**
-                     * 获取支付者昵称
-                     * @return PayerUinName 支付者昵称
+                     * 获取<p>支付者昵称</p>
+                     * @return PayerUinName <p>支付者昵称</p>
                      * 
                      */
                     std::string GetPayerUinName() const;
 
                     /**
-                     * 设置支付者昵称
-                     * @param _payerUinName 支付者昵称
+                     * 设置<p>支付者昵称</p>
+                     * @param _payerUinName <p>支付者昵称</p>
                      * 
                      */
                     void SetPayerUinName(const std::string& _payerUinName);
@@ -299,15 +299,15 @@ namespace TencentCloud
                     bool PayerUinNameHasBeenSet() const;
 
                     /**
-                     * 获取使用者昵称
-                     * @return OwnerUinName 使用者昵称
+                     * 获取<p>使用者昵称</p>
+                     * @return OwnerUinName <p>使用者昵称</p>
                      * 
                      */
                     std::string GetOwnerUinName() const;
 
                     /**
-                     * 设置使用者昵称
-                     * @param _ownerUinName 使用者昵称
+                     * 设置<p>使用者昵称</p>
+                     * @param _ownerUinName <p>使用者昵称</p>
                      * 
                      */
                     void SetOwnerUinName(const std::string& _ownerUinName);
@@ -320,15 +320,15 @@ namespace TencentCloud
                     bool OwnerUinNameHasBeenSet() const;
 
                     /**
-                     * 获取支付者uin
-                     * @return PayerUin 支付者uin
+                     * 获取<p>支付者uin</p>
+                     * @return PayerUin <p>支付者uin</p>
                      * 
                      */
                     std::string GetPayerUin() const;
 
                     /**
-                     * 设置支付者uin
-                     * @param _payerUin 支付者uin
+                     * 设置<p>支付者uin</p>
+                     * @param _payerUin <p>支付者uin</p>
                      * 
                      */
                     void SetPayerUin(const std::string& _payerUin);
@@ -341,15 +341,15 @@ namespace TencentCloud
                     bool PayerUinHasBeenSet() const;
 
                     /**
-                     * 获取计费项名称
-                     * @return SubBillingItemName 计费项名称
+                     * 获取<p>计费项名称</p>
+                     * @return SubBillingItemName <p>计费项名称</p>
                      * 
                      */
                     std::string GetSubBillingItemName() const;
 
                     /**
-                     * 设置计费项名称
-                     * @param _subBillingItemName 计费项名称
+                     * 设置<p>计费项名称</p>
+                     * @param _subBillingItemName <p>计费项名称</p>
                      * 
                      */
                     void SetSubBillingItemName(const std::string& _subBillingItemName);
@@ -362,15 +362,15 @@ namespace TencentCloud
                     bool SubBillingItemNameHasBeenSet() const;
 
                     /**
-                     * 获取计费细项名称
-                     * @return BillingItemName 计费细项名称
+                     * 获取<p>计费细项名称</p>
+                     * @return BillingItemName <p>计费细项名称</p>
                      * 
                      */
                     std::string GetBillingItemName() const;
 
                     /**
-                     * 设置计费细项名称
-                     * @param _billingItemName 计费细项名称
+                     * 设置<p>计费细项名称</p>
+                     * @param _billingItemName <p>计费细项名称</p>
                      * 
                      */
                     void SetBillingItemName(const std::string& _billingItemName);
@@ -383,15 +383,15 @@ namespace TencentCloud
                     bool BillingItemNameHasBeenSet() const;
 
                     /**
-                     * 获取子产品名称
-                     * @return SubProductName 子产品名称
+                     * 获取<p>子产品名称</p>
+                     * @return SubProductName <p>子产品名称</p>
                      * 
                      */
                     std::string GetSubProductName() const;
 
                     /**
-                     * 设置子产品名称
-                     * @param _subProductName 子产品名称
+                     * 设置<p>子产品名称</p>
+                     * @param _subProductName <p>子产品名称</p>
                      * 
                      */
                     void SetSubProductName(const std::string& _subProductName);
@@ -406,103 +406,103 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 资源 ID：账单中出账对象 ID，不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID
+                     * <p>资源 ID：账单中出账对象 ID，不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID</p>
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 地域ID
+                     * <p>地域ID</p>
                      */
                     uint64_t m_regionId;
                     bool m_regionIdHasBeenSet;
 
                     /**
-                     * 产品编码
+                     * <p>产品编码</p>
                      */
                     std::string m_productCode;
                     bool m_productCodeHasBeenSet;
 
                     /**
-                     * 子产品编码
+                     * <p>子产品编码</p>
                      */
                     std::string m_subProductCode;
                     bool m_subProductCodeHasBeenSet;
 
                     /**
-                     * 费用起始日期，格式yyyy-MM-dd
+                     * <p>费用起始日期，格式yyyy-MM-dd</p>
                      */
                     std::string m_startDate;
                     bool m_startDateHasBeenSet;
 
                     /**
-                     * 费用结束日期，格式yyyy-MM-dd，目前与StartDate相等
+                     * <p>费用结束日期，格式yyyy-MM-dd，目前与StartDate相等</p>
                      */
                     std::string m_endDate;
                     bool m_endDateHasBeenSet;
 
                     /**
-                     * 节省计划覆盖金额（即节省计划支付金额）
+                     * <p>节省计划覆盖金额（即节省计划支付金额）</p>
                      */
                     double m_spCoveredAmount;
                     bool m_spCoveredAmountHasBeenSet;
 
                     /**
-                     * 节省计划未覆盖金额（即优惠后总价）
+                     * <p>节省计划未覆盖金额（即优惠后总价）</p>
                      */
                     double m_spUncoveredAmount;
                     bool m_spUncoveredAmountHasBeenSet;
 
                     /**
-                     * 总支出（即节省计划未覆盖金额 + 节省计划覆盖金额）
+                     * <p>总支出（即节省计划未覆盖金额 + 节省计划覆盖金额）</p>
                      */
                     double m_totalRealAmount;
                     bool m_totalRealAmountHasBeenSet;
 
                     /**
-                     * 按量计费预期金额（即折前价 * 折扣）
+                     * <p>按量计费预期金额（即折前价 * 折扣）</p>
                      */
                     double m_expectedAmount;
                     bool m_expectedAmountHasBeenSet;
 
                     /**
-                     * 覆盖率结果，取值[0, 100]
+                     * <p>覆盖率结果，取值为百分比值，取值范围[0,100]</p>
                      */
                     double m_spCoverage;
                     bool m_spCoverageHasBeenSet;
 
                     /**
-                     * 支付者昵称
+                     * <p>支付者昵称</p>
                      */
                     std::string m_payerUinName;
                     bool m_payerUinNameHasBeenSet;
 
                     /**
-                     * 使用者昵称
+                     * <p>使用者昵称</p>
                      */
                     std::string m_ownerUinName;
                     bool m_ownerUinNameHasBeenSet;
 
                     /**
-                     * 支付者uin
+                     * <p>支付者uin</p>
                      */
                     std::string m_payerUin;
                     bool m_payerUinHasBeenSet;
 
                     /**
-                     * 计费项名称
+                     * <p>计费项名称</p>
                      */
                     std::string m_subBillingItemName;
                     bool m_subBillingItemNameHasBeenSet;
 
                     /**
-                     * 计费细项名称
+                     * <p>计费细项名称</p>
                      */
                     std::string m_billingItemName;
                     bool m_billingItemNameHasBeenSet;
 
                     /**
-                     * 子产品名称
+                     * <p>子产品名称</p>
                      */
                     std::string m_subProductName;
                     bool m_subProductNameHasBeenSet;

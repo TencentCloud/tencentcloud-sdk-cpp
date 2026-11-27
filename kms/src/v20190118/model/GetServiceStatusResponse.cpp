@@ -48,7 +48,8 @@ GetServiceStatusResponse::GetServiceStatusResponse() :
     m_resourceZoneHasBeenSet(false),
     m_resourceRegionHasBeenSet(false),
     m_multiAccountLimitHasBeenSet(false),
-    m_multiAccountUsedCountHasBeenSet(false)
+    m_multiAccountUsedCountHasBeenSet(false),
+    m_cmkExtPackCountHasBeenSet(false)
 {
 }
 
@@ -366,6 +367,16 @@ CoreInternalOutcome GetServiceStatusResponse::Deserialize(const string &payload)
         m_multiAccountUsedCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CmkExtPackCount") && !rsp["CmkExtPackCount"].IsNull())
+    {
+        if (!rsp["CmkExtPackCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CmkExtPackCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cmkExtPackCount = rsp["CmkExtPackCount"].GetUint64();
+        m_cmkExtPackCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -595,6 +606,14 @@ string GetServiceStatusResponse::ToJsonString() const
         string key = "MultiAccountUsedCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_multiAccountUsedCount, allocator);
+    }
+
+    if (m_cmkExtPackCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CmkExtPackCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cmkExtPackCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -857,6 +876,16 @@ uint64_t GetServiceStatusResponse::GetMultiAccountUsedCount() const
 bool GetServiceStatusResponse::MultiAccountUsedCountHasBeenSet() const
 {
     return m_multiAccountUsedCountHasBeenSet;
+}
+
+uint64_t GetServiceStatusResponse::GetCmkExtPackCount() const
+{
+    return m_cmkExtPackCount;
+}
+
+bool GetServiceStatusResponse::CmkExtPackCountHasBeenSet() const
+{
+    return m_cmkExtPackCountHasBeenSet;
 }
 
 

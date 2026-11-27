@@ -20,11 +20,11 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <memory>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/wedata/v20210820/model/TaskDsDTO.h>
 
 
 namespace TencentCloud
@@ -35,6 +35,7 @@ namespace TencentCloud
         {
             namespace Model
             {
+                class TaskDsDTO;
                 /**
                 * 循环依赖响应体
                 */
@@ -229,7 +230,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    TaskDsDTO GetTaskToInfo() const;
+                    std::shared_ptr<TaskDsDTO> GetTaskToInfo() const;
 
                     /**
                      * 设置下游任务基本信息
@@ -238,7 +239,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetTaskToInfo(const TaskDsDTO& _taskToInfo);
+                    void SetTaskToInfo(const std::shared_ptr<TaskDsDTO>& _taskToInfo);
 
                     /**
                      * 判断参数 TaskToInfo 是否已赋值
@@ -552,7 +553,7 @@ namespace TencentCloud
                      * 下游任务基本信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    TaskDsDTO m_taskToInfo;
+                    std::shared_ptr<TaskDsDTO> m_taskToInfo;
                     bool m_taskToInfoHasBeenSet;
 
                     /**

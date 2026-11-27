@@ -15,6 +15,7 @@
  */
 
 #include <tencentcloud/cls/v20201016/model/KeyValueInfo.h>
+#include <tencentcloud/cls/v20201016/model/ValueInfo.h>
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cls::V20201016::Model;
@@ -48,7 +49,8 @@ CoreInternalOutcome KeyValueInfo::Deserialize(const rapidjson::Value &value)
             return CoreInternalOutcome(Core::Error("response `KeyValueInfo.Value` is not object type").SetRequestId(requestId));
         }
 
-        CoreInternalOutcome outcome = m_value.Deserialize(value["Value"]);
+        m_value = std::make_shared<ValueInfo>();
+        CoreInternalOutcome outcome = m_value->Deserialize(value["Value"]);
         if (!outcome.IsSuccess())
         {
             outcome.GetError().SetRequestId(requestId);
@@ -79,7 +81,10 @@ void KeyValueInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Value";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_value.ToJsonObject(value[key.c_str()], allocator);
+        if (m_value)
+        {
+            m_value->ToJsonObject(value[key.c_str()], allocator);
+        }
     }
 
 }
@@ -101,12 +106,12 @@ bool KeyValueInfo::KeyHasBeenSet() const
     return m_keyHasBeenSet;
 }
 
-ValueInfo KeyValueInfo::GetValue() const
+shared_ptr<ValueInfo> KeyValueInfo::GetValue() const
 {
     return m_value;
 }
 
-void KeyValueInfo::SetValue(const ValueInfo& _value)
+void KeyValueInfo::SetValue(const shared_ptr<ValueInfo>& _value)
 {
     m_value = _value;
     m_valueHasBeenSet = true;

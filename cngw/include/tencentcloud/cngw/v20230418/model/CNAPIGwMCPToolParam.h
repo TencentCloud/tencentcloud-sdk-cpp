@@ -20,11 +20,11 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <memory>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/cngw/v20230418/model/CNAPIGwMCPToolParam.h>
 
 
 namespace TencentCloud
@@ -35,6 +35,7 @@ namespace TencentCloud
         {
             namespace Model
             {
+                class CNAPIGwMCPToolParam;
                 /**
                 * MCP tool 参数
                 */
@@ -178,14 +179,14 @@ namespace TencentCloud
                      * @return Items <p>数组子项</p>
                      * 
                      */
-                    CNAPIGwMCPToolParam GetItems() const;
+                    std::shared_ptr<CNAPIGwMCPToolParam> GetItems() const;
 
                     /**
                      * 设置<p>数组子项</p>
                      * @param _items <p>数组子项</p>
                      * 
                      */
-                    void SetItems(const CNAPIGwMCPToolParam& _items);
+                    void SetItems(const std::shared_ptr<CNAPIGwMCPToolParam>& _items);
 
                     /**
                      * 判断参数 Items 是否已赋值
@@ -199,14 +200,14 @@ namespace TencentCloud
                      * @return Properties <p>对象属性</p>
                      * 
                      */
-                    std::vector<CNAPIGwMCPToolParam> GetProperties() const;
+                    std::vector<std::shared_ptr<CNAPIGwMCPToolParam>> GetProperties() const;
 
                     /**
                      * 设置<p>对象属性</p>
                      * @param _properties <p>对象属性</p>
                      * 
                      */
-                    void SetProperties(const std::vector<CNAPIGwMCPToolParam>& _properties);
+                    void SetProperties(const std::vector<std::shared_ptr<CNAPIGwMCPToolParam>>& _properties);
 
                     /**
                      * 判断参数 Properties 是否已赋值
@@ -277,13 +278,13 @@ namespace TencentCloud
                     /**
                      * <p>数组子项</p>
                      */
-                    CNAPIGwMCPToolParam m_items;
+                    std::shared_ptr<CNAPIGwMCPToolParam> m_items;
                     bool m_itemsHasBeenSet;
 
                     /**
                      * <p>对象属性</p>
                      */
-                    std::vector<CNAPIGwMCPToolParam> m_properties;
+                    std::vector<std::shared_ptr<CNAPIGwMCPToolParam>> m_properties;
                     bool m_propertiesHasBeenSet;
 
                     /**

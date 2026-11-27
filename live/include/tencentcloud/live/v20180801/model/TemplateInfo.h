@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool WidthHasBeenSet() const;
 
                     /**
-                     * 获取<p>高，默认0。<br>范围[0-3000]<br>数值必须是2的倍数，0是原始宽度</p>
-                     * @return Height <p>高，默认0。<br>范围[0-3000]<br>数值必须是2的倍数，0是原始宽度</p>
+                     * 获取<p>高，默认0。<br>范围[0-3000]<br>数值必须是2的倍数，0是原始高度</p>
+                     * @return Height <p>高，默认0。<br>范围[0-3000]<br>数值必须是2的倍数，0是原始高度</p>
                      * 
                      */
                     int64_t GetHeight() const;
 
                     /**
-                     * 设置<p>高，默认0。<br>范围[0-3000]<br>数值必须是2的倍数，0是原始宽度</p>
-                     * @param _height <p>高，默认0。<br>范围[0-3000]<br>数值必须是2的倍数，0是原始宽度</p>
+                     * 设置<p>高，默认0。<br>范围[0-3000]<br>数值必须是2的倍数，0是原始高度</p>
+                     * @param _height <p>高，默认0。<br>范围[0-3000]<br>数值必须是2的倍数，0是原始高度</p>
                      * 
                      */
                     void SetHeight(const int64_t& _height);
@@ -667,7 +667,7 @@ namespace TencentCloud
                     bool m_widthHasBeenSet;
 
                     /**
-                     * <p>高，默认0。<br>范围[0-3000]<br>数值必须是2的倍数，0是原始宽度</p>
+                     * <p>高，默认0。<br>范围[0-3000]<br>数值必须是2的倍数，0是原始高度</p>
                      */
                     int64_t m_height;
                     bool m_heightHasBeenSet;

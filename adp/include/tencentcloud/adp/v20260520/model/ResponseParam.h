@@ -20,11 +20,11 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <memory>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/adp/v20260520/model/ResponseParam.h>
 
 
 namespace TencentCloud
@@ -35,6 +35,7 @@ namespace TencentCloud
         {
             namespace Model
             {
+                class ResponseParam;
                 /**
                 * ResponseParam
                 */
@@ -115,14 +116,14 @@ namespace TencentCloud
                      * @return SubParams <p>只对 OBJECT 或 ARRAY_OBJECT 类型有用</p>
                      * 
                      */
-                    std::vector<ResponseParam> GetSubParams() const;
+                    std::vector<std::shared_ptr<ResponseParam>> GetSubParams() const;
 
                     /**
                      * 设置<p>只对 OBJECT 或 ARRAY_OBJECT 类型有用</p>
                      * @param _subParams <p>只对 OBJECT 或 ARRAY_OBJECT 类型有用</p>
                      * 
                      */
-                    void SetSubParams(const std::vector<ResponseParam>& _subParams);
+                    void SetSubParams(const std::vector<std::shared_ptr<ResponseParam>>& _subParams);
 
                     /**
                      * 判断参数 SubParams 是否已赋值
@@ -175,7 +176,7 @@ namespace TencentCloud
                     /**
                      * <p>只对 OBJECT 或 ARRAY_OBJECT 类型有用</p>
                      */
-                    std::vector<ResponseParam> m_subParams;
+                    std::vector<std::shared_ptr<ResponseParam>> m_subParams;
                     bool m_subParamsHasBeenSet;
 
                     /**

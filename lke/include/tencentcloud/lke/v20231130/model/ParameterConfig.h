@@ -20,11 +20,11 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <memory>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/lke/v20231130/model/ParameterConfig.h>
 
 
 namespace TencentCloud
@@ -35,6 +35,7 @@ namespace TencentCloud
         {
             namespace Model
             {
+                class ParameterConfig;
                 /**
                 * 参数配置列表
                 */
@@ -136,14 +137,14 @@ namespace TencentCloud
                      * @return SubParams 子参数
                      * 
                      */
-                    std::vector<ParameterConfig> GetSubParams() const;
+                    std::vector<std::shared_ptr<ParameterConfig>> GetSubParams() const;
 
                     /**
                      * 设置子参数
                      * @param _subParams 子参数
                      * 
                      */
-                    void SetSubParams(const std::vector<ParameterConfig>& _subParams);
+                    void SetSubParams(const std::vector<std::shared_ptr<ParameterConfig>>& _subParams);
 
                     /**
                      * 判断参数 SubParams 是否已赋值
@@ -157,14 +158,14 @@ namespace TencentCloud
                      * @return OneOf OneOf类型的参数
                      * 
                      */
-                    std::vector<ParameterConfig> GetOneOf() const;
+                    std::vector<std::shared_ptr<ParameterConfig>> GetOneOf() const;
 
                     /**
                      * 设置OneOf类型的参数
                      * @param _oneOf OneOf类型的参数
                      * 
                      */
-                    void SetOneOf(const std::vector<ParameterConfig>& _oneOf);
+                    void SetOneOf(const std::vector<std::shared_ptr<ParameterConfig>>& _oneOf);
 
                     /**
                      * 判断参数 OneOf 是否已赋值
@@ -178,14 +179,14 @@ namespace TencentCloud
                      * @return AnyOf AnyOf类型的参数
                      * 
                      */
-                    std::vector<ParameterConfig> GetAnyOf() const;
+                    std::vector<std::shared_ptr<ParameterConfig>> GetAnyOf() const;
 
                     /**
                      * 设置AnyOf类型的参数
                      * @param _anyOf AnyOf类型的参数
                      * 
                      */
-                    void SetAnyOf(const std::vector<ParameterConfig>& _anyOf);
+                    void SetAnyOf(const std::vector<std::shared_ptr<ParameterConfig>>& _anyOf);
 
                     /**
                      * 判断参数 AnyOf 是否已赋值
@@ -223,19 +224,19 @@ namespace TencentCloud
                     /**
                      * 子参数
                      */
-                    std::vector<ParameterConfig> m_subParams;
+                    std::vector<std::shared_ptr<ParameterConfig>> m_subParams;
                     bool m_subParamsHasBeenSet;
 
                     /**
                      * OneOf类型的参数
                      */
-                    std::vector<ParameterConfig> m_oneOf;
+                    std::vector<std::shared_ptr<ParameterConfig>> m_oneOf;
                     bool m_oneOfHasBeenSet;
 
                     /**
                      * AnyOf类型的参数
                      */
-                    std::vector<ParameterConfig> m_anyOf;
+                    std::vector<std::shared_ptr<ParameterConfig>> m_anyOf;
                     bool m_anyOfHasBeenSet;
 
                 };

@@ -20,11 +20,11 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <memory>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/ocr/v20181119/model/FieldsInfo.h>
 
 
 namespace TencentCloud
@@ -35,6 +35,7 @@ namespace TencentCloud
         {
             namespace Model
             {
+                class FieldsInfo;
                 /**
                 * 用于分层展示抽取出的信息
                 */
@@ -52,14 +53,14 @@ namespace TencentCloud
                      * @return Groups <p>子结构嵌套FieldsInfo结构</p>
                      * 
                      */
-                    std::vector<FieldsInfo> GetGroups() const;
+                    std::vector<std::shared_ptr<FieldsInfo>> GetGroups() const;
 
                     /**
                      * 设置<p>子结构嵌套FieldsInfo结构</p>
                      * @param _groups <p>子结构嵌套FieldsInfo结构</p>
                      * 
                      */
-                    void SetGroups(const std::vector<FieldsInfo>& _groups);
+                    void SetGroups(const std::vector<std::shared_ptr<FieldsInfo>>& _groups);
 
                     /**
                      * 判断参数 Groups 是否已赋值
@@ -73,7 +74,7 @@ namespace TencentCloud
                     /**
                      * <p>子结构嵌套FieldsInfo结构</p>
                      */
-                    std::vector<FieldsInfo> m_groups;
+                    std::vector<std::shared_ptr<FieldsInfo>> m_groups;
                     bool m_groupsHasBeenSet;
 
                 };

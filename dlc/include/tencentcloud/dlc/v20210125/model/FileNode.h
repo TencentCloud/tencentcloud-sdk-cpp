@@ -20,11 +20,11 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <memory>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/dlc/v20210125/model/FileNode.h>
 
 
 namespace TencentCloud
@@ -35,6 +35,7 @@ namespace TencentCloud
         {
             namespace Model
             {
+                class FileNode;
                 /**
                 * 文件/目录节点
                 */
@@ -129,7 +130,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::vector<FileNode> GetChildren() const;
+                    std::vector<std::shared_ptr<FileNode>> GetChildren() const;
 
                     /**
                      * 设置<p>子节点列表（仅目录有效）</p>
@@ -138,7 +139,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetChildren(const std::vector<FileNode>& _children);
+                    void SetChildren(const std::vector<std::shared_ptr<FileNode>>& _children);
 
                     /**
                      * 判断参数 Children 是否已赋值
@@ -195,7 +196,7 @@ namespace TencentCloud
                      * <p>子节点列表（仅目录有效）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<FileNode> m_children;
+                    std::vector<std::shared_ptr<FileNode>> m_children;
                     bool m_childrenHasBeenSet;
 
                     /**

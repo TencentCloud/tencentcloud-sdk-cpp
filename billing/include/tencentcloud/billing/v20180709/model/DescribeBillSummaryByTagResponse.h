@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据是否准备好，0准备中，1已就绪。（Ready=0，为当前UIN首次进行初始化出账，预计需要5~10分钟出账，请于10分钟后重试即可）
-                     * @return Ready 数据是否准备好，0准备中，1已就绪。（Ready=0，为当前UIN首次进行初始化出账，预计需要5~10分钟出账，请于10分钟后重试即可）
+                     * 获取<p>数据是否准备好，0准备中，1已就绪。（Ready=0，为当前UIN首次进行初始化出账，预计需要5~10分钟出账，请于10分钟后重试即可）</p>
+                     * @return Ready <p>数据是否准备好，0准备中，1已就绪。（Ready=0，为当前UIN首次进行初始化出账，预计需要5~10分钟出账，请于10分钟后重试即可）</p>
                      * 
                      */
                     uint64_t GetReady() const;
@@ -60,9 +60,9 @@ namespace TencentCloud
                     bool ReadyHasBeenSet() const;
 
                     /**
-                     * 获取各标签值花费分布详情
+                     * 获取<p>各标签值花费分布详情</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SummaryOverview 各标签值花费分布详情
+                     * @return SummaryOverview <p>各标签值花费分布详情</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -76,9 +76,9 @@ namespace TencentCloud
                     bool SummaryOverviewHasBeenSet() const;
 
                     /**
-                     * 获取总数
+                     * 获取<p>总数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SummaryTotal 总数
+                     * @return SummaryTotal <p>总数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -94,20 +94,20 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据是否准备好，0准备中，1已就绪。（Ready=0，为当前UIN首次进行初始化出账，预计需要5~10分钟出账，请于10分钟后重试即可）
+                     * <p>数据是否准备好，0准备中，1已就绪。（Ready=0，为当前UIN首次进行初始化出账，预计需要5~10分钟出账，请于10分钟后重试即可）</p>
                      */
                     uint64_t m_ready;
                     bool m_readyHasBeenSet;
 
                     /**
-                     * 各标签值花费分布详情
+                     * <p>各标签值花费分布详情</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TagSummaryOverviewItem> m_summaryOverview;
                     bool m_summaryOverviewHasBeenSet;
 
                     /**
-                     * 总数
+                     * <p>总数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SummaryTotal m_summaryTotal;

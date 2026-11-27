@@ -15,6 +15,7 @@
  */
 
 #include <tencentcloud/ocr/v20181119/model/Element.h>
+#include <tencentcloud/ocr/v20181119/model/ResultList.h>
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ocr::V20181119::Model;
@@ -81,8 +82,8 @@ CoreInternalOutcome Element::Deserialize(const rapidjson::Value &value)
         const rapidjson::Value &tmpValue = value["ResultList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            ResultList item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<ResultList>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -173,7 +174,10 @@ void Element::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         for (auto itr = m_resultList.begin(); itr != m_resultList.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -253,12 +257,12 @@ bool Element::GroupTypeHasBeenSet() const
     return m_groupTypeHasBeenSet;
 }
 
-vector<ResultList> Element::GetResultList() const
+vector<shared_ptr<ResultList>> Element::GetResultList() const
 {
     return m_resultList;
 }
 
-void Element::SetResultList(const vector<ResultList>& _resultList)
+void Element::SetResultList(const vector<shared_ptr<ResultList>>& _resultList)
 {
     m_resultList = _resultList;
     m_resultListHasBeenSet = true;

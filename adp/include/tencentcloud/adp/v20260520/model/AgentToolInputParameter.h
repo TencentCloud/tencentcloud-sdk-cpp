@@ -20,11 +20,11 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <memory>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/adp/v20260520/model/AgentToolInputParameter.h>
 #include <tencentcloud/adp/v20260520/model/AgentInput.h>
 
 
@@ -36,6 +36,7 @@ namespace TencentCloud
         {
             namespace Model
             {
+                class AgentToolInputParameter;
                 /**
                 * Agent 工具输入参数定义
                 */
@@ -139,7 +140,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::vector<AgentToolInputParameter> GetSubParameterList() const;
+                    std::vector<std::shared_ptr<AgentToolInputParameter>> GetSubParameterList() const;
 
                     /**
                      * 设置<p>子参数，仅 OBJECT 或 ARRAY&lt;&gt; 类型时使用</p>
@@ -148,7 +149,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetSubParameterList(const std::vector<AgentToolInputParameter>& _subParameterList);
+                    void SetSubParameterList(const std::vector<std::shared_ptr<AgentToolInputParameter>>& _subParameterList);
 
                     /**
                      * 判断参数 SubParameterList 是否已赋值
@@ -185,7 +186,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::vector<AgentToolInputParameter> GetOneOfList() const;
+                    std::vector<std::shared_ptr<AgentToolInputParameter>> GetOneOfList() const;
 
                     /**
                      * 设置<p>OneOf类型的参数</p>
@@ -194,7 +195,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetOneOfList(const std::vector<AgentToolInputParameter>& _oneOfList);
+                    void SetOneOfList(const std::vector<std::shared_ptr<AgentToolInputParameter>>& _oneOfList);
 
                     /**
                      * 判断参数 OneOfList 是否已赋值
@@ -210,7 +211,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::vector<AgentToolInputParameter> GetAnyOfList() const;
+                    std::vector<std::shared_ptr<AgentToolInputParameter>> GetAnyOfList() const;
 
                     /**
                      * 设置<p>AnyOf类型的参数</p>
@@ -219,7 +220,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetAnyOfList(const std::vector<AgentToolInputParameter>& _anyOfList);
+                    void SetAnyOfList(const std::vector<std::shared_ptr<AgentToolInputParameter>>& _anyOfList);
 
                     /**
                      * 判断参数 AnyOfList 是否已赋值
@@ -283,7 +284,7 @@ namespace TencentCloud
                      * <p>子参数，仅 OBJECT 或 ARRAY&lt;&gt; 类型时使用</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<AgentToolInputParameter> m_subParameterList;
+                    std::vector<std::shared_ptr<AgentToolInputParameter>> m_subParameterList;
                     bool m_subParameterListHasBeenSet;
 
                     /**
@@ -296,14 +297,14 @@ namespace TencentCloud
                      * <p>OneOf类型的参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<AgentToolInputParameter> m_oneOfList;
+                    std::vector<std::shared_ptr<AgentToolInputParameter>> m_oneOfList;
                     bool m_oneOfListHasBeenSet;
 
                     /**
                      * <p>AnyOf类型的参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<AgentToolInputParameter> m_anyOfList;
+                    std::vector<std::shared_ptr<AgentToolInputParameter>> m_anyOfList;
                     bool m_anyOfListHasBeenSet;
 
                     /**

@@ -20,11 +20,11 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <memory>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/lke/v20231130/model/AgentToolReqParam.h>
 #include <tencentcloud/lke/v20231130/model/AgentInput.h>
 
 
@@ -36,6 +36,7 @@ namespace TencentCloud
         {
             namespace Model
             {
+                class AgentToolReqParam;
                 /**
                 * Agent工具的请求参数定义
                 */
@@ -158,14 +159,14 @@ namespace TencentCloud
                      * @return SubParams 子参数,ParamType 是OBJECT 或 ARRAY<>类型有用
                      * 
                      */
-                    std::vector<AgentToolReqParam> GetSubParams() const;
+                    std::vector<std::shared_ptr<AgentToolReqParam>> GetSubParams() const;
 
                     /**
                      * 设置子参数,ParamType 是OBJECT 或 ARRAY<>类型有用
                      * @param _subParams 子参数,ParamType 是OBJECT 或 ARRAY<>类型有用
                      * 
                      */
-                    void SetSubParams(const std::vector<AgentToolReqParam>& _subParams);
+                    void SetSubParams(const std::vector<std::shared_ptr<AgentToolReqParam>>& _subParams);
 
                     /**
                      * 判断参数 SubParams 是否已赋值
@@ -221,14 +222,14 @@ namespace TencentCloud
                      * @return AnyOf 其中任意
                      * 
                      */
-                    std::vector<AgentToolReqParam> GetAnyOf() const;
+                    std::vector<std::shared_ptr<AgentToolReqParam>> GetAnyOf() const;
 
                     /**
                      * 设置其中任意
                      * @param _anyOf 其中任意
                      * 
                      */
-                    void SetAnyOf(const std::vector<AgentToolReqParam>& _anyOf);
+                    void SetAnyOf(const std::vector<std::shared_ptr<AgentToolReqParam>>& _anyOf);
 
                     /**
                      * 判断参数 AnyOf 是否已赋值
@@ -242,14 +243,14 @@ namespace TencentCloud
                      * @return OneOf 其中一个
                      * 
                      */
-                    std::vector<AgentToolReqParam> GetOneOf() const;
+                    std::vector<std::shared_ptr<AgentToolReqParam>> GetOneOf() const;
 
                     /**
                      * 设置其中一个
                      * @param _oneOf 其中一个
                      * 
                      */
-                    void SetOneOf(const std::vector<AgentToolReqParam>& _oneOf);
+                    void SetOneOf(const std::vector<std::shared_ptr<AgentToolReqParam>>& _oneOf);
 
                     /**
                      * 判断参数 OneOf 是否已赋值
@@ -314,7 +315,7 @@ namespace TencentCloud
                     /**
                      * 子参数,ParamType 是OBJECT 或 ARRAY<>类型有用
                      */
-                    std::vector<AgentToolReqParam> m_subParams;
+                    std::vector<std::shared_ptr<AgentToolReqParam>> m_subParams;
                     bool m_subParamsHasBeenSet;
 
                     /**
@@ -332,13 +333,13 @@ namespace TencentCloud
                     /**
                      * 其中任意
                      */
-                    std::vector<AgentToolReqParam> m_anyOf;
+                    std::vector<std::shared_ptr<AgentToolReqParam>> m_anyOf;
                     bool m_anyOfHasBeenSet;
 
                     /**
                      * 其中一个
                      */
-                    std::vector<AgentToolReqParam> m_oneOf;
+                    std::vector<std::shared_ptr<AgentToolReqParam>> m_oneOf;
                     bool m_oneOfHasBeenSet;
 
                     /**

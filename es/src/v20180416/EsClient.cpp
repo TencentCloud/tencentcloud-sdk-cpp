@@ -3690,6 +3690,56 @@ EsClient::SaveAndDeployLogstashPipelineOutcomeCallable EsClient::SaveAndDeployLo
     return prom->get_future();
 }
 
+EsClient::SearchServerlessSpaceDataOutcome EsClient::SearchServerlessSpaceData(const SearchServerlessSpaceDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "SearchServerlessSpaceData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SearchServerlessSpaceDataResponse rsp = SearchServerlessSpaceDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SearchServerlessSpaceDataOutcome(rsp);
+        else
+            return SearchServerlessSpaceDataOutcome(o.GetError());
+    }
+    else
+    {
+        return SearchServerlessSpaceDataOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::SearchServerlessSpaceDataAsync(const SearchServerlessSpaceDataRequest& request, const SearchServerlessSpaceDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SearchServerlessSpaceDataRequest&;
+    using Resp = SearchServerlessSpaceDataResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SearchServerlessSpaceData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EsClient::SearchServerlessSpaceDataOutcomeCallable EsClient::SearchServerlessSpaceDataCallable(const SearchServerlessSpaceDataRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SearchServerlessSpaceDataOutcome>>();
+    SearchServerlessSpaceDataAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const SearchServerlessSpaceDataRequest&,
+        SearchServerlessSpaceDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 EsClient::StartLogstashPipelinesOutcome EsClient::StartLogstashPipelines(const StartLogstashPipelinesRequest &request)
 {
     auto outcome = MakeRequest(request, "StartLogstashPipelines");

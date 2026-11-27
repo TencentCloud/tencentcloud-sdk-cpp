@@ -43,23 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模板名称。
-长度上限：255字节。
-仅支持中文、英文、数字、_、-。
-                     * @return TemplateName 模板名称。
-长度上限：255字节。
-仅支持中文、英文、数字、_、-。
+                     * 获取<p>模板名称。<br>长度上限：255字节。<br>仅支持中文、英文、数字、_、-。</p>
+                     * @return TemplateName <p>模板名称。<br>长度上限：255字节。<br>仅支持中文、英文、数字、_、-。</p>
                      * 
                      */
                     std::string GetTemplateName() const;
 
                     /**
-                     * 设置模板名称。
-长度上限：255字节。
-仅支持中文、英文、数字、_、-。
-                     * @param _templateName 模板名称。
-长度上限：255字节。
-仅支持中文、英文、数字、_、-。
+                     * 设置<p>模板名称。<br>长度上限：255字节。<br>仅支持中文、英文、数字、_、-。</p>
+                     * @param _templateName <p>模板名称。<br>长度上限：255字节。<br>仅支持中文、英文、数字、_、-。</p>
                      * 
                      */
                     void SetTemplateName(const std::string& _templateName);
@@ -72,15 +64,15 @@ namespace TencentCloud
                     bool TemplateNameHasBeenSet() const;
 
                     /**
-                     * 获取时移时长。单位：s。取值范围：86400 259200 604800 1296000 2592000。
-                     * @return Duration 时移时长。单位：s。取值范围：86400 259200 604800 1296000 2592000。
+                     * 获取<p>时移时长。单位：s。取值范围：86400 259200 604800 1296000 2592000。</p>
+                     * @return Duration <p>时移时长。单位：s。取值范围：86400 259200 604800 1296000 2592000。</p>
                      * 
                      */
                     uint64_t GetDuration() const;
 
                     /**
-                     * 设置时移时长。单位：s。取值范围：86400 259200 604800 1296000 2592000。
-                     * @param _duration 时移时长。单位：s。取值范围：86400 259200 604800 1296000 2592000。
+                     * 设置<p>时移时长。单位：s。取值范围：86400 259200 604800 1296000 2592000。</p>
+                     * @param _duration <p>时移时长。单位：s。取值范围：86400 259200 604800 1296000 2592000。</p>
                      * 
                      */
                     void SetDuration(const uint64_t& _duration);
@@ -93,19 +85,15 @@ namespace TencentCloud
                     bool DurationHasBeenSet() const;
 
                     /**
-                     * 获取描述信息。
-仅支持中文、英文、数字、_、-。
-                     * @return Description 描述信息。
-仅支持中文、英文、数字、_、-。
+                     * 获取<p>描述信息。<br>仅支持中文、英文、数字、_、-。</p>
+                     * @return Description <p>描述信息。<br>仅支持中文、英文、数字、_、-。</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置描述信息。
-仅支持中文、英文、数字、_、-。
-                     * @param _description 描述信息。
-仅支持中文、英文、数字、_、-。
+                     * 设置<p>描述信息。<br>仅支持中文、英文、数字、_、-。</p>
+                     * @param _description <p>描述信息。<br>仅支持中文、英文、数字、_、-。</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -118,27 +106,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取地域。
-Mainland：中国大陆。
-Overseas：海外及港澳台地区。
-默认值：Mainland。
-                     * @return Area 地域。
-Mainland：中国大陆。
-Overseas：海外及港澳台地区。
-默认值：Mainland。
+                     * 获取<p>地域。<br>Mainland：中国大陆。<br>Overseas：海外及港澳台地区。<br>EuropeFrankfurt：欧洲-法兰克福。<br>NorthAmericaSiliconValley：北美-硅谷。<br>MiddleEastRiyadh：中东-利雅得。<br>AsiaTokyo：亚太-东京。<br>AsiaSeoul：亚太-首尔。<br>默认值：Mainland。</p>
+                     * @return Area <p>地域。<br>Mainland：中国大陆。<br>Overseas：海外及港澳台地区。<br>EuropeFrankfurt：欧洲-法兰克福。<br>NorthAmericaSiliconValley：北美-硅谷。<br>MiddleEastRiyadh：中东-利雅得。<br>AsiaTokyo：亚太-东京。<br>AsiaSeoul：亚太-首尔。<br>默认值：Mainland。</p>
                      * 
                      */
                     std::string GetArea() const;
 
                     /**
-                     * 设置地域。
-Mainland：中国大陆。
-Overseas：海外及港澳台地区。
-默认值：Mainland。
-                     * @param _area 地域。
-Mainland：中国大陆。
-Overseas：海外及港澳台地区。
-默认值：Mainland。
+                     * 设置<p>地域。<br>Mainland：中国大陆。<br>Overseas：海外及港澳台地区。<br>EuropeFrankfurt：欧洲-法兰克福。<br>NorthAmericaSiliconValley：北美-硅谷。<br>MiddleEastRiyadh：中东-利雅得。<br>AsiaTokyo：亚太-东京。<br>AsiaSeoul：亚太-首尔。<br>默认值：Mainland。</p>
+                     * @param _area <p>地域。<br>Mainland：中国大陆。<br>Overseas：海外及港澳台地区。<br>EuropeFrankfurt：欧洲-法兰克福。<br>NorthAmericaSiliconValley：北美-硅谷。<br>MiddleEastRiyadh：中东-利雅得。<br>AsiaTokyo：亚太-东京。<br>AsiaSeoul：亚太-首尔。<br>默认值：Mainland。</p>
                      * 
                      */
                     void SetArea(const std::string& _area);
@@ -151,27 +127,15 @@ Overseas：海外及港澳台地区。
                     bool AreaHasBeenSet() const;
 
                     /**
-                     * 获取分片时长。
-可取3-10。
-单位：s。
-默认值：5。
-                     * @return ItemDuration 分片时长。
-可取3-10。
-单位：s。
-默认值：5。
+                     * 获取<p>分片时长。<br>可取3-10。<br>单位：s。<br>默认值：5。</p>
+                     * @return ItemDuration <p>分片时长。<br>可取3-10。<br>单位：s。<br>默认值：5。</p>
                      * 
                      */
                     uint64_t GetItemDuration() const;
 
                     /**
-                     * 设置分片时长。
-可取3-10。
-单位：s。
-默认值：5。
-                     * @param _itemDuration 分片时长。
-可取3-10。
-单位：s。
-默认值：5。
+                     * 设置<p>分片时长。<br>可取3-10。<br>单位：s。<br>默认值：5。</p>
+                     * @param _itemDuration <p>分片时长。<br>可取3-10。<br>单位：s。<br>默认值：5。</p>
                      * 
                      */
                     void SetItemDuration(const uint64_t& _itemDuration);
@@ -184,23 +148,15 @@ Overseas：海外及港澳台地区。
                     bool ItemDurationHasBeenSet() const;
 
                     /**
-                     * 获取是否去除水印。
-传true则将录制原始流。
-默认值：false。
-                     * @return RemoveWatermark 是否去除水印。
-传true则将录制原始流。
-默认值：false。
+                     * 获取<p>是否去除水印。<br>传true则将录制原始流。<br>默认值：false。</p>
+                     * @return RemoveWatermark <p>是否去除水印。<br>传true则将录制原始流。<br>默认值：false。</p>
                      * 
                      */
                     bool GetRemoveWatermark() const;
 
                     /**
-                     * 设置是否去除水印。
-传true则将录制原始流。
-默认值：false。
-                     * @param _removeWatermark 是否去除水印。
-传true则将录制原始流。
-默认值：false。
+                     * 设置<p>是否去除水印。<br>传true则将录制原始流。<br>默认值：false。</p>
+                     * @param _removeWatermark <p>是否去除水印。<br>传true则将录制原始流。<br>默认值：false。</p>
                      * 
                      */
                     void SetRemoveWatermark(const bool& _removeWatermark);
@@ -213,19 +169,15 @@ Overseas：海外及港澳台地区。
                     bool RemoveWatermarkHasBeenSet() const;
 
                     /**
-                     * 获取转码流id列表。
-此参数仅在 RemoveWatermark为false时生效。
-                     * @return TranscodeTemplateIds 转码流id列表。
-此参数仅在 RemoveWatermark为false时生效。
+                     * 获取<p>转码流id列表。<br>此参数仅在 RemoveWatermark为false时生效。</p>
+                     * @return TranscodeTemplateIds <p>转码流id列表。<br>此参数仅在 RemoveWatermark为false时生效。</p>
                      * 
                      */
                     std::vector<int64_t> GetTranscodeTemplateIds() const;
 
                     /**
-                     * 设置转码流id列表。
-此参数仅在 RemoveWatermark为false时生效。
-                     * @param _transcodeTemplateIds 转码流id列表。
-此参数仅在 RemoveWatermark为false时生效。
+                     * 设置<p>转码流id列表。<br>此参数仅在 RemoveWatermark为false时生效。</p>
+                     * @param _transcodeTemplateIds <p>转码流id列表。<br>此参数仅在 RemoveWatermark为false时生效。</p>
                      * 
                      */
                     void SetTranscodeTemplateIds(const std::vector<int64_t>& _transcodeTemplateIds);
@@ -240,55 +192,43 @@ Overseas：海外及港澳台地区。
                 private:
 
                     /**
-                     * 模板名称。
-长度上限：255字节。
-仅支持中文、英文、数字、_、-。
+                     * <p>模板名称。<br>长度上限：255字节。<br>仅支持中文、英文、数字、_、-。</p>
                      */
                     std::string m_templateName;
                     bool m_templateNameHasBeenSet;
 
                     /**
-                     * 时移时长。单位：s。取值范围：86400 259200 604800 1296000 2592000。
+                     * <p>时移时长。单位：s。取值范围：86400 259200 604800 1296000 2592000。</p>
                      */
                     uint64_t m_duration;
                     bool m_durationHasBeenSet;
 
                     /**
-                     * 描述信息。
-仅支持中文、英文、数字、_、-。
+                     * <p>描述信息。<br>仅支持中文、英文、数字、_、-。</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 地域。
-Mainland：中国大陆。
-Overseas：海外及港澳台地区。
-默认值：Mainland。
+                     * <p>地域。<br>Mainland：中国大陆。<br>Overseas：海外及港澳台地区。<br>EuropeFrankfurt：欧洲-法兰克福。<br>NorthAmericaSiliconValley：北美-硅谷。<br>MiddleEastRiyadh：中东-利雅得。<br>AsiaTokyo：亚太-东京。<br>AsiaSeoul：亚太-首尔。<br>默认值：Mainland。</p>
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;
 
                     /**
-                     * 分片时长。
-可取3-10。
-单位：s。
-默认值：5。
+                     * <p>分片时长。<br>可取3-10。<br>单位：s。<br>默认值：5。</p>
                      */
                     uint64_t m_itemDuration;
                     bool m_itemDurationHasBeenSet;
 
                     /**
-                     * 是否去除水印。
-传true则将录制原始流。
-默认值：false。
+                     * <p>是否去除水印。<br>传true则将录制原始流。<br>默认值：false。</p>
                      */
                     bool m_removeWatermark;
                     bool m_removeWatermarkHasBeenSet;
 
                     /**
-                     * 转码流id列表。
-此参数仅在 RemoveWatermark为false时生效。
+                     * <p>转码流id列表。<br>此参数仅在 RemoveWatermark为false时生效。</p>
                      */
                     std::vector<int64_t> m_transcodeTemplateIds;
                     bool m_transcodeTemplateIdsHasBeenSet;

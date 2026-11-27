@@ -15,6 +15,7 @@
  */
 
 #include <tencentcloud/teo/v20220901/model/CustomVariableOperationSubRule.h>
+#include <tencentcloud/teo/v20220901/model/CustomVariableOperationRuleBranch.h>
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Teo::V20220901::Model;
@@ -39,8 +40,8 @@ CoreInternalOutcome CustomVariableOperationSubRule::Deserialize(const rapidjson:
         const rapidjson::Value &tmpValue = value["Branches"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            CustomVariableOperationRuleBranch item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<CustomVariableOperationRuleBranch>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -82,7 +83,10 @@ void CustomVariableOperationSubRule::ToJsonObject(rapidjson::Value &value, rapid
         for (auto itr = m_branches.begin(); itr != m_branches.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -102,12 +106,12 @@ void CustomVariableOperationSubRule::ToJsonObject(rapidjson::Value &value, rapid
 }
 
 
-vector<CustomVariableOperationRuleBranch> CustomVariableOperationSubRule::GetBranches() const
+vector<shared_ptr<CustomVariableOperationRuleBranch>> CustomVariableOperationSubRule::GetBranches() const
 {
     return m_branches;
 }
 
-void CustomVariableOperationSubRule::SetBranches(const vector<CustomVariableOperationRuleBranch>& _branches)
+void CustomVariableOperationSubRule::SetBranches(const vector<shared_ptr<CustomVariableOperationRuleBranch>>& _branches)
 {
     m_branches = _branches;
     m_branchesHasBeenSet = true;

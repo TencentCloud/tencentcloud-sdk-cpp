@@ -105,8 +105,8 @@ CoreInternalOutcome QACate::Deserialize(const rapidjson::Value &value)
         const rapidjson::Value &tmpValue = value["Children"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            QACate item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<QACate>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -193,7 +193,10 @@ void QACate::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         for (auto itr = m_children.begin(); itr != m_children.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -304,12 +307,12 @@ bool QACate::CanDeleteHasBeenSet() const
     return m_canDeleteHasBeenSet;
 }
 
-vector<QACate> QACate::GetChildren() const
+vector<shared_ptr<QACate>> QACate::GetChildren() const
 {
     return m_children;
 }
 
-void QACate::SetChildren(const vector<QACate>& _children)
+void QACate::SetChildren(const vector<shared_ptr<QACate>>& _children)
 {
     m_children = _children;
     m_childrenHasBeenSet = true;

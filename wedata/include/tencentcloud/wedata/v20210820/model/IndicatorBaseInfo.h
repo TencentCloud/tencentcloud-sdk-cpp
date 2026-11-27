@@ -20,6 +20,7 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <memory>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
@@ -28,7 +29,6 @@
 #include <tencentcloud/wedata/v20210820/model/AssetDimSimpleVO.h>
 #include <tencentcloud/wedata/v20210820/model/ChangeLog.h>
 #include <tencentcloud/wedata/v20210820/model/AssetDimTableColumn.h>
-#include <tencentcloud/wedata/v20210820/model/IndicatorBaseInfo.h>
 #include <tencentcloud/wedata/v20210820/model/PermissionStatus.h>
 #include <tencentcloud/wedata/v20210820/model/DataAssetOption.h>
 
@@ -41,6 +41,7 @@ namespace TencentCloud
         {
             namespace Model
             {
+                class IndicatorBaseInfo;
                 /**
                 * 指标查询出参
                 */
@@ -735,7 +736,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::vector<IndicatorBaseInfo> GetAllSourceIndicatorIds() const;
+                    std::vector<std::shared_ptr<IndicatorBaseInfo>> GetAllSourceIndicatorIds() const;
 
                     /**
                      * 设置关联指标(包含多层级关联指标)
@@ -744,7 +745,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetAllSourceIndicatorIds(const std::vector<IndicatorBaseInfo>& _allSourceIndicatorIds);
+                    void SetAllSourceIndicatorIds(const std::vector<std::shared_ptr<IndicatorBaseInfo>>& _allSourceIndicatorIds);
 
                     /**
                      * 判断参数 AllSourceIndicatorIds 是否已赋值
@@ -835,7 +836,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::vector<IndicatorBaseInfo> GetRelatedIndicatorIds() const;
+                    std::vector<std::shared_ptr<IndicatorBaseInfo>> GetRelatedIndicatorIds() const;
 
                     /**
                      * 设置被关联的指标
@@ -844,7 +845,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetRelatedIndicatorIds(const std::vector<IndicatorBaseInfo>& _relatedIndicatorIds);
+                    void SetRelatedIndicatorIds(const std::vector<std::shared_ptr<IndicatorBaseInfo>>& _relatedIndicatorIds);
 
                     /**
                      * 判断参数 RelatedIndicatorIds 是否已赋值
@@ -1323,7 +1324,7 @@ namespace TencentCloud
                      * 关联指标(包含多层级关联指标)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<IndicatorBaseInfo> m_allSourceIndicatorIds;
+                    std::vector<std::shared_ptr<IndicatorBaseInfo>> m_allSourceIndicatorIds;
                     bool m_allSourceIndicatorIdsHasBeenSet;
 
                     /**
@@ -1351,7 +1352,7 @@ namespace TencentCloud
                      * 被关联的指标
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<IndicatorBaseInfo> m_relatedIndicatorIds;
+                    std::vector<std::shared_ptr<IndicatorBaseInfo>> m_relatedIndicatorIds;
                     bool m_relatedIndicatorIdsHasBeenSet;
 
                     /**

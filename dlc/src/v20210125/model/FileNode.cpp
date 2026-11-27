@@ -72,8 +72,8 @@ CoreInternalOutcome FileNode::Deserialize(const rapidjson::Value &value)
         const rapidjson::Value &tmpValue = value["Children"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            FileNode item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<FileNode>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -136,7 +136,10 @@ void FileNode::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         for (auto itr = m_children.begin(); itr != m_children.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -199,12 +202,12 @@ bool FileNode::SizeHasBeenSet() const
     return m_sizeHasBeenSet;
 }
 
-vector<FileNode> FileNode::GetChildren() const
+vector<shared_ptr<FileNode>> FileNode::GetChildren() const
 {
     return m_children;
 }
 
-void FileNode::SetChildren(const vector<FileNode>& _children)
+void FileNode::SetChildren(const vector<shared_ptr<FileNode>>& _children)
 {
     m_children = _children;
     m_childrenHasBeenSet = true;

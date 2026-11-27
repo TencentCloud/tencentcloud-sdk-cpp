@@ -86,8 +86,8 @@ CoreInternalOutcome KBCategory::Deserialize(const rapidjson::Value &value)
         const rapidjson::Value &tmpValue = value["ChildList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            KBCategory item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<KBCategory>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -195,7 +195,10 @@ void KBCategory::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         for (auto itr = m_childList.begin(); itr != m_childList.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -299,12 +302,12 @@ bool KBCategory::CategoryIdHasBeenSet() const
     return m_categoryIdHasBeenSet;
 }
 
-vector<KBCategory> KBCategory::GetChildList() const
+vector<shared_ptr<KBCategory>> KBCategory::GetChildList() const
 {
     return m_childList;
 }
 
-void KBCategory::SetChildList(const vector<KBCategory>& _childList)
+void KBCategory::SetChildList(const vector<shared_ptr<KBCategory>>& _childList)
 {
     m_childList = _childList;
     m_childListHasBeenSet = true;

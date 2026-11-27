@@ -20,11 +20,11 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <memory>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/cls/v20201016/model/ValueInfo.h>
 
 
 namespace TencentCloud
@@ -35,6 +35,7 @@ namespace TencentCloud
         {
             namespace Model
             {
+                class ValueInfo;
                 /**
                 * 键值或者元字段索引的字段信息
                 */
@@ -97,14 +98,14 @@ namespace TencentCloud
                      * @return Value 字段的索引描述信息
                      * 
                      */
-                    ValueInfo GetValue() const;
+                    std::shared_ptr<ValueInfo> GetValue() const;
 
                     /**
                      * 设置字段的索引描述信息
                      * @param _value 字段的索引描述信息
                      * 
                      */
-                    void SetValue(const ValueInfo& _value);
+                    void SetValue(const std::shared_ptr<ValueInfo>& _value);
 
                     /**
                      * 判断参数 Value 是否已赋值
@@ -130,7 +131,7 @@ namespace TencentCloud
                     /**
                      * 字段的索引描述信息
                      */
-                    ValueInfo m_value;
+                    std::shared_ptr<ValueInfo> m_value;
                     bool m_valueHasBeenSet;
 
                 };

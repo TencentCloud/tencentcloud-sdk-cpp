@@ -20,12 +20,12 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <memory>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/wedata/v20210820/model/WorkflowCanvasOpsDto.h>
-#include <tencentcloud/wedata/v20210820/model/FolderDsDto.h>
 
 
 namespace TencentCloud
@@ -36,6 +36,7 @@ namespace TencentCloud
         {
             namespace Model
             {
+                class FolderDsDto;
                 /**
                 * 文件夹属性
                 */
@@ -280,7 +281,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::vector<FolderDsDto> GetFolders() const;
+                    std::vector<std::shared_ptr<FolderDsDto>> GetFolders() const;
 
                     /**
                      * 设置<p>子文件夹列表</p>
@@ -289,7 +290,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetFolders(const std::vector<FolderDsDto>& _folders);
+                    void SetFolders(const std::vector<std::shared_ptr<FolderDsDto>>& _folders);
 
                     /**
                      * 判断参数 Folders 是否已赋值
@@ -417,7 +418,7 @@ namespace TencentCloud
                      * <p>子文件夹列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<FolderDsDto> m_folders;
+                    std::vector<std::shared_ptr<FolderDsDto>> m_folders;
                     bool m_foldersHasBeenSet;
 
                     /**

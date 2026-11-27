@@ -20,11 +20,11 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <memory>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/lke/v20231130/model/QACate.h>
 
 
 namespace TencentCloud
@@ -35,6 +35,7 @@ namespace TencentCloud
         {
             namespace Model
             {
+                class QACate;
                 /**
                 * 获取QA分类分组
                 */
@@ -224,7 +225,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::vector<QACate> GetChildren() const;
+                    std::vector<std::shared_ptr<QACate>> GetChildren() const;
 
                     /**
                      * 设置子分类
@@ -233,7 +234,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetChildren(const std::vector<QACate>& _children);
+                    void SetChildren(const std::vector<std::shared_ptr<QACate>>& _children);
 
                     /**
                      * 判断参数 Children 是否已赋值
@@ -320,7 +321,7 @@ namespace TencentCloud
                      * 子分类
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<QACate> m_children;
+                    std::vector<std::shared_ptr<QACate>> m_children;
                     bool m_childrenHasBeenSet;
 
                     /**

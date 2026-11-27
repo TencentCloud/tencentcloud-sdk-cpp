@@ -20,11 +20,11 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <memory>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/ocr/v20181119/model/SchemaList.h>
 
 
 namespace TencentCloud
@@ -35,6 +35,7 @@ namespace TencentCloud
         {
             namespace Model
             {
+                class SchemaList;
                 /**
                 * 描述用户提供的出参结构的模板
                 */
@@ -115,14 +116,14 @@ namespace TencentCloud
                      * @return SubItems <p>嵌套SchemaList结构，最多支持嵌套三层。注：仅当KeyType=1时生效。</p>
                      * 
                      */
-                    std::vector<SchemaList> GetSubItems() const;
+                    std::vector<std::shared_ptr<SchemaList>> GetSubItems() const;
 
                     /**
                      * 设置<p>嵌套SchemaList结构，最多支持嵌套三层。注：仅当KeyType=1时生效。</p>
                      * @param _subItems <p>嵌套SchemaList结构，最多支持嵌套三层。注：仅当KeyType=1时生效。</p>
                      * 
                      */
-                    void SetSubItems(const std::vector<SchemaList>& _subItems);
+                    void SetSubItems(const std::vector<std::shared_ptr<SchemaList>>& _subItems);
 
                     /**
                      * 判断参数 SubItems 是否已赋值
@@ -154,7 +155,7 @@ namespace TencentCloud
                     /**
                      * <p>嵌套SchemaList结构，最多支持嵌套三层。注：仅当KeyType=1时生效。</p>
                      */
-                    std::vector<SchemaList> m_subItems;
+                    std::vector<std::shared_ptr<SchemaList>> m_subItems;
                     bool m_subItemsHasBeenSet;
 
                 };

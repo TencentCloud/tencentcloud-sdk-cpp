@@ -15,6 +15,7 @@
  */
 
 #include <tencentcloud/ocr/v20181119/model/FieldsInfo.h>
+#include <tencentcloud/ocr/v20181119/model/SubItemGroup.h>
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ocr::V20181119::Model;
@@ -100,8 +101,8 @@ CoreInternalOutcome FieldsInfo::Deserialize(const rapidjson::Value &value)
         const rapidjson::Value &tmpValue = value["SubItems"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            SubItemGroup item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<SubItemGroup>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -171,7 +172,10 @@ void FieldsInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         for (auto itr = m_subItems.begin(); itr != m_subItems.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -258,12 +262,12 @@ bool FieldsInfo::PolygonHasBeenSet() const
     return m_polygonHasBeenSet;
 }
 
-vector<SubItemGroup> FieldsInfo::GetSubItems() const
+vector<shared_ptr<SubItemGroup>> FieldsInfo::GetSubItems() const
 {
     return m_subItems;
 }
 
-void FieldsInfo::SetSubItems(const vector<SubItemGroup>& _subItems)
+void FieldsInfo::SetSubItems(const vector<shared_ptr<SubItemGroup>>& _subItems)
 {
     m_subItems = _subItems;
     m_subItemsHasBeenSet = true;

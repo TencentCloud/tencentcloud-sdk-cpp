@@ -20,11 +20,11 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <memory>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/wedata/v20210820/model/TaskTableMetricInfo.h>
 
 
 namespace TencentCloud
@@ -35,6 +35,7 @@ namespace TencentCloud
         {
             namespace Model
             {
+                class TaskTableMetricInfo;
                 /**
                 * 任务表粒度指标信息
                 */
@@ -371,7 +372,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::vector<TaskTableMetricInfo> GetTaskTableMetricInfos() const;
+                    std::vector<std::shared_ptr<TaskTableMetricInfo>> GetTaskTableMetricInfos() const;
 
                     /**
                      * 设置物理表信息
@@ -380,7 +381,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetTaskTableMetricInfos(const std::vector<TaskTableMetricInfo>& _taskTableMetricInfos);
+                    void SetTaskTableMetricInfos(const std::vector<std::shared_ptr<TaskTableMetricInfo>>& _taskTableMetricInfos);
 
                     /**
                      * 判断参数 TaskTableMetricInfos 是否已赋值
@@ -809,7 +810,7 @@ namespace TencentCloud
                      * 物理表信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<TaskTableMetricInfo> m_taskTableMetricInfos;
+                    std::vector<std::shared_ptr<TaskTableMetricInfo>> m_taskTableMetricInfos;
                     bool m_taskTableMetricInfosHasBeenSet;
 
                     /**

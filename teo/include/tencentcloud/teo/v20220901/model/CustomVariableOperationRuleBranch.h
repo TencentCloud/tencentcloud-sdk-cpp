@@ -20,12 +20,12 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <memory>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/teo/v20220901/model/CustomVariableOperationRuleAction.h>
-#include <tencentcloud/teo/v20220901/model/CustomVariableOperationSubRule.h>
 
 
 namespace TencentCloud
@@ -36,6 +36,7 @@ namespace TencentCloud
         {
             namespace Model
             {
+                class CustomVariableOperationSubRule;
                 /**
                 * 自定义变量运算子规则分支。
                 */
@@ -101,7 +102,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::vector<CustomVariableOperationSubRule> GetSubRules() const;
+                    std::vector<std::shared_ptr<CustomVariableOperationSubRule>> GetSubRules() const;
 
                     /**
                      * 设置<p>子规则列表。此列表中若存在多条规则，按照从上往下的顺序依次执行。<br>注意：SubRules 和 Actions 不可同时为空。且当前只支持填写一层 SubRules。</p>
@@ -110,7 +111,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetSubRules(const std::vector<CustomVariableOperationSubRule>& _subRules);
+                    void SetSubRules(const std::vector<std::shared_ptr<CustomVariableOperationSubRule>>& _subRules);
 
                     /**
                      * 判断参数 SubRules 是否已赋值
@@ -138,7 +139,7 @@ namespace TencentCloud
                      * <p>子规则列表。此列表中若存在多条规则，按照从上往下的顺序依次执行。<br>注意：SubRules 和 Actions 不可同时为空。且当前只支持填写一层 SubRules。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<CustomVariableOperationSubRule> m_subRules;
+                    std::vector<std::shared_ptr<CustomVariableOperationSubRule>> m_subRules;
                     bool m_subRulesHasBeenSet;
 
                 };

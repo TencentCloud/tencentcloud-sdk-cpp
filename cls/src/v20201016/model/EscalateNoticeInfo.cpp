@@ -112,7 +112,8 @@ CoreInternalOutcome EscalateNoticeInfo::Deserialize(const rapidjson::Value &valu
             return CoreInternalOutcome(Core::Error("response `EscalateNoticeInfo.EscalateNotice` is not object type").SetRequestId(requestId));
         }
 
-        CoreInternalOutcome outcome = m_escalateNotice.Deserialize(value["EscalateNotice"]);
+        m_escalateNotice = std::make_shared<EscalateNoticeInfo>();
+        CoreInternalOutcome outcome = m_escalateNotice->Deserialize(value["EscalateNotice"]);
         if (!outcome.IsSuccess())
         {
             outcome.GetError().SetRequestId(requestId);
@@ -189,7 +190,10 @@ void EscalateNoticeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "EscalateNotice";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_escalateNotice.ToJsonObject(value[key.c_str()], allocator);
+        if (m_escalateNotice)
+        {
+            m_escalateNotice->ToJsonObject(value[key.c_str()], allocator);
+        }
     }
 
 }
@@ -275,12 +279,12 @@ bool EscalateNoticeInfo::TypeHasBeenSet() const
     return m_typeHasBeenSet;
 }
 
-EscalateNoticeInfo EscalateNoticeInfo::GetEscalateNotice() const
+shared_ptr<EscalateNoticeInfo> EscalateNoticeInfo::GetEscalateNotice() const
 {
     return m_escalateNotice;
 }
 
-void EscalateNoticeInfo::SetEscalateNotice(const EscalateNoticeInfo& _escalateNotice)
+void EscalateNoticeInfo::SetEscalateNotice(const shared_ptr<EscalateNoticeInfo>& _escalateNotice)
 {
     m_escalateNotice = _escalateNotice;
     m_escalateNoticeHasBeenSet = true;

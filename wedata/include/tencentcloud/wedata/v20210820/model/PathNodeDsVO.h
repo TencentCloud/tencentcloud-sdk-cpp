@@ -20,11 +20,11 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <memory>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/wedata/v20210820/model/PathNodeDsVO.h>
 
 
 namespace TencentCloud
@@ -35,6 +35,7 @@ namespace TencentCloud
         {
             namespace Model
             {
+                class PathNodeDsVO;
                 /**
                 * 数据开发-统一树结构返回属性
                 */
@@ -179,7 +180,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::vector<PathNodeDsVO> GetChildren() const;
+                    std::vector<std::shared_ptr<PathNodeDsVO>> GetChildren() const;
 
                     /**
                      * 设置子节点列表
@@ -188,7 +189,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetChildren(const std::vector<PathNodeDsVO>& _children);
+                    void SetChildren(const std::vector<std::shared_ptr<PathNodeDsVO>>& _children);
 
                     /**
                      * 判断参数 Children 是否已赋值
@@ -263,7 +264,7 @@ namespace TencentCloud
                      * 子节点列表
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<PathNodeDsVO> m_children;
+                    std::vector<std::shared_ptr<PathNodeDsVO>> m_children;
                     bool m_childrenHasBeenSet;
 
                     /**

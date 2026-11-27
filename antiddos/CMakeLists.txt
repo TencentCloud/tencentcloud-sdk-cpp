@@ -15,18 +15,11 @@
 #
 
 set(antiddos_public_header
-  include/tencentcloud/antiddos/v20250903/AntiddosClient.h
   include/tencentcloud/antiddos/v20200309/AntiddosClient.h
+  include/tencentcloud/antiddos/v20250903/AntiddosClient.h
   )
 
 set(antiddos_public_header_model
-  include/tencentcloud/antiddos/v20250903/model/DDoSUnblockQuota.h
-  include/tencentcloud/antiddos/v20250903/model/Filter.h
-  include/tencentcloud/antiddos/v20250903/model/UnblockResourcesResponse.h
-  include/tencentcloud/antiddos/v20250903/model/DDoSBlockRecord.h
-  include/tencentcloud/antiddos/v20250903/model/DescribeDDoSBlockRecordsResponse.h
-  include/tencentcloud/antiddos/v20250903/model/UnblockResourcesRequest.h
-  include/tencentcloud/antiddos/v20250903/model/DescribeDDoSBlockRecordsRequest.h
   include/tencentcloud/antiddos/v20200309/model/CreateDefaultAlarmThresholdRequest.h
   include/tencentcloud/antiddos/v20200309/model/DescribeDDoSConnectLimitListRequest.h
   include/tencentcloud/antiddos/v20200309/model/DescribeListBGPIPInstancesResponse.h
@@ -297,18 +290,61 @@ set(antiddos_public_header_model
   include/tencentcloud/antiddos/v20200309/model/InstanceChargePrepaid.h
   include/tencentcloud/antiddos/v20200309/model/CreatePacketFilterConfigRequest.h
   include/tencentcloud/antiddos/v20200309/model/DescribeCCTrendRequest.h
+  include/tencentcloud/antiddos/v20250903/model/DeleteProtectionRequest.h
+  include/tencentcloud/antiddos/v20250903/model/ModifyProtectionResourceRequest.h
+  include/tencentcloud/antiddos/v20250903/model/AbnormalConnectionLimit.h
+  include/tencentcloud/antiddos/v20250903/model/AbnormalConnectCondition.h
+  include/tencentcloud/antiddos/v20250903/model/ProtectionFilter.h
+  include/tencentcloud/antiddos/v20250903/model/SpeedLimitRules.h
+  include/tencentcloud/antiddos/v20250903/model/ModifyProtectionResponse.h
+  include/tencentcloud/antiddos/v20250903/model/ResourceProtection.h
+  include/tencentcloud/antiddos/v20250903/model/ModifyDDoSProtectionPolicyRequest.h
+  include/tencentcloud/antiddos/v20250903/model/DeleteProtectionResponse.h
+  include/tencentcloud/antiddos/v20250903/model/DescribeDDoSProtectionPolicyRequest.h
+  include/tencentcloud/antiddos/v20250903/model/PacketFilterRule.h
+  include/tencentcloud/antiddos/v20250903/model/ProtocolBlockingConfig.h
+  include/tencentcloud/antiddos/v20250903/model/PacketFilterCondition.h
+  include/tencentcloud/antiddos/v20250903/model/ProtectionInfo.h
+  include/tencentcloud/antiddos/v20250903/model/TagInfo.h
+  include/tencentcloud/antiddos/v20250903/model/DescribeProtectionResourcesRequest.h
+  include/tencentcloud/antiddos/v20250903/model/SizeRange.h
+  include/tencentcloud/antiddos/v20250903/model/DescribeProtectionsResponse.h
+  include/tencentcloud/antiddos/v20250903/model/DDoSUnblockQuota.h
+  include/tencentcloud/antiddos/v20250903/model/CreateProtectionResponse.h
+  include/tencentcloud/antiddos/v20250903/model/DescribeDDoSProtectionPolicyResponse.h
+  include/tencentcloud/antiddos/v20250903/model/DefaultProtectionConfig.h
+  include/tencentcloud/antiddos/v20250903/model/ResourceInfo.h
+  include/tencentcloud/antiddos/v20250903/model/ProtectionPolicy.h
+  include/tencentcloud/antiddos/v20250903/model/DescribeProtectionResourcesResponse.h
+  include/tencentcloud/antiddos/v20250903/model/DescribeDDoSBlockRecordsResponse.h
+  include/tencentcloud/antiddos/v20250903/model/GeoBlockingConfig.h
+  include/tencentcloud/antiddos/v20250903/model/PortACLRule.h
+  include/tencentcloud/antiddos/v20250903/model/PacketMatchContent.h
+  include/tencentcloud/antiddos/v20250903/model/PortRange.h
+  include/tencentcloud/antiddos/v20250903/model/CreateProtectionRequest.h
+  include/tencentcloud/antiddos/v20250903/model/DescribeProtectionsRequest.h
+  include/tencentcloud/antiddos/v20250903/model/Filter.h
+  include/tencentcloud/antiddos/v20250903/model/UnblockResourcesResponse.h
+  include/tencentcloud/antiddos/v20250903/model/ModifyProtectionResourceResponse.h
+  include/tencentcloud/antiddos/v20250903/model/PortACLRules.h
+  include/tencentcloud/antiddos/v20250903/model/DescribeDDoSBlockRecordsRequest.h
+  include/tencentcloud/antiddos/v20250903/model/ConnectionProtectionConfig.h
+  include/tencentcloud/antiddos/v20250903/model/TrafficSignatureConfig.h
+  include/tencentcloud/antiddos/v20250903/model/IPACLRules.h
+  include/tencentcloud/antiddos/v20250903/model/IPACLRule.h
+  include/tencentcloud/antiddos/v20250903/model/PacketFilterRules.h
+  include/tencentcloud/antiddos/v20250903/model/ModifyDDoSProtectionPolicyResponse.h
+  include/tencentcloud/antiddos/v20250903/model/DDoSBlockRecord.h
+  include/tencentcloud/antiddos/v20250903/model/ModifyProtectionRequest.h
+  include/tencentcloud/antiddos/v20250903/model/DescribeResourceProtectionsRequest.h
+  include/tencentcloud/antiddos/v20250903/model/UnblockResourcesRequest.h
+  include/tencentcloud/antiddos/v20250903/model/SpeedLimitRule.h
+  include/tencentcloud/antiddos/v20250903/model/DescribeResourceProtectionsResponse.h
   )
 
 set(antiddos_src
-  src/v20250903/AntiddosClient.cpp
   src/v20200309/AntiddosClient.cpp
-  src/v20250903/model/DDoSUnblockQuota.cpp
-  src/v20250903/model/Filter.cpp
-  src/v20250903/model/UnblockResourcesResponse.cpp
-  src/v20250903/model/DDoSBlockRecord.cpp
-  src/v20250903/model/DescribeDDoSBlockRecordsResponse.cpp
-  src/v20250903/model/UnblockResourcesRequest.cpp
-  src/v20250903/model/DescribeDDoSBlockRecordsRequest.cpp
+  src/v20250903/AntiddosClient.cpp
   src/v20200309/model/CreateDefaultAlarmThresholdRequest.cpp
   src/v20200309/model/DescribeDDoSConnectLimitListRequest.cpp
   src/v20200309/model/DescribeListBGPIPInstancesResponse.cpp
@@ -579,6 +615,56 @@ set(antiddos_src
   src/v20200309/model/InstanceChargePrepaid.cpp
   src/v20200309/model/CreatePacketFilterConfigRequest.cpp
   src/v20200309/model/DescribeCCTrendRequest.cpp
+  src/v20250903/model/DeleteProtectionRequest.cpp
+  src/v20250903/model/ModifyProtectionResourceRequest.cpp
+  src/v20250903/model/AbnormalConnectionLimit.cpp
+  src/v20250903/model/AbnormalConnectCondition.cpp
+  src/v20250903/model/ProtectionFilter.cpp
+  src/v20250903/model/SpeedLimitRules.cpp
+  src/v20250903/model/ModifyProtectionResponse.cpp
+  src/v20250903/model/ResourceProtection.cpp
+  src/v20250903/model/ModifyDDoSProtectionPolicyRequest.cpp
+  src/v20250903/model/DeleteProtectionResponse.cpp
+  src/v20250903/model/DescribeDDoSProtectionPolicyRequest.cpp
+  src/v20250903/model/PacketFilterRule.cpp
+  src/v20250903/model/ProtocolBlockingConfig.cpp
+  src/v20250903/model/PacketFilterCondition.cpp
+  src/v20250903/model/ProtectionInfo.cpp
+  src/v20250903/model/TagInfo.cpp
+  src/v20250903/model/DescribeProtectionResourcesRequest.cpp
+  src/v20250903/model/SizeRange.cpp
+  src/v20250903/model/DescribeProtectionsResponse.cpp
+  src/v20250903/model/DDoSUnblockQuota.cpp
+  src/v20250903/model/CreateProtectionResponse.cpp
+  src/v20250903/model/DescribeDDoSProtectionPolicyResponse.cpp
+  src/v20250903/model/DefaultProtectionConfig.cpp
+  src/v20250903/model/ResourceInfo.cpp
+  src/v20250903/model/ProtectionPolicy.cpp
+  src/v20250903/model/DescribeProtectionResourcesResponse.cpp
+  src/v20250903/model/DescribeDDoSBlockRecordsResponse.cpp
+  src/v20250903/model/GeoBlockingConfig.cpp
+  src/v20250903/model/PortACLRule.cpp
+  src/v20250903/model/PacketMatchContent.cpp
+  src/v20250903/model/PortRange.cpp
+  src/v20250903/model/CreateProtectionRequest.cpp
+  src/v20250903/model/DescribeProtectionsRequest.cpp
+  src/v20250903/model/Filter.cpp
+  src/v20250903/model/UnblockResourcesResponse.cpp
+  src/v20250903/model/ModifyProtectionResourceResponse.cpp
+  src/v20250903/model/PortACLRules.cpp
+  src/v20250903/model/DescribeDDoSBlockRecordsRequest.cpp
+  src/v20250903/model/ConnectionProtectionConfig.cpp
+  src/v20250903/model/TrafficSignatureConfig.cpp
+  src/v20250903/model/IPACLRules.cpp
+  src/v20250903/model/IPACLRule.cpp
+  src/v20250903/model/PacketFilterRules.cpp
+  src/v20250903/model/ModifyDDoSProtectionPolicyResponse.cpp
+  src/v20250903/model/DDoSBlockRecord.cpp
+  src/v20250903/model/ModifyProtectionRequest.cpp
+  src/v20250903/model/DescribeResourceProtectionsRequest.cpp
+  src/v20250903/model/UnblockResourcesRequest.cpp
+  src/v20250903/model/SpeedLimitRule.cpp
+  src/v20250903/model/DescribeResourceProtectionsResponse.cpp
   )
 
 set(antiddos_include
@@ -607,9 +693,9 @@ target_link_libraries(antiddos
   core)
 
 #install(FILES ${antiddos_public_header}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/antiddos/v20200309)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/antiddos/v20250903)
 #install(FILES ${antiddos_public_header_model}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/antiddos/v20200309/model)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/antiddos/v20250903/model)
 install(DIRECTORY ${antiddos_include}
   DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud)
 

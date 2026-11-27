@@ -214,6 +214,111 @@ namespace TencentCloud
                      */
                     bool OutputImageCoefficientHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Realtime 音频输入积分系数，单位为积分/百万音频 Token。</p><p>取值范围：[0, 5000]</p><p>默认值：80</p><p>仅 Capability=realtime 支持，最多 6 位小数。修改时未提供此字段则保留旧值；0 表示零价，不接受 null。</p>
+                     * @return InputAudioTokenCoefficient <p>Realtime 音频输入积分系数，单位为积分/百万音频 Token。</p><p>取值范围：[0, 5000]</p><p>默认值：80</p><p>仅 Capability=realtime 支持，最多 6 位小数。修改时未提供此字段则保留旧值；0 表示零价，不接受 null。</p>
+                     * 
+                     */
+                    double GetInputAudioTokenCoefficient() const;
+
+                    /**
+                     * 设置<p>Realtime 音频输入积分系数，单位为积分/百万音频 Token。</p><p>取值范围：[0, 5000]</p><p>默认值：80</p><p>仅 Capability=realtime 支持，最多 6 位小数。修改时未提供此字段则保留旧值；0 表示零价，不接受 null。</p>
+                     * @param _inputAudioTokenCoefficient <p>Realtime 音频输入积分系数，单位为积分/百万音频 Token。</p><p>取值范围：[0, 5000]</p><p>默认值：80</p><p>仅 Capability=realtime 支持，最多 6 位小数。修改时未提供此字段则保留旧值；0 表示零价，不接受 null。</p>
+                     * 
+                     */
+                    void SetInputAudioTokenCoefficient(const double& _inputAudioTokenCoefficient);
+
+                    /**
+                     * 判断参数 InputAudioTokenCoefficient 是否已赋值
+                     * @return InputAudioTokenCoefficient 是否已赋值
+                     * 
+                     */
+                    bool InputAudioTokenCoefficientHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Realtime 音频缓存命中输入积分系数，单位为积分/百万音频 Token。</p><p>取值范围：[0, 5000]</p><p>默认值：5</p><p>仅 Capability=realtime 支持，最多 6 位小数。修改时未提供此字段则保留旧值；0 表示零价，不接受 null。</p>
+                     * @return InputCachedAudioTokenCoefficient <p>Realtime 音频缓存命中输入积分系数，单位为积分/百万音频 Token。</p><p>取值范围：[0, 5000]</p><p>默认值：5</p><p>仅 Capability=realtime 支持，最多 6 位小数。修改时未提供此字段则保留旧值；0 表示零价，不接受 null。</p>
+                     * 
+                     */
+                    double GetInputCachedAudioTokenCoefficient() const;
+
+                    /**
+                     * 设置<p>Realtime 音频缓存命中输入积分系数，单位为积分/百万音频 Token。</p><p>取值范围：[0, 5000]</p><p>默认值：5</p><p>仅 Capability=realtime 支持，最多 6 位小数。修改时未提供此字段则保留旧值；0 表示零价，不接受 null。</p>
+                     * @param _inputCachedAudioTokenCoefficient <p>Realtime 音频缓存命中输入积分系数，单位为积分/百万音频 Token。</p><p>取值范围：[0, 5000]</p><p>默认值：5</p><p>仅 Capability=realtime 支持，最多 6 位小数。修改时未提供此字段则保留旧值；0 表示零价，不接受 null。</p>
+                     * 
+                     */
+                    void SetInputCachedAudioTokenCoefficient(const double& _inputCachedAudioTokenCoefficient);
+
+                    /**
+                     * 判断参数 InputCachedAudioTokenCoefficient 是否已赋值
+                     * @return InputCachedAudioTokenCoefficient 是否已赋值
+                     * 
+                     */
+                    bool InputCachedAudioTokenCoefficientHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Realtime 图像输入积分系数，单位为积分/百万图像 Token。</p><p>取值范围：[0, 5000]</p><p>默认值：12.5</p><p>仅 Capability=realtime 支持，最多 6 位小数。修改时未提供此字段则保留旧值；0 表示零价，不接受 null。</p>
+                     * @return InputImageTokenCoefficient <p>Realtime 图像输入积分系数，单位为积分/百万图像 Token。</p><p>取值范围：[0, 5000]</p><p>默认值：12.5</p><p>仅 Capability=realtime 支持，最多 6 位小数。修改时未提供此字段则保留旧值；0 表示零价，不接受 null。</p>
+                     * 
+                     */
+                    double GetInputImageTokenCoefficient() const;
+
+                    /**
+                     * 设置<p>Realtime 图像输入积分系数，单位为积分/百万图像 Token。</p><p>取值范围：[0, 5000]</p><p>默认值：12.5</p><p>仅 Capability=realtime 支持，最多 6 位小数。修改时未提供此字段则保留旧值；0 表示零价，不接受 null。</p>
+                     * @param _inputImageTokenCoefficient <p>Realtime 图像输入积分系数，单位为积分/百万图像 Token。</p><p>取值范围：[0, 5000]</p><p>默认值：12.5</p><p>仅 Capability=realtime 支持，最多 6 位小数。修改时未提供此字段则保留旧值；0 表示零价，不接受 null。</p>
+                     * 
+                     */
+                    void SetInputImageTokenCoefficient(const double& _inputImageTokenCoefficient);
+
+                    /**
+                     * 判断参数 InputImageTokenCoefficient 是否已赋值
+                     * @return InputImageTokenCoefficient 是否已赋值
+                     * 
+                     */
+                    bool InputImageTokenCoefficientHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Realtime 图像缓存命中输入积分系数，单位为积分/百万图像 Token。</p><p>取值范围：[0, 5000]</p><p>默认值：5</p><p>仅 Capability=realtime 支持，最多 6 位小数。修改时未提供此字段则保留旧值；0 表示零价，不接受 null。</p>
+                     * @return InputCachedImageTokenCoefficient <p>Realtime 图像缓存命中输入积分系数，单位为积分/百万图像 Token。</p><p>取值范围：[0, 5000]</p><p>默认值：5</p><p>仅 Capability=realtime 支持，最多 6 位小数。修改时未提供此字段则保留旧值；0 表示零价，不接受 null。</p>
+                     * 
+                     */
+                    double GetInputCachedImageTokenCoefficient() const;
+
+                    /**
+                     * 设置<p>Realtime 图像缓存命中输入积分系数，单位为积分/百万图像 Token。</p><p>取值范围：[0, 5000]</p><p>默认值：5</p><p>仅 Capability=realtime 支持，最多 6 位小数。修改时未提供此字段则保留旧值；0 表示零价，不接受 null。</p>
+                     * @param _inputCachedImageTokenCoefficient <p>Realtime 图像缓存命中输入积分系数，单位为积分/百万图像 Token。</p><p>取值范围：[0, 5000]</p><p>默认值：5</p><p>仅 Capability=realtime 支持，最多 6 位小数。修改时未提供此字段则保留旧值；0 表示零价，不接受 null。</p>
+                     * 
+                     */
+                    void SetInputCachedImageTokenCoefficient(const double& _inputCachedImageTokenCoefficient);
+
+                    /**
+                     * 判断参数 InputCachedImageTokenCoefficient 是否已赋值
+                     * @return InputCachedImageTokenCoefficient 是否已赋值
+                     * 
+                     */
+                    bool InputCachedImageTokenCoefficientHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Realtime 音频输出积分系数，单位为积分/百万音频 Token。</p><p>取值范围：[0, 5000]</p><p>默认值：300</p><p>仅 Capability=realtime 支持，最多 6 位小数。修改时未提供此字段则保留旧值；0 表示零价，不接受 null。</p>
+                     * @return OutputAudioTokenCoefficient <p>Realtime 音频输出积分系数，单位为积分/百万音频 Token。</p><p>取值范围：[0, 5000]</p><p>默认值：300</p><p>仅 Capability=realtime 支持，最多 6 位小数。修改时未提供此字段则保留旧值；0 表示零价，不接受 null。</p>
+                     * 
+                     */
+                    double GetOutputAudioTokenCoefficient() const;
+
+                    /**
+                     * 设置<p>Realtime 音频输出积分系数，单位为积分/百万音频 Token。</p><p>取值范围：[0, 5000]</p><p>默认值：300</p><p>仅 Capability=realtime 支持，最多 6 位小数。修改时未提供此字段则保留旧值；0 表示零价，不接受 null。</p>
+                     * @param _outputAudioTokenCoefficient <p>Realtime 音频输出积分系数，单位为积分/百万音频 Token。</p><p>取值范围：[0, 5000]</p><p>默认值：300</p><p>仅 Capability=realtime 支持，最多 6 位小数。修改时未提供此字段则保留旧值；0 表示零价，不接受 null。</p>
+                     * 
+                     */
+                    void SetOutputAudioTokenCoefficient(const double& _outputAudioTokenCoefficient);
+
+                    /**
+                     * 判断参数 OutputAudioTokenCoefficient 是否已赋值
+                     * @return OutputAudioTokenCoefficient 是否已赋值
+                     * 
+                     */
+                    bool OutputAudioTokenCoefficientHasBeenSet() const;
+
                 private:
 
                     /**
@@ -263,6 +368,36 @@ namespace TencentCloud
                      */
                     double m_outputImageCoefficient;
                     bool m_outputImageCoefficientHasBeenSet;
+
+                    /**
+                     * <p>Realtime 音频输入积分系数，单位为积分/百万音频 Token。</p><p>取值范围：[0, 5000]</p><p>默认值：80</p><p>仅 Capability=realtime 支持，最多 6 位小数。修改时未提供此字段则保留旧值；0 表示零价，不接受 null。</p>
+                     */
+                    double m_inputAudioTokenCoefficient;
+                    bool m_inputAudioTokenCoefficientHasBeenSet;
+
+                    /**
+                     * <p>Realtime 音频缓存命中输入积分系数，单位为积分/百万音频 Token。</p><p>取值范围：[0, 5000]</p><p>默认值：5</p><p>仅 Capability=realtime 支持，最多 6 位小数。修改时未提供此字段则保留旧值；0 表示零价，不接受 null。</p>
+                     */
+                    double m_inputCachedAudioTokenCoefficient;
+                    bool m_inputCachedAudioTokenCoefficientHasBeenSet;
+
+                    /**
+                     * <p>Realtime 图像输入积分系数，单位为积分/百万图像 Token。</p><p>取值范围：[0, 5000]</p><p>默认值：12.5</p><p>仅 Capability=realtime 支持，最多 6 位小数。修改时未提供此字段则保留旧值；0 表示零价，不接受 null。</p>
+                     */
+                    double m_inputImageTokenCoefficient;
+                    bool m_inputImageTokenCoefficientHasBeenSet;
+
+                    /**
+                     * <p>Realtime 图像缓存命中输入积分系数，单位为积分/百万图像 Token。</p><p>取值范围：[0, 5000]</p><p>默认值：5</p><p>仅 Capability=realtime 支持，最多 6 位小数。修改时未提供此字段则保留旧值；0 表示零价，不接受 null。</p>
+                     */
+                    double m_inputCachedImageTokenCoefficient;
+                    bool m_inputCachedImageTokenCoefficientHasBeenSet;
+
+                    /**
+                     * <p>Realtime 音频输出积分系数，单位为积分/百万音频 Token。</p><p>取值范围：[0, 5000]</p><p>默认值：300</p><p>仅 Capability=realtime 支持，最多 6 位小数。修改时未提供此字段则保留旧值；0 表示零价，不接受 null。</p>
+                     */
+                    double m_outputAudioTokenCoefficient;
+                    bool m_outputAudioTokenCoefficientHasBeenSet;
 
                 };
             }

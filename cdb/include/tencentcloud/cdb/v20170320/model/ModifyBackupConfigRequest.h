@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。
-                     * @return InstanceId 实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。
+                     * 获取<p>实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。</p>
+                     * @return InstanceId <p>实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。
-                     * @param _instanceId 实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。
+                     * 设置<p>实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。</p>
+                     * @param _instanceId <p>实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -65,23 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取数据备份文件的保留时间，单位为天。
-1. MySQL 双节点、三节点、云盘版数据备份文件可以保留7天 - 1830天。
-2. MySQL 单节点（云盘）数据备份文件可以保留7天 - 30天。
-                     * @return ExpireDays 数据备份文件的保留时间，单位为天。
-1. MySQL 双节点、三节点、云盘版数据备份文件可以保留7天 - 1830天。
-2. MySQL 单节点（云盘）数据备份文件可以保留7天 - 30天。
+                     * 获取<p>数据备份文件的保留时间，单位为天。</p><ol><li>MySQL 双节点、三节点、云盘版数据备份文件可以保留7天 - 1830天。</li><li>MySQL 单节点（云盘）数据备份文件可以保留7天 - 30天。</li></ol>
+                     * @return ExpireDays <p>数据备份文件的保留时间，单位为天。</p><ol><li>MySQL 双节点、三节点、云盘版数据备份文件可以保留7天 - 1830天。</li><li>MySQL 单节点（云盘）数据备份文件可以保留7天 - 30天。</li></ol>
                      * 
                      */
                     int64_t GetExpireDays() const;
 
                     /**
-                     * 设置数据备份文件的保留时间，单位为天。
-1. MySQL 双节点、三节点、云盘版数据备份文件可以保留7天 - 1830天。
-2. MySQL 单节点（云盘）数据备份文件可以保留7天 - 30天。
-                     * @param _expireDays 数据备份文件的保留时间，单位为天。
-1. MySQL 双节点、三节点、云盘版数据备份文件可以保留7天 - 1830天。
-2. MySQL 单节点（云盘）数据备份文件可以保留7天 - 30天。
+                     * 设置<p>数据备份文件的保留时间，单位为天。</p><ol><li>MySQL 双节点、三节点、云盘版数据备份文件可以保留7天 - 1830天。</li><li>MySQL 单节点（云盘）数据备份文件可以保留7天 - 30天。</li></ol>
+                     * @param _expireDays <p>数据备份文件的保留时间，单位为天。</p><ol><li>MySQL 双节点、三节点、云盘版数据备份文件可以保留7天 - 1830天。</li><li>MySQL 单节点（云盘）数据备份文件可以保留7天 - 30天。</li></ol>
                      * 
                      */
                     void SetExpireDays(const int64_t& _expireDays);
@@ -94,15 +86,15 @@ namespace TencentCloud
                     bool ExpireDaysHasBeenSet() const;
 
                     /**
-                     * 获取(将废弃，建议使用 BackupTimeWindow 参数) 备份时间范围，格式为：02:00-06:00，起点和终点时间目前限制为整点，目前可以选择的范围为： 00:00-12:00，02:00-06:00，06：00-10：00，10:00-14:00，14:00-18:00，18:00-22:00，22:00-02:00。
-                     * @return StartTime (将废弃，建议使用 BackupTimeWindow 参数) 备份时间范围，格式为：02:00-06:00，起点和终点时间目前限制为整点，目前可以选择的范围为： 00:00-12:00，02:00-06:00，06：00-10：00，10:00-14:00，14:00-18:00，18:00-22:00，22:00-02:00。
+                     * 获取<p>(将废弃，建议使用 BackupTimeWindow 参数) 备份时间范围，格式为：02:00-06:00，起点和终点时间目前限制为整点，目前可以选择的范围为： 00:00-12:00，02:00-06:00，06：00-10：00，10:00-14:00，14:00-18:00，18:00-22:00，22:00-02:00。</p>
+                     * @return StartTime <p>(将废弃，建议使用 BackupTimeWindow 参数) 备份时间范围，格式为：02:00-06:00，起点和终点时间目前限制为整点，目前可以选择的范围为： 00:00-12:00，02:00-06:00，06：00-10：00，10:00-14:00，14:00-18:00，18:00-22:00，22:00-02:00。</p>
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置(将废弃，建议使用 BackupTimeWindow 参数) 备份时间范围，格式为：02:00-06:00，起点和终点时间目前限制为整点，目前可以选择的范围为： 00:00-12:00，02:00-06:00，06：00-10：00，10:00-14:00，14:00-18:00，18:00-22:00，22:00-02:00。
-                     * @param _startTime (将废弃，建议使用 BackupTimeWindow 参数) 备份时间范围，格式为：02:00-06:00，起点和终点时间目前限制为整点，目前可以选择的范围为： 00:00-12:00，02:00-06:00，06：00-10：00，10:00-14:00，14:00-18:00，18:00-22:00，22:00-02:00。
+                     * 设置<p>(将废弃，建议使用 BackupTimeWindow 参数) 备份时间范围，格式为：02:00-06:00，起点和终点时间目前限制为整点，目前可以选择的范围为： 00:00-12:00，02:00-06:00，06：00-10：00，10:00-14:00，14:00-18:00，18:00-22:00，22:00-02:00。</p>
+                     * @param _startTime <p>(将废弃，建议使用 BackupTimeWindow 参数) 备份时间范围，格式为：02:00-06:00，起点和终点时间目前限制为整点，目前可以选择的范围为： 00:00-12:00，02:00-06:00，06：00-10：00，10:00-14:00，14:00-18:00，18:00-22:00，22:00-02:00。</p>
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -115,15 +107,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取自动备份方式，仅支持：physical - 物理冷备
-                     * @return BackupMethod 自动备份方式，仅支持：physical - 物理冷备
+                     * 获取<p>自动备份方式，仅支持：physical - 物理冷备</p>
+                     * @return BackupMethod <p>自动备份方式，仅支持：physical - 物理冷备</p>
                      * 
                      */
                     std::string GetBackupMethod() const;
 
                     /**
-                     * 设置自动备份方式，仅支持：physical - 物理冷备
-                     * @param _backupMethod 自动备份方式，仅支持：physical - 物理冷备
+                     * 设置<p>自动备份方式，仅支持：physical - 物理冷备</p>
+                     * @param _backupMethod <p>自动备份方式，仅支持：physical - 物理冷备</p>
                      * 
                      */
                     void SetBackupMethod(const std::string& _backupMethod);
@@ -136,23 +128,15 @@ namespace TencentCloud
                     bool BackupMethodHasBeenSet() const;
 
                     /**
-                     * 获取binlog 的保留时间，单位为天。
-1. MySQL 双节点、三节点、云盘版日志备份文件可以保留7天 - 3650天。
-2. MySQL 单节点（云盘）日志备份文件可以保留7天 - 30天。
-                     * @return BinlogExpireDays binlog 的保留时间，单位为天。
-1. MySQL 双节点、三节点、云盘版日志备份文件可以保留7天 - 3650天。
-2. MySQL 单节点（云盘）日志备份文件可以保留7天 - 30天。
+                     * 获取<p>binlog 的保留时间，单位为天。</p><ol><li>MySQL 双节点、三节点、云盘版日志备份文件可以保留7天 - 3650天。</li><li>MySQL 单节点（云盘）日志备份文件可以保留7天 - 30天。</li></ol>
+                     * @return BinlogExpireDays <p>binlog 的保留时间，单位为天。</p><ol><li>MySQL 双节点、三节点、云盘版日志备份文件可以保留7天 - 3650天。</li><li>MySQL 单节点（云盘）日志备份文件可以保留7天 - 30天。</li></ol>
                      * 
                      */
                     int64_t GetBinlogExpireDays() const;
 
                     /**
-                     * 设置binlog 的保留时间，单位为天。
-1. MySQL 双节点、三节点、云盘版日志备份文件可以保留7天 - 3650天。
-2. MySQL 单节点（云盘）日志备份文件可以保留7天 - 30天。
-                     * @param _binlogExpireDays binlog 的保留时间，单位为天。
-1. MySQL 双节点、三节点、云盘版日志备份文件可以保留7天 - 3650天。
-2. MySQL 单节点（云盘）日志备份文件可以保留7天 - 30天。
+                     * 设置<p>binlog 的保留时间，单位为天。</p><ol><li>MySQL 双节点、三节点、云盘版日志备份文件可以保留7天 - 3650天。</li><li>MySQL 单节点（云盘）日志备份文件可以保留7天 - 30天。</li></ol>
+                     * @param _binlogExpireDays <p>binlog 的保留时间，单位为天。</p><ol><li>MySQL 双节点、三节点、云盘版日志备份文件可以保留7天 - 3650天。</li><li>MySQL 单节点（云盘）日志备份文件可以保留7天 - 30天。</li></ol>
                      * 
                      */
                     void SetBinlogExpireDays(const int64_t& _binlogExpireDays);
@@ -165,15 +149,15 @@ namespace TencentCloud
                     bool BinlogExpireDaysHasBeenSet() const;
 
                     /**
-                     * 获取备份时间窗，比如要设置每周二和周日 10:00-14:00之间备份，该参数如下：{"Monday": "", "Tuesday": "10:00-14:00", "Wednesday": "", "Thursday": "", "Friday": "", "Saturday": "", "Sunday": "10:00-14:00"}    （注：可以设置一周的某几天备份，但是每天的备份时间需要设置为相同的时间段。 如果设置了该字段，将忽略StartTime字段的设置）
-                     * @return BackupTimeWindow 备份时间窗，比如要设置每周二和周日 10:00-14:00之间备份，该参数如下：{"Monday": "", "Tuesday": "10:00-14:00", "Wednesday": "", "Thursday": "", "Friday": "", "Saturday": "", "Sunday": "10:00-14:00"}    （注：可以设置一周的某几天备份，但是每天的备份时间需要设置为相同的时间段。 如果设置了该字段，将忽略StartTime字段的设置）
+                     * 获取<p>备份时间窗，比如要设置每周二和周日 10:00-14:00之间备份，该参数如下：{&quot;Monday&quot;: &quot;&quot;, &quot;Tuesday&quot;: &quot;10:00-14:00&quot;, &quot;Wednesday&quot;: &quot;&quot;, &quot;Thursday&quot;: &quot;&quot;, &quot;Friday&quot;: &quot;&quot;, &quot;Saturday&quot;: &quot;&quot;, &quot;Sunday&quot;: &quot;10:00-14:00&quot;}    （注：可以设置一周的某几天备份，但是每天的备份时间需要设置为相同的时间段。 如果设置了该字段，将忽略StartTime字段的设置）</p>
+                     * @return BackupTimeWindow <p>备份时间窗，比如要设置每周二和周日 10:00-14:00之间备份，该参数如下：{&quot;Monday&quot;: &quot;&quot;, &quot;Tuesday&quot;: &quot;10:00-14:00&quot;, &quot;Wednesday&quot;: &quot;&quot;, &quot;Thursday&quot;: &quot;&quot;, &quot;Friday&quot;: &quot;&quot;, &quot;Saturday&quot;: &quot;&quot;, &quot;Sunday&quot;: &quot;10:00-14:00&quot;}    （注：可以设置一周的某几天备份，但是每天的备份时间需要设置为相同的时间段。 如果设置了该字段，将忽略StartTime字段的设置）</p>
                      * 
                      */
                     CommonTimeWindow GetBackupTimeWindow() const;
 
                     /**
-                     * 设置备份时间窗，比如要设置每周二和周日 10:00-14:00之间备份，该参数如下：{"Monday": "", "Tuesday": "10:00-14:00", "Wednesday": "", "Thursday": "", "Friday": "", "Saturday": "", "Sunday": "10:00-14:00"}    （注：可以设置一周的某几天备份，但是每天的备份时间需要设置为相同的时间段。 如果设置了该字段，将忽略StartTime字段的设置）
-                     * @param _backupTimeWindow 备份时间窗，比如要设置每周二和周日 10:00-14:00之间备份，该参数如下：{"Monday": "", "Tuesday": "10:00-14:00", "Wednesday": "", "Thursday": "", "Friday": "", "Saturday": "", "Sunday": "10:00-14:00"}    （注：可以设置一周的某几天备份，但是每天的备份时间需要设置为相同的时间段。 如果设置了该字段，将忽略StartTime字段的设置）
+                     * 设置<p>备份时间窗，比如要设置每周二和周日 10:00-14:00之间备份，该参数如下：{&quot;Monday&quot;: &quot;&quot;, &quot;Tuesday&quot;: &quot;10:00-14:00&quot;, &quot;Wednesday&quot;: &quot;&quot;, &quot;Thursday&quot;: &quot;&quot;, &quot;Friday&quot;: &quot;&quot;, &quot;Saturday&quot;: &quot;&quot;, &quot;Sunday&quot;: &quot;10:00-14:00&quot;}    （注：可以设置一周的某几天备份，但是每天的备份时间需要设置为相同的时间段。 如果设置了该字段，将忽略StartTime字段的设置）</p>
+                     * @param _backupTimeWindow <p>备份时间窗，比如要设置每周二和周日 10:00-14:00之间备份，该参数如下：{&quot;Monday&quot;: &quot;&quot;, &quot;Tuesday&quot;: &quot;10:00-14:00&quot;, &quot;Wednesday&quot;: &quot;&quot;, &quot;Thursday&quot;: &quot;&quot;, &quot;Friday&quot;: &quot;&quot;, &quot;Saturday&quot;: &quot;&quot;, &quot;Sunday&quot;: &quot;10:00-14:00&quot;}    （注：可以设置一周的某几天备份，但是每天的备份时间需要设置为相同的时间段。 如果设置了该字段，将忽略StartTime字段的设置）</p>
                      * 
                      */
                     void SetBackupTimeWindow(const CommonTimeWindow& _backupTimeWindow);
@@ -186,15 +170,15 @@ namespace TencentCloud
                     bool BackupTimeWindowHasBeenSet() const;
 
                     /**
-                     * 获取定期保留开关，off - 不开启定期保留策略，on - 开启定期保留策略，默认为off。
-                     * @return EnableBackupPeriodSave 定期保留开关，off - 不开启定期保留策略，on - 开启定期保留策略，默认为off。
+                     * 获取<p>定期保留开关，off - 不开启定期保留策略，on - 开启定期保留策略，默认为off。</p>
+                     * @return EnableBackupPeriodSave <p>定期保留开关，off - 不开启定期保留策略，on - 开启定期保留策略，默认为off。</p>
                      * 
                      */
                     std::string GetEnableBackupPeriodSave() const;
 
                     /**
-                     * 设置定期保留开关，off - 不开启定期保留策略，on - 开启定期保留策略，默认为off。
-                     * @param _enableBackupPeriodSave 定期保留开关，off - 不开启定期保留策略，on - 开启定期保留策略，默认为off。
+                     * 设置<p>定期保留开关，off - 不开启定期保留策略，on - 开启定期保留策略，默认为off。</p>
+                     * @param _enableBackupPeriodSave <p>定期保留开关，off - 不开启定期保留策略，on - 开启定期保留策略，默认为off。</p>
                      * 
                      */
                     void SetEnableBackupPeriodSave(const std::string& _enableBackupPeriodSave);
@@ -207,15 +191,15 @@ namespace TencentCloud
                     bool EnableBackupPeriodSaveHasBeenSet() const;
 
                     /**
-                     * 获取长期保留开关,该字段功能暂未上线，可忽略。off - 不开启长期保留策略，on - 开启长期保留策略，默认为off，如果开启，则BackupPeriodSaveDays，BackupPeriodSaveInterval，BackupPeriodSaveCount参数无效
-                     * @return EnableBackupPeriodLongTermSave 长期保留开关,该字段功能暂未上线，可忽略。off - 不开启长期保留策略，on - 开启长期保留策略，默认为off，如果开启，则BackupPeriodSaveDays，BackupPeriodSaveInterval，BackupPeriodSaveCount参数无效
+                     * 获取<p>长期保留开关,该字段功能暂未上线，可忽略。off - 不开启长期保留策略，on - 开启长期保留策略，默认为off，如果开启，则BackupPeriodSaveDays，BackupPeriodSaveInterval，BackupPeriodSaveCount参数无效</p>
+                     * @return EnableBackupPeriodLongTermSave <p>长期保留开关,该字段功能暂未上线，可忽略。off - 不开启长期保留策略，on - 开启长期保留策略，默认为off，如果开启，则BackupPeriodSaveDays，BackupPeriodSaveInterval，BackupPeriodSaveCount参数无效</p>
                      * 
                      */
                     std::string GetEnableBackupPeriodLongTermSave() const;
 
                     /**
-                     * 设置长期保留开关,该字段功能暂未上线，可忽略。off - 不开启长期保留策略，on - 开启长期保留策略，默认为off，如果开启，则BackupPeriodSaveDays，BackupPeriodSaveInterval，BackupPeriodSaveCount参数无效
-                     * @param _enableBackupPeriodLongTermSave 长期保留开关,该字段功能暂未上线，可忽略。off - 不开启长期保留策略，on - 开启长期保留策略，默认为off，如果开启，则BackupPeriodSaveDays，BackupPeriodSaveInterval，BackupPeriodSaveCount参数无效
+                     * 设置<p>长期保留开关,该字段功能暂未上线，可忽略。off - 不开启长期保留策略，on - 开启长期保留策略，默认为off，如果开启，则BackupPeriodSaveDays，BackupPeriodSaveInterval，BackupPeriodSaveCount参数无效</p>
+                     * @param _enableBackupPeriodLongTermSave <p>长期保留开关,该字段功能暂未上线，可忽略。off - 不开启长期保留策略，on - 开启长期保留策略，默认为off，如果开启，则BackupPeriodSaveDays，BackupPeriodSaveInterval，BackupPeriodSaveCount参数无效</p>
                      * 
                      */
                     void SetEnableBackupPeriodLongTermSave(const std::string& _enableBackupPeriodLongTermSave);
@@ -228,15 +212,15 @@ namespace TencentCloud
                     bool EnableBackupPeriodLongTermSaveHasBeenSet() const;
 
                     /**
-                     * 获取定期保留最长天数，最小值：90，最大值：3650，默认值：1080
-                     * @return BackupPeriodSaveDays 定期保留最长天数，最小值：90，最大值：3650，默认值：1080
+                     * 获取<p>定期保留最长天数，最小值：90，最大值：3650，默认值：1080</p>
+                     * @return BackupPeriodSaveDays <p>定期保留最长天数，最小值：90，最大值：3650，默认值：1080</p>
                      * 
                      */
                     int64_t GetBackupPeriodSaveDays() const;
 
                     /**
-                     * 设置定期保留最长天数，最小值：90，最大值：3650，默认值：1080
-                     * @param _backupPeriodSaveDays 定期保留最长天数，最小值：90，最大值：3650，默认值：1080
+                     * 设置<p>定期保留最长天数，最小值：90，最大值：3650，默认值：1080</p>
+                     * @param _backupPeriodSaveDays <p>定期保留最长天数，最小值：90，最大值：3650，默认值：1080</p>
                      * 
                      */
                     void SetBackupPeriodSaveDays(const int64_t& _backupPeriodSaveDays);
@@ -249,15 +233,15 @@ namespace TencentCloud
                     bool BackupPeriodSaveDaysHasBeenSet() const;
 
                     /**
-                     * 获取定期保留策略周期，可取值：weekly - 周，monthly - 月， quarterly - 季度，yearly - 年，默认为monthly
-                     * @return BackupPeriodSaveInterval 定期保留策略周期，可取值：weekly - 周，monthly - 月， quarterly - 季度，yearly - 年，默认为monthly
+                     * 获取<p>定期保留策略周期，可取值：weekly - 周，monthly - 月， quarterly - 季度，yearly - 年，默认为monthly</p>
+                     * @return BackupPeriodSaveInterval <p>定期保留策略周期，可取值：weekly - 周，monthly - 月， quarterly - 季度，yearly - 年，默认为monthly</p>
                      * 
                      */
                     std::string GetBackupPeriodSaveInterval() const;
 
                     /**
-                     * 设置定期保留策略周期，可取值：weekly - 周，monthly - 月， quarterly - 季度，yearly - 年，默认为monthly
-                     * @param _backupPeriodSaveInterval 定期保留策略周期，可取值：weekly - 周，monthly - 月， quarterly - 季度，yearly - 年，默认为monthly
+                     * 设置<p>定期保留策略周期，可取值：weekly - 周，monthly - 月， quarterly - 季度，yearly - 年，默认为monthly</p>
+                     * @param _backupPeriodSaveInterval <p>定期保留策略周期，可取值：weekly - 周，monthly - 月， quarterly - 季度，yearly - 年，默认为monthly</p>
                      * 
                      */
                     void SetBackupPeriodSaveInterval(const std::string& _backupPeriodSaveInterval);
@@ -270,15 +254,15 @@ namespace TencentCloud
                     bool BackupPeriodSaveIntervalHasBeenSet() const;
 
                     /**
-                     * 获取定期保留的备份数量，最小值为1，最大值不超过定期保留策略周期内常规备份个数，默认值为1
-                     * @return BackupPeriodSaveCount 定期保留的备份数量，最小值为1，最大值不超过定期保留策略周期内常规备份个数，默认值为1
+                     * 获取<p>定期保留的备份数量，最小值为1，最大值不超过定期保留策略周期内常规备份个数，默认值为1</p>
+                     * @return BackupPeriodSaveCount <p>定期保留的备份数量，最小值为1，最大值不超过定期保留策略周期内常规备份个数，默认值为1</p>
                      * 
                      */
                     int64_t GetBackupPeriodSaveCount() const;
 
                     /**
-                     * 设置定期保留的备份数量，最小值为1，最大值不超过定期保留策略周期内常规备份个数，默认值为1
-                     * @param _backupPeriodSaveCount 定期保留的备份数量，最小值为1，最大值不超过定期保留策略周期内常规备份个数，默认值为1
+                     * 设置<p>定期保留的备份数量，最小值为1，最大值不超过定期保留策略周期内常规备份个数，默认值为1</p>
+                     * @param _backupPeriodSaveCount <p>定期保留的备份数量，最小值为1，最大值不超过定期保留策略周期内常规备份个数，默认值为1</p>
                      * 
                      */
                     void SetBackupPeriodSaveCount(const int64_t& _backupPeriodSaveCount);
@@ -291,15 +275,15 @@ namespace TencentCloud
                     bool BackupPeriodSaveCountHasBeenSet() const;
 
                     /**
-                     * 获取定期保留策略周期起始日期，格式：YYYY-MM-dd HH:mm:ss
-                     * @return StartBackupPeriodSaveDate 定期保留策略周期起始日期，格式：YYYY-MM-dd HH:mm:ss
+                     * 获取<p>定期保留策略周期起始日期，格式：YYYY-MM-dd HH:mm:ss</p>
+                     * @return StartBackupPeriodSaveDate <p>定期保留策略周期起始日期，格式：YYYY-MM-dd HH:mm:ss</p>
                      * 
                      */
                     std::string GetStartBackupPeriodSaveDate() const;
 
                     /**
-                     * 设置定期保留策略周期起始日期，格式：YYYY-MM-dd HH:mm:ss
-                     * @param _startBackupPeriodSaveDate 定期保留策略周期起始日期，格式：YYYY-MM-dd HH:mm:ss
+                     * 设置<p>定期保留策略周期起始日期，格式：YYYY-MM-dd HH:mm:ss</p>
+                     * @param _startBackupPeriodSaveDate <p>定期保留策略周期起始日期，格式：YYYY-MM-dd HH:mm:ss</p>
                      * 
                      */
                     void SetStartBackupPeriodSaveDate(const std::string& _startBackupPeriodSaveDate);
@@ -312,15 +296,15 @@ namespace TencentCloud
                     bool StartBackupPeriodSaveDateHasBeenSet() const;
 
                     /**
-                     * 获取是否开启数据备份归档策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。
-                     * @return EnableBackupArchive 是否开启数据备份归档策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。
+                     * 获取<p>是否开启数据备份归档策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。</p>
+                     * @return EnableBackupArchive <p>是否开启数据备份归档策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。</p>
                      * 
                      */
                     std::string GetEnableBackupArchive() const;
 
                     /**
-                     * 设置是否开启数据备份归档策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。
-                     * @param _enableBackupArchive 是否开启数据备份归档策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。
+                     * 设置<p>是否开启数据备份归档策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。</p>
+                     * @param _enableBackupArchive <p>是否开启数据备份归档策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。</p>
                      * 
                      */
                     void SetEnableBackupArchive(const std::string& _enableBackupArchive);
@@ -333,15 +317,15 @@ namespace TencentCloud
                     bool EnableBackupArchiveHasBeenSet() const;
 
                     /**
-                     * 获取数据备份归档起始天数，数据备份达到归档起始天数时进行归档，最小为180天，不得大于数据备份保留天数
-                     * @return BackupArchiveDays 数据备份归档起始天数，数据备份达到归档起始天数时进行归档，最小为180天，不得大于数据备份保留天数
+                     * 获取<p>数据备份归档起始天数，数据备份达到归档起始天数时进行归档，最小为180天，不得大于数据备份保留天数</p>
+                     * @return BackupArchiveDays <p>数据备份归档起始天数，数据备份达到归档起始天数时进行归档，最小为180天，不得大于数据备份保留天数</p>
                      * 
                      */
                     int64_t GetBackupArchiveDays() const;
 
                     /**
-                     * 设置数据备份归档起始天数，数据备份达到归档起始天数时进行归档，最小为180天，不得大于数据备份保留天数
-                     * @param _backupArchiveDays 数据备份归档起始天数，数据备份达到归档起始天数时进行归档，最小为180天，不得大于数据备份保留天数
+                     * 设置<p>数据备份归档起始天数，数据备份达到归档起始天数时进行归档，最小为180天，不得大于数据备份保留天数</p>
+                     * @param _backupArchiveDays <p>数据备份归档起始天数，数据备份达到归档起始天数时进行归档，最小为180天，不得大于数据备份保留天数</p>
                      * 
                      */
                     void SetBackupArchiveDays(const int64_t& _backupArchiveDays);
@@ -354,15 +338,15 @@ namespace TencentCloud
                     bool BackupArchiveDaysHasBeenSet() const;
 
                     /**
-                     * 获取日志备份归档起始天数，日志备份达到归档起始天数时进行归档，最小为180天，不得大于日志备份保留天数
-                     * @return BinlogArchiveDays 日志备份归档起始天数，日志备份达到归档起始天数时进行归档，最小为180天，不得大于日志备份保留天数
+                     * 获取<p>日志备份归档起始天数，日志备份达到归档起始天数时进行归档，最小为180天，不得大于日志备份保留天数</p>
+                     * @return BinlogArchiveDays <p>日志备份归档起始天数，日志备份达到归档起始天数时进行归档，最小为180天，不得大于日志备份保留天数</p>
                      * 
                      */
                     int64_t GetBinlogArchiveDays() const;
 
                     /**
-                     * 设置日志备份归档起始天数，日志备份达到归档起始天数时进行归档，最小为180天，不得大于日志备份保留天数
-                     * @param _binlogArchiveDays 日志备份归档起始天数，日志备份达到归档起始天数时进行归档，最小为180天，不得大于日志备份保留天数
+                     * 设置<p>日志备份归档起始天数，日志备份达到归档起始天数时进行归档，最小为180天，不得大于日志备份保留天数</p>
+                     * @param _binlogArchiveDays <p>日志备份归档起始天数，日志备份达到归档起始天数时进行归档，最小为180天，不得大于日志备份保留天数</p>
                      * 
                      */
                     void SetBinlogArchiveDays(const int64_t& _binlogArchiveDays);
@@ -375,15 +359,15 @@ namespace TencentCloud
                     bool BinlogArchiveDaysHasBeenSet() const;
 
                     /**
-                     * 获取是否开启日志备份归档策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。
-                     * @return EnableBinlogArchive 是否开启日志备份归档策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。
+                     * 获取<p>是否开启日志备份归档策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。</p>
+                     * @return EnableBinlogArchive <p>是否开启日志备份归档策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。</p>
                      * 
                      */
                     std::string GetEnableBinlogArchive() const;
 
                     /**
-                     * 设置是否开启日志备份归档策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。
-                     * @param _enableBinlogArchive 是否开启日志备份归档策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。
+                     * 设置<p>是否开启日志备份归档策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。</p>
+                     * @param _enableBinlogArchive <p>是否开启日志备份归档策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。</p>
                      * 
                      */
                     void SetEnableBinlogArchive(const std::string& _enableBinlogArchive);
@@ -396,15 +380,15 @@ namespace TencentCloud
                     bool EnableBinlogArchiveHasBeenSet() const;
 
                     /**
-                     * 获取是否开启数据备份标准存储策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。
-                     * @return EnableBackupStandby 是否开启数据备份标准存储策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。
+                     * 获取<p>是否开启数据备份标准存储策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。</p>
+                     * @return EnableBackupStandby <p>是否开启数据备份标准存储策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。</p>
                      * 
                      */
                     std::string GetEnableBackupStandby() const;
 
                     /**
-                     * 设置是否开启数据备份标准存储策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。
-                     * @param _enableBackupStandby 是否开启数据备份标准存储策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。
+                     * 设置<p>是否开启数据备份标准存储策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。</p>
+                     * @param _enableBackupStandby <p>是否开启数据备份标准存储策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。</p>
                      * 
                      */
                     void SetEnableBackupStandby(const std::string& _enableBackupStandby);
@@ -417,15 +401,15 @@ namespace TencentCloud
                     bool EnableBackupStandbyHasBeenSet() const;
 
                     /**
-                     * 获取数据备份标准存储起始天数，数据备份达到标准存储起始天数时进行转换，最小为30天，不得大于数据备份保留天数。如果开启备份归档，不得大于等于备份归档天数
-                     * @return BackupStandbyDays 数据备份标准存储起始天数，数据备份达到标准存储起始天数时进行转换，最小为30天，不得大于数据备份保留天数。如果开启备份归档，不得大于等于备份归档天数
+                     * 获取<p>数据备份标准存储起始天数，数据备份达到标准存储起始天数时进行转换，最小为30天，不得大于数据备份保留天数。如果开启备份归档，不得大于等于备份归档天数</p>
+                     * @return BackupStandbyDays <p>数据备份标准存储起始天数，数据备份达到标准存储起始天数时进行转换，最小为30天，不得大于数据备份保留天数。如果开启备份归档，不得大于等于备份归档天数</p>
                      * 
                      */
                     int64_t GetBackupStandbyDays() const;
 
                     /**
-                     * 设置数据备份标准存储起始天数，数据备份达到标准存储起始天数时进行转换，最小为30天，不得大于数据备份保留天数。如果开启备份归档，不得大于等于备份归档天数
-                     * @param _backupStandbyDays 数据备份标准存储起始天数，数据备份达到标准存储起始天数时进行转换，最小为30天，不得大于数据备份保留天数。如果开启备份归档，不得大于等于备份归档天数
+                     * 设置<p>数据备份标准存储起始天数，数据备份达到标准存储起始天数时进行转换，最小为30天，不得大于数据备份保留天数。如果开启备份归档，不得大于等于备份归档天数</p>
+                     * @param _backupStandbyDays <p>数据备份标准存储起始天数，数据备份达到标准存储起始天数时进行转换，最小为30天，不得大于数据备份保留天数。如果开启备份归档，不得大于等于备份归档天数</p>
                      * 
                      */
                     void SetBackupStandbyDays(const int64_t& _backupStandbyDays);
@@ -438,15 +422,15 @@ namespace TencentCloud
                     bool BackupStandbyDaysHasBeenSet() const;
 
                     /**
-                     * 获取是否开启日志备份标准存储策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。
-                     * @return EnableBinlogStandby 是否开启日志备份标准存储策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。
+                     * 获取<p>是否开启日志备份标准存储策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。</p>
+                     * @return EnableBinlogStandby <p>是否开启日志备份标准存储策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。</p>
                      * 
                      */
                     std::string GetEnableBinlogStandby() const;
 
                     /**
-                     * 设置是否开启日志备份标准存储策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。
-                     * @param _enableBinlogStandby 是否开启日志备份标准存储策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。
+                     * 设置<p>是否开启日志备份标准存储策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。</p>
+                     * @param _enableBinlogStandby <p>是否开启日志备份标准存储策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。</p>
                      * 
                      */
                     void SetEnableBinlogStandby(const std::string& _enableBinlogStandby);
@@ -459,15 +443,15 @@ namespace TencentCloud
                     bool EnableBinlogStandbyHasBeenSet() const;
 
                     /**
-                     * 获取日志备份标准存储起始天数，日志备份达到标准存储起始天数时进行转换，最小为30天，不得大于日志备份保留天数。如果开启备份归档，不得大于等于备份归档天数
-                     * @return BinlogStandbyDays 日志备份标准存储起始天数，日志备份达到标准存储起始天数时进行转换，最小为30天，不得大于日志备份保留天数。如果开启备份归档，不得大于等于备份归档天数
+                     * 获取<p>日志备份标准存储起始天数，日志备份达到标准存储起始天数时进行转换，最小为30天，不得大于日志备份保留天数。如果开启备份归档，不得大于等于备份归档天数</p>
+                     * @return BinlogStandbyDays <p>日志备份标准存储起始天数，日志备份达到标准存储起始天数时进行转换，最小为30天，不得大于日志备份保留天数。如果开启备份归档，不得大于等于备份归档天数</p>
                      * 
                      */
                     int64_t GetBinlogStandbyDays() const;
 
                     /**
-                     * 设置日志备份标准存储起始天数，日志备份达到标准存储起始天数时进行转换，最小为30天，不得大于日志备份保留天数。如果开启备份归档，不得大于等于备份归档天数
-                     * @param _binlogStandbyDays 日志备份标准存储起始天数，日志备份达到标准存储起始天数时进行转换，最小为30天，不得大于日志备份保留天数。如果开启备份归档，不得大于等于备份归档天数
+                     * 设置<p>日志备份标准存储起始天数，日志备份达到标准存储起始天数时进行转换，最小为30天，不得大于日志备份保留天数。如果开启备份归档，不得大于等于备份归档天数</p>
+                     * @param _binlogStandbyDays <p>日志备份标准存储起始天数，日志备份达到标准存储起始天数时进行转换，最小为30天，不得大于日志备份保留天数。如果开启备份归档，不得大于等于备份归档天数</p>
                      * 
                      */
                     void SetBinlogStandbyDays(const int64_t& _binlogStandbyDays);
@@ -482,125 +466,121 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。
+                     * <p>实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 数据备份文件的保留时间，单位为天。
-1. MySQL 双节点、三节点、云盘版数据备份文件可以保留7天 - 1830天。
-2. MySQL 单节点（云盘）数据备份文件可以保留7天 - 30天。
+                     * <p>数据备份文件的保留时间，单位为天。</p><ol><li>MySQL 双节点、三节点、云盘版数据备份文件可以保留7天 - 1830天。</li><li>MySQL 单节点（云盘）数据备份文件可以保留7天 - 30天。</li></ol>
                      */
                     int64_t m_expireDays;
                     bool m_expireDaysHasBeenSet;
 
                     /**
-                     * (将废弃，建议使用 BackupTimeWindow 参数) 备份时间范围，格式为：02:00-06:00，起点和终点时间目前限制为整点，目前可以选择的范围为： 00:00-12:00，02:00-06:00，06：00-10：00，10:00-14:00，14:00-18:00，18:00-22:00，22:00-02:00。
+                     * <p>(将废弃，建议使用 BackupTimeWindow 参数) 备份时间范围，格式为：02:00-06:00，起点和终点时间目前限制为整点，目前可以选择的范围为： 00:00-12:00，02:00-06:00，06：00-10：00，10:00-14:00，14:00-18:00，18:00-22:00，22:00-02:00。</p>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 自动备份方式，仅支持：physical - 物理冷备
+                     * <p>自动备份方式，仅支持：physical - 物理冷备</p>
                      */
                     std::string m_backupMethod;
                     bool m_backupMethodHasBeenSet;
 
                     /**
-                     * binlog 的保留时间，单位为天。
-1. MySQL 双节点、三节点、云盘版日志备份文件可以保留7天 - 3650天。
-2. MySQL 单节点（云盘）日志备份文件可以保留7天 - 30天。
+                     * <p>binlog 的保留时间，单位为天。</p><ol><li>MySQL 双节点、三节点、云盘版日志备份文件可以保留7天 - 3650天。</li><li>MySQL 单节点（云盘）日志备份文件可以保留7天 - 30天。</li></ol>
                      */
                     int64_t m_binlogExpireDays;
                     bool m_binlogExpireDaysHasBeenSet;
 
                     /**
-                     * 备份时间窗，比如要设置每周二和周日 10:00-14:00之间备份，该参数如下：{"Monday": "", "Tuesday": "10:00-14:00", "Wednesday": "", "Thursday": "", "Friday": "", "Saturday": "", "Sunday": "10:00-14:00"}    （注：可以设置一周的某几天备份，但是每天的备份时间需要设置为相同的时间段。 如果设置了该字段，将忽略StartTime字段的设置）
+                     * <p>备份时间窗，比如要设置每周二和周日 10:00-14:00之间备份，该参数如下：{&quot;Monday&quot;: &quot;&quot;, &quot;Tuesday&quot;: &quot;10:00-14:00&quot;, &quot;Wednesday&quot;: &quot;&quot;, &quot;Thursday&quot;: &quot;&quot;, &quot;Friday&quot;: &quot;&quot;, &quot;Saturday&quot;: &quot;&quot;, &quot;Sunday&quot;: &quot;10:00-14:00&quot;}    （注：可以设置一周的某几天备份，但是每天的备份时间需要设置为相同的时间段。 如果设置了该字段，将忽略StartTime字段的设置）</p>
                      */
                     CommonTimeWindow m_backupTimeWindow;
                     bool m_backupTimeWindowHasBeenSet;
 
                     /**
-                     * 定期保留开关，off - 不开启定期保留策略，on - 开启定期保留策略，默认为off。
+                     * <p>定期保留开关，off - 不开启定期保留策略，on - 开启定期保留策略，默认为off。</p>
                      */
                     std::string m_enableBackupPeriodSave;
                     bool m_enableBackupPeriodSaveHasBeenSet;
 
                     /**
-                     * 长期保留开关,该字段功能暂未上线，可忽略。off - 不开启长期保留策略，on - 开启长期保留策略，默认为off，如果开启，则BackupPeriodSaveDays，BackupPeriodSaveInterval，BackupPeriodSaveCount参数无效
+                     * <p>长期保留开关,该字段功能暂未上线，可忽略。off - 不开启长期保留策略，on - 开启长期保留策略，默认为off，如果开启，则BackupPeriodSaveDays，BackupPeriodSaveInterval，BackupPeriodSaveCount参数无效</p>
                      */
                     std::string m_enableBackupPeriodLongTermSave;
                     bool m_enableBackupPeriodLongTermSaveHasBeenSet;
 
                     /**
-                     * 定期保留最长天数，最小值：90，最大值：3650，默认值：1080
+                     * <p>定期保留最长天数，最小值：90，最大值：3650，默认值：1080</p>
                      */
                     int64_t m_backupPeriodSaveDays;
                     bool m_backupPeriodSaveDaysHasBeenSet;
 
                     /**
-                     * 定期保留策略周期，可取值：weekly - 周，monthly - 月， quarterly - 季度，yearly - 年，默认为monthly
+                     * <p>定期保留策略周期，可取值：weekly - 周，monthly - 月， quarterly - 季度，yearly - 年，默认为monthly</p>
                      */
                     std::string m_backupPeriodSaveInterval;
                     bool m_backupPeriodSaveIntervalHasBeenSet;
 
                     /**
-                     * 定期保留的备份数量，最小值为1，最大值不超过定期保留策略周期内常规备份个数，默认值为1
+                     * <p>定期保留的备份数量，最小值为1，最大值不超过定期保留策略周期内常规备份个数，默认值为1</p>
                      */
                     int64_t m_backupPeriodSaveCount;
                     bool m_backupPeriodSaveCountHasBeenSet;
 
                     /**
-                     * 定期保留策略周期起始日期，格式：YYYY-MM-dd HH:mm:ss
+                     * <p>定期保留策略周期起始日期，格式：YYYY-MM-dd HH:mm:ss</p>
                      */
                     std::string m_startBackupPeriodSaveDate;
                     bool m_startBackupPeriodSaveDateHasBeenSet;
 
                     /**
-                     * 是否开启数据备份归档策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。
+                     * <p>是否开启数据备份归档策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。</p>
                      */
                     std::string m_enableBackupArchive;
                     bool m_enableBackupArchiveHasBeenSet;
 
                     /**
-                     * 数据备份归档起始天数，数据备份达到归档起始天数时进行归档，最小为180天，不得大于数据备份保留天数
+                     * <p>数据备份归档起始天数，数据备份达到归档起始天数时进行归档，最小为180天，不得大于数据备份保留天数</p>
                      */
                     int64_t m_backupArchiveDays;
                     bool m_backupArchiveDaysHasBeenSet;
 
                     /**
-                     * 日志备份归档起始天数，日志备份达到归档起始天数时进行归档，最小为180天，不得大于日志备份保留天数
+                     * <p>日志备份归档起始天数，日志备份达到归档起始天数时进行归档，最小为180天，不得大于日志备份保留天数</p>
                      */
                     int64_t m_binlogArchiveDays;
                     bool m_binlogArchiveDaysHasBeenSet;
 
                     /**
-                     * 是否开启日志备份归档策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。
+                     * <p>是否开启日志备份归档策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。</p>
                      */
                     std::string m_enableBinlogArchive;
                     bool m_enableBinlogArchiveHasBeenSet;
 
                     /**
-                     * 是否开启数据备份标准存储策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。
+                     * <p>是否开启数据备份标准存储策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。</p>
                      */
                     std::string m_enableBackupStandby;
                     bool m_enableBackupStandbyHasBeenSet;
 
                     /**
-                     * 数据备份标准存储起始天数，数据备份达到标准存储起始天数时进行转换，最小为30天，不得大于数据备份保留天数。如果开启备份归档，不得大于等于备份归档天数
+                     * <p>数据备份标准存储起始天数，数据备份达到标准存储起始天数时进行转换，最小为30天，不得大于数据备份保留天数。如果开启备份归档，不得大于等于备份归档天数</p>
                      */
                     int64_t m_backupStandbyDays;
                     bool m_backupStandbyDaysHasBeenSet;
 
                     /**
-                     * 是否开启日志备份标准存储策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。
+                     * <p>是否开启日志备份标准存储策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。</p>
                      */
                     std::string m_enableBinlogStandby;
                     bool m_enableBinlogStandbyHasBeenSet;
 
                     /**
-                     * 日志备份标准存储起始天数，日志备份达到标准存储起始天数时进行转换，最小为30天，不得大于日志备份保留天数。如果开启备份归档，不得大于等于备份归档天数
+                     * <p>日志备份标准存储起始天数，日志备份达到标准存储起始天数时进行转换，最小为30天，不得大于日志备份保留天数。如果开启备份归档，不得大于等于备份归档天数</p>
                      */
                     int64_t m_binlogStandbyDays;
                     bool m_binlogStandbyDaysHasBeenSet;

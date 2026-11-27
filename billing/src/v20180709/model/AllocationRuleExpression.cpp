@@ -85,8 +85,8 @@ CoreInternalOutcome AllocationRuleExpression::Deserialize(const rapidjson::Value
         const rapidjson::Value &tmpValue = value["Children"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            AllocationRuleExpression item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<AllocationRuleExpression>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -152,7 +152,10 @@ void AllocationRuleExpression::ToJsonObject(rapidjson::Value &value, rapidjson::
         for (auto itr = m_children.begin(); itr != m_children.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -223,12 +226,12 @@ bool AllocationRuleExpression::ConnectorsHasBeenSet() const
     return m_connectorsHasBeenSet;
 }
 
-vector<AllocationRuleExpression> AllocationRuleExpression::GetChildren() const
+vector<shared_ptr<AllocationRuleExpression>> AllocationRuleExpression::GetChildren() const
 {
     return m_children;
 }
 
-void AllocationRuleExpression::SetChildren(const vector<AllocationRuleExpression>& _children)
+void AllocationRuleExpression::SetChildren(const vector<shared_ptr<AllocationRuleExpression>>& _children)
 {
     m_children = _children;
     m_childrenHasBeenSet = true;

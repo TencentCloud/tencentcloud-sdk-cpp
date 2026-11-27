@@ -236,8 +236,8 @@ CoreInternalOutcome BlockingChainNode::Deserialize(const rapidjson::Value &value
         const rapidjson::Value &tmpValue = value["Children"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            BlockingChainNode item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<BlockingChainNode>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -410,7 +410,10 @@ void BlockingChainNode::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         for (auto itr = m_children.begin(); itr != m_children.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -705,12 +708,12 @@ bool BlockingChainNode::ReportTimeHasBeenSet() const
     return m_reportTimeHasBeenSet;
 }
 
-vector<BlockingChainNode> BlockingChainNode::GetChildren() const
+vector<shared_ptr<BlockingChainNode>> BlockingChainNode::GetChildren() const
 {
     return m_children;
 }
 
-void BlockingChainNode::SetChildren(const vector<BlockingChainNode>& _children)
+void BlockingChainNode::SetChildren(const vector<shared_ptr<BlockingChainNode>>& _children)
 {
     m_children = _children;
     m_childrenHasBeenSet = true;

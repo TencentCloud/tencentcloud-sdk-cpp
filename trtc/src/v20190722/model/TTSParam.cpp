@@ -25,7 +25,8 @@ TTSParam::TTSParam() :
     m_languageHasBeenSet(false),
     m_targetUserHasBeenSet(false),
     m_tTSRobotUserHasBeenSet(false),
-    m_voiceHasBeenSet(false)
+    m_voiceHasBeenSet(false),
+    m_extraParamsHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,16 @@ CoreInternalOutcome TTSParam::Deserialize(const rapidjson::Value &value)
         m_voiceHasBeenSet = true;
     }
 
+    if (value.HasMember("ExtraParams") && !value["ExtraParams"].IsNull())
+    {
+        if (!value["ExtraParams"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TTSParam.ExtraParams` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_extraParams = string(value["ExtraParams"].GetString());
+        m_extraParamsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -153,6 +164,14 @@ void TTSParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_voice.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_extraParamsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtraParams";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_extraParams.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -236,5 +255,21 @@ void TTSParam::SetVoice(const TTSVoice& _voice)
 bool TTSParam::VoiceHasBeenSet() const
 {
     return m_voiceHasBeenSet;
+}
+
+string TTSParam::GetExtraParams() const
+{
+    return m_extraParams;
+}
+
+void TTSParam::SetExtraParams(const string& _extraParams)
+{
+    m_extraParams = _extraParams;
+    m_extraParamsHasBeenSet = true;
+}
+
+bool TTSParam::ExtraParamsHasBeenSet() const
+{
+    return m_extraParamsHasBeenSet;
 }
 

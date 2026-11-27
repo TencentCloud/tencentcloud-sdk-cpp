@@ -20,11 +20,11 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <memory>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/billing/v20180709/model/AllocationOverviewNode.h>
 #include <tencentcloud/billing/v20180709/model/AllocationMonthOverviewDetail.h>
 
 
@@ -36,6 +36,7 @@ namespace TencentCloud
         {
             namespace Model
             {
+                class AllocationOverviewNode;
                 /**
                 * 分账账单月概览详情
                 */
@@ -153,14 +154,14 @@ namespace TencentCloud
                      * @return Children 子单元月概览详情
                      * 
                      */
-                    std::vector<AllocationOverviewNode> GetChildren() const;
+                    std::vector<std::shared_ptr<AllocationOverviewNode>> GetChildren() const;
 
                     /**
                      * 设置子单元月概览详情
                      * @param _children 子单元月概览详情
                      * 
                      */
-                    void SetChildren(const std::vector<AllocationOverviewNode>& _children);
+                    void SetChildren(const std::vector<std::shared_ptr<AllocationOverviewNode>>& _children);
 
                     /**
                      * 判断参数 Children 是否已赋值
@@ -223,7 +224,7 @@ namespace TencentCloud
                     /**
                      * 子单元月概览详情
                      */
-                    std::vector<AllocationOverviewNode> m_children;
+                    std::vector<std::shared_ptr<AllocationOverviewNode>> m_children;
                     bool m_childrenHasBeenSet;
 
                     /**

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取发送数据统计响应包体。
-                     * @return SmsPackagesStatisticsSet 发送数据统计响应包体。
+                     * 获取<p>套餐包统计信息响应包体。</p>
+                     * @return SmsPackagesStatisticsSet <p>套餐包统计信息响应包体。</p>
                      * 
                      */
                     std::vector<SmsPackagesStatistics> GetSmsPackagesStatisticsSet() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 发送数据统计响应包体。
+                     * <p>套餐包统计信息响应包体。</p>
                      */
                     std::vector<SmsPackagesStatistics> m_smsPackagesStatisticsSet;
                     bool m_smsPackagesStatisticsSetHasBeenSet;

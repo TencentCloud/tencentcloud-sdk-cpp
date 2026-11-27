@@ -75,8 +75,8 @@ CoreInternalOutcome MarkInfo::Deserialize(const rapidjson::Value &value)
         const rapidjson::Value &tmpValue = value["MarkInfos"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            MarkInfo item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<MarkInfo>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -191,7 +191,10 @@ void MarkInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         for (auto itr = m_markInfos.begin(); itr != m_markInfos.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -282,12 +285,12 @@ bool MarkInfo::AnswerInfosHasBeenSet() const
     return m_answerInfosHasBeenSet;
 }
 
-vector<MarkInfo> MarkInfo::GetMarkInfos() const
+vector<shared_ptr<MarkInfo>> MarkInfo::GetMarkInfos() const
 {
     return m_markInfos;
 }
 
-void MarkInfo::SetMarkInfos(const vector<MarkInfo>& _markInfos)
+void MarkInfo::SetMarkInfos(const vector<shared_ptr<MarkInfo>>& _markInfos)
 {
     m_markInfos = _markInfos;
     m_markInfosHasBeenSet = true;

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取要筛选的模板ID数组。
-                     * @return TemplateIds 要筛选的模板ID数组。
+                     * 获取<p>要筛选的模板ID数组。</p>
+                     * @return TemplateIds <p>要筛选的模板ID数组。</p>
                      * 
                      */
                     std::vector<int64_t> GetTemplateIds() const;
 
                     /**
-                     * 设置要筛选的模板ID数组。
-                     * @param _templateIds 要筛选的模板ID数组。
+                     * 设置<p>要筛选的模板ID数组。</p>
+                     * @param _templateIds <p>要筛选的模板ID数组。</p>
                      * 
                      */
                     void SetTemplateIds(const std::vector<int64_t>& _templateIds);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool TemplateIdsHasBeenSet() const;
 
                     /**
-                     * 获取要筛选的域名数组。
-                     * @return DomainNames 要筛选的域名数组。
+                     * 获取<p>要筛选的域名数组。</p>
+                     * @return DomainNames <p>要筛选的域名数组。</p>
                      * 
                      */
                     std::vector<std::string> GetDomainNames() const;
 
                     /**
-                     * 设置要筛选的域名数组。
-                     * @param _domainNames 要筛选的域名数组。
+                     * 设置<p>要筛选的域名数组。</p>
+                     * @param _domainNames <p>要筛选的域名数组。</p>
                      * 
                      */
                     void SetDomainNames(const std::vector<std::string>& _domainNames);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 要筛选的模板ID数组。
+                     * <p>要筛选的模板ID数组。</p>
                      */
                     std::vector<int64_t> m_templateIds;
                     bool m_templateIdsHasBeenSet;
 
                     /**
-                     * 要筛选的域名数组。
+                     * <p>要筛选的域名数组。</p>
                      */
                     std::vector<std::string> m_domainNames;
                     bool m_domainNamesHasBeenSet;

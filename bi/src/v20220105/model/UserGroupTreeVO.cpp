@@ -149,8 +149,8 @@ CoreInternalOutcome UserGroupTreeVO::Deserialize(const rapidjson::Value &value)
         const rapidjson::Value &tmpValue = value["Children"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            UserGroupTreeVO item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<UserGroupTreeVO>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -288,7 +288,10 @@ void UserGroupTreeVO::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         for (auto itr = m_children.begin(); itr != m_children.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -462,12 +465,12 @@ bool UserGroupTreeVO::LocationHasBeenSet() const
     return m_locationHasBeenSet;
 }
 
-vector<UserGroupTreeVO> UserGroupTreeVO::GetChildren() const
+vector<shared_ptr<UserGroupTreeVO>> UserGroupTreeVO::GetChildren() const
 {
     return m_children;
 }
 
-void UserGroupTreeVO::SetChildren(const vector<UserGroupTreeVO>& _children)
+void UserGroupTreeVO::SetChildren(const vector<shared_ptr<UserGroupTreeVO>>& _children)
 {
     m_children = _children;
     m_childrenHasBeenSet = true;

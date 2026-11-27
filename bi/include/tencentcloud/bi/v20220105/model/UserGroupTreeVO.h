@@ -20,12 +20,12 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <memory>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/bi/v20220105/model/UserVO.h>
-#include <tencentcloud/bi/v20220105/model/UserGroupTreeVO.h>
 #include <tencentcloud/bi/v20220105/model/ResourceDTO.h>
 
 
@@ -37,6 +37,7 @@ namespace TencentCloud
         {
             namespace Model
             {
+                class UserGroupTreeVO;
                 /**
                 * 用户组权限树
                 */
@@ -281,7 +282,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::vector<UserGroupTreeVO> GetChildren() const;
+                    std::vector<std::shared_ptr<UserGroupTreeVO>> GetChildren() const;
 
                     /**
                      * 设置孩子节点
@@ -290,7 +291,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetChildren(const std::vector<UserGroupTreeVO>& _children);
+                    void SetChildren(const std::vector<std::shared_ptr<UserGroupTreeVO>>& _children);
 
                     /**
                      * 判断参数 Children 是否已赋值
@@ -418,7 +419,7 @@ namespace TencentCloud
                      * 孩子节点
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<UserGroupTreeVO> m_children;
+                    std::vector<std::shared_ptr<UserGroupTreeVO>> m_children;
                     bool m_childrenHasBeenSet;
 
                     /**

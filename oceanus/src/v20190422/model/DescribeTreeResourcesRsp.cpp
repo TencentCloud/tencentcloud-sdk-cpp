@@ -93,8 +93,8 @@ CoreInternalOutcome DescribeTreeResourcesRsp::Deserialize(const rapidjson::Value
         const rapidjson::Value &tmpValue = value["Children"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            DescribeTreeResourcesRsp item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<DescribeTreeResourcesRsp>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -172,7 +172,10 @@ void DescribeTreeResourcesRsp::ToJsonObject(rapidjson::Value &value, rapidjson::
         for (auto itr = m_children.begin(); itr != m_children.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -251,12 +254,12 @@ bool DescribeTreeResourcesRsp::ItemsHasBeenSet() const
     return m_itemsHasBeenSet;
 }
 
-vector<DescribeTreeResourcesRsp> DescribeTreeResourcesRsp::GetChildren() const
+vector<shared_ptr<DescribeTreeResourcesRsp>> DescribeTreeResourcesRsp::GetChildren() const
 {
     return m_children;
 }
 
-void DescribeTreeResourcesRsp::SetChildren(const vector<DescribeTreeResourcesRsp>& _children)
+void DescribeTreeResourcesRsp::SetChildren(const vector<shared_ptr<DescribeTreeResourcesRsp>>& _children)
 {
     m_children = _children;
     m_childrenHasBeenSet = true;

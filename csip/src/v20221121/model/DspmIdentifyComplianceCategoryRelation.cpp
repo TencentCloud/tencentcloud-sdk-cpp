@@ -125,8 +125,8 @@ CoreInternalOutcome DspmIdentifyComplianceCategoryRelation::Deserialize(const ra
         const rapidjson::Value &tmpValue = value["Children"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            DspmIdentifyComplianceCategoryRelation item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<DspmIdentifyComplianceCategoryRelation>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -218,7 +218,10 @@ void DspmIdentifyComplianceCategoryRelation::ToJsonObject(rapidjson::Value &valu
         for (auto itr = m_children.begin(); itr != m_children.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -337,12 +340,12 @@ bool DspmIdentifyComplianceCategoryRelation::RuleRelationsHasBeenSet() const
     return m_ruleRelationsHasBeenSet;
 }
 
-vector<DspmIdentifyComplianceCategoryRelation> DspmIdentifyComplianceCategoryRelation::GetChildren() const
+vector<shared_ptr<DspmIdentifyComplianceCategoryRelation>> DspmIdentifyComplianceCategoryRelation::GetChildren() const
 {
     return m_children;
 }
 
-void DspmIdentifyComplianceCategoryRelation::SetChildren(const vector<DspmIdentifyComplianceCategoryRelation>& _children)
+void DspmIdentifyComplianceCategoryRelation::SetChildren(const vector<shared_ptr<DspmIdentifyComplianceCategoryRelation>>& _children)
 {
     m_children = _children;
     m_childrenHasBeenSet = true;

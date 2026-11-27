@@ -20,11 +20,11 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <memory>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/adp/v20260520/model/AppTriggerParamSchema.h>
 
 
 namespace TencentCloud
@@ -35,6 +35,7 @@ namespace TencentCloud
         {
             namespace Model
             {
+                class AppTriggerParamSchema;
                 /**
                 * AppTriggerParamSchema
                 */
@@ -115,14 +116,14 @@ namespace TencentCloud
                      * @return SubParamList <p>子参数列表</p>
                      * 
                      */
-                    std::vector<AppTriggerParamSchema> GetSubParamList() const;
+                    std::vector<std::shared_ptr<AppTriggerParamSchema>> GetSubParamList() const;
 
                     /**
                      * 设置<p>子参数列表</p>
                      * @param _subParamList <p>子参数列表</p>
                      * 
                      */
-                    void SetSubParamList(const std::vector<AppTriggerParamSchema>& _subParamList);
+                    void SetSubParamList(const std::vector<std::shared_ptr<AppTriggerParamSchema>>& _subParamList);
 
                     /**
                      * 判断参数 SubParamList 是否已赋值
@@ -154,7 +155,7 @@ namespace TencentCloud
                     /**
                      * <p>子参数列表</p>
                      */
-                    std::vector<AppTriggerParamSchema> m_subParamList;
+                    std::vector<std::shared_ptr<AppTriggerParamSchema>> m_subParamList;
                     bool m_subParamListHasBeenSet;
 
                 };

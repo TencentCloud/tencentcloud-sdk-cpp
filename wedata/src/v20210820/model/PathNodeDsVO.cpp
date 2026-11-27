@@ -94,8 +94,8 @@ CoreInternalOutcome PathNodeDsVO::Deserialize(const rapidjson::Value &value)
         const rapidjson::Value &tmpValue = value["Children"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            PathNodeDsVO item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<PathNodeDsVO>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -174,7 +174,10 @@ void PathNodeDsVO::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         for (auto itr = m_children.begin(); itr != m_children.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -269,12 +272,12 @@ bool PathNodeDsVO::IsLeafHasBeenSet() const
     return m_isLeafHasBeenSet;
 }
 
-vector<PathNodeDsVO> PathNodeDsVO::GetChildren() const
+vector<shared_ptr<PathNodeDsVO>> PathNodeDsVO::GetChildren() const
 {
     return m_children;
 }
 
-void PathNodeDsVO::SetChildren(const vector<PathNodeDsVO>& _children)
+void PathNodeDsVO::SetChildren(const vector<shared_ptr<PathNodeDsVO>>& _children)
 {
     m_children = _children;
     m_childrenHasBeenSet = true;

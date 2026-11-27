@@ -15,6 +15,7 @@
  */
 
 #include <tencentcloud/wedata/v20210820/model/DependencyConfigDsDTO.h>
+#include <tencentcloud/wedata/v20210820/model/TaskDsDTO.h>
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Wedata::V20210820::Model;
@@ -42,7 +43,8 @@ CoreInternalOutcome DependencyConfigDsDTO::Deserialize(const rapidjson::Value &v
             return CoreInternalOutcome(Core::Error("response `DependencyConfigDsDTO.ParentTask` is not object type").SetRequestId(requestId));
         }
 
-        CoreInternalOutcome outcome = m_parentTask.Deserialize(value["ParentTask"]);
+        m_parentTask = std::make_shared<TaskDsDTO>();
+        CoreInternalOutcome outcome = m_parentTask->Deserialize(value["ParentTask"]);
         if (!outcome.IsSuccess())
         {
             outcome.GetError().SetRequestId(requestId);
@@ -59,7 +61,8 @@ CoreInternalOutcome DependencyConfigDsDTO::Deserialize(const rapidjson::Value &v
             return CoreInternalOutcome(Core::Error("response `DependencyConfigDsDTO.SonTask` is not object type").SetRequestId(requestId));
         }
 
-        CoreInternalOutcome outcome = m_sonTask.Deserialize(value["SonTask"]);
+        m_sonTask = std::make_shared<TaskDsDTO>();
+        CoreInternalOutcome outcome = m_sonTask->Deserialize(value["SonTask"]);
         if (!outcome.IsSuccess())
         {
             outcome.GetError().SetRequestId(requestId);
@@ -129,7 +132,10 @@ void DependencyConfigDsDTO::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "ParentTask";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_parentTask.ToJsonObject(value[key.c_str()], allocator);
+        if (m_parentTask)
+        {
+            m_parentTask->ToJsonObject(value[key.c_str()], allocator);
+        }
     }
 
     if (m_sonTaskHasBeenSet)
@@ -138,7 +144,10 @@ void DependencyConfigDsDTO::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "SonTask";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_sonTask.ToJsonObject(value[key.c_str()], allocator);
+        if (m_sonTask)
+        {
+            m_sonTask->ToJsonObject(value[key.c_str()], allocator);
+        }
     }
 
     if (m_mainCyclicConfigHasBeenSet)
@@ -177,12 +186,12 @@ void DependencyConfigDsDTO::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
 }
 
 
-TaskDsDTO DependencyConfigDsDTO::GetParentTask() const
+shared_ptr<TaskDsDTO> DependencyConfigDsDTO::GetParentTask() const
 {
     return m_parentTask;
 }
 
-void DependencyConfigDsDTO::SetParentTask(const TaskDsDTO& _parentTask)
+void DependencyConfigDsDTO::SetParentTask(const shared_ptr<TaskDsDTO>& _parentTask)
 {
     m_parentTask = _parentTask;
     m_parentTaskHasBeenSet = true;
@@ -193,12 +202,12 @@ bool DependencyConfigDsDTO::ParentTaskHasBeenSet() const
     return m_parentTaskHasBeenSet;
 }
 
-TaskDsDTO DependencyConfigDsDTO::GetSonTask() const
+shared_ptr<TaskDsDTO> DependencyConfigDsDTO::GetSonTask() const
 {
     return m_sonTask;
 }
 
-void DependencyConfigDsDTO::SetSonTask(const TaskDsDTO& _sonTask)
+void DependencyConfigDsDTO::SetSonTask(const shared_ptr<TaskDsDTO>& _sonTask)
 {
     m_sonTask = _sonTask;
     m_sonTaskHasBeenSet = true;

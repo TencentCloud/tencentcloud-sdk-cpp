@@ -3090,6 +3090,56 @@ CdbClient::DescribeCPUExpandStrategyInfoOutcomeCallable CdbClient::DescribeCPUEx
     return prom->get_future();
 }
 
+CdbClient::DescribeCageListOutcome CdbClient::DescribeCageList(const DescribeCageListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCageList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCageListResponse rsp = DescribeCageListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCageListOutcome(rsp);
+        else
+            return DescribeCageListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCageListOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::DescribeCageListAsync(const DescribeCageListRequest& request, const DescribeCageListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCageListRequest&;
+    using Resp = DescribeCageListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCageList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CdbClient::DescribeCageListOutcomeCallable CdbClient::DescribeCageListCallable(const DescribeCageListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCageListOutcome>>();
+    DescribeCageListAsync(
+    request,
+    [prom](
+        const CdbClient*,
+        const DescribeCageListRequest&,
+        DescribeCageListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CdbClient::DescribeCdbProxyInfoOutcome CdbClient::DescribeCdbProxyInfo(const DescribeCdbProxyInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCdbProxyInfo");

@@ -56,8 +56,8 @@ CoreInternalOutcome ElementProfileTreeNode::Deserialize(const rapidjson::Value &
         const rapidjson::Value &tmpValue = value["Children"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            ElementProfileTreeNode item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<ElementProfileTreeNode>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -95,7 +95,10 @@ void ElementProfileTreeNode::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         for (auto itr = m_children.begin(); itr != m_children.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -118,12 +121,12 @@ bool ElementProfileTreeNode::ElementProfileHasBeenSet() const
     return m_elementProfileHasBeenSet;
 }
 
-vector<ElementProfileTreeNode> ElementProfileTreeNode::GetChildren() const
+vector<shared_ptr<ElementProfileTreeNode>> ElementProfileTreeNode::GetChildren() const
 {
     return m_children;
 }
 
-void ElementProfileTreeNode::SetChildren(const vector<ElementProfileTreeNode>& _children)
+void ElementProfileTreeNode::SetChildren(const vector<shared_ptr<ElementProfileTreeNode>>& _children)
 {
     m_children = _children;
     m_childrenHasBeenSet = true;

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取证书Id。
-                     * @return CertId 证书Id。
+                     * 获取<p>证书Id。</p>
+                     * @return CertId <p>证书Id。</p>
                      * 
                      */
                     int64_t GetCertId() const;
 
                     /**
-                     * 设置证书Id。
-                     * @param _certId 证书Id。
+                     * 设置<p>证书Id。</p>
+                     * @param _certId <p>证书Id。</p>
                      * 
                      */
                     void SetCertId(const int64_t& _certId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool CertIdHasBeenSet() const;
 
                     /**
-                     * 获取证书名称。
-                     * @return CertName 证书名称。
+                     * 获取<p>证书名称。</p>
+                     * @return CertName <p>证书名称。</p>
                      * 
                      */
                     std::string GetCertName() const;
 
                     /**
-                     * 设置证书名称。
-                     * @param _certName 证书名称。
+                     * 设置<p>证书名称。</p>
+                     * @param _certName <p>证书名称。</p>
                      * 
                      */
                     void SetCertName(const std::string& _certName);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool CertNameHasBeenSet() const;
 
                     /**
-                     * 获取描述信息。
-                     * @return Description 描述信息。
+                     * 获取<p>描述信息。</p>
+                     * @return Description <p>描述信息。</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置描述信息。
-                     * @param _description 描述信息。
+                     * 设置<p>描述信息。</p>
+                     * @param _description <p>描述信息。</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -110,19 +110,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取创建时间，UTC格式。
-注：此字段为北京时间（UTC+8时区）。
-                     * @return CreateTime 创建时间，UTC格式。
-注：此字段为北京时间（UTC+8时区）。
+                     * 获取<p>创建时间，UTC格式。<br>注：此字段为北京时间（UTC+8时区）。</p>
+                     * @return CreateTime <p>创建时间，UTC格式。<br>注：此字段为北京时间（UTC+8时区）。</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间，UTC格式。
-注：此字段为北京时间（UTC+8时区）。
-                     * @param _createTime 创建时间，UTC格式。
-注：此字段为北京时间（UTC+8时区）。
+                     * 设置<p>创建时间，UTC格式。<br>注：此字段为北京时间（UTC+8时区）。</p>
+                     * @param _createTime <p>创建时间，UTC格式。<br>注：此字段为北京时间（UTC+8时区）。</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -135,15 +131,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取证书内容。
-                     * @return HttpsCrt 证书内容。
+                     * 获取<p>证书内容。</p>
+                     * @return HttpsCrt <p>证书内容。</p>
                      * 
                      */
                     std::string GetHttpsCrt() const;
 
                     /**
-                     * 设置证书内容。
-                     * @param _httpsCrt 证书内容。
+                     * 设置<p>证书内容。</p>
+                     * @param _httpsCrt <p>证书内容。</p>
                      * 
                      */
                     void SetHttpsCrt(const std::string& _httpsCrt);
@@ -156,23 +152,15 @@ namespace TencentCloud
                     bool HttpsCrtHasBeenSet() const;
 
                     /**
-                     * 获取证书类型。
-0：用户添加证书，
-1：腾讯云托管证书。
-                     * @return CertType 证书类型。
-0：用户添加证书，
-1：腾讯云托管证书。
+                     * 获取<p>证书类型。<br>0：用户添加证书，<br>1：腾讯云托管证书。</p>
+                     * @return CertType <p>证书类型。<br>0：用户添加证书，<br>1：腾讯云托管证书。</p>
                      * 
                      */
                     int64_t GetCertType() const;
 
                     /**
-                     * 设置证书类型。
-0：用户添加证书，
-1：腾讯云托管证书。
-                     * @param _certType 证书类型。
-0：用户添加证书，
-1：腾讯云托管证书。
+                     * 设置<p>证书类型。<br>0：用户添加证书，<br>1：腾讯云托管证书。</p>
+                     * @param _certType <p>证书类型。<br>0：用户添加证书，<br>1：腾讯云托管证书。</p>
                      * 
                      */
                     void SetCertType(const int64_t& _certType);
@@ -185,19 +173,15 @@ namespace TencentCloud
                     bool CertTypeHasBeenSet() const;
 
                     /**
-                     * 获取证书过期时间，UTC格式。
-注：此字段为北京时间（UTC+8时区）。
-                     * @return CertExpireTime 证书过期时间，UTC格式。
-注：此字段为北京时间（UTC+8时区）。
+                     * 获取<p>证书过期时间，UTC格式。<br>注：此字段为北京时间（UTC+8时区）。</p>
+                     * @return CertExpireTime <p>证书过期时间，UTC格式。<br>注：此字段为北京时间（UTC+8时区）。</p>
                      * 
                      */
                     std::string GetCertExpireTime() const;
 
                     /**
-                     * 设置证书过期时间，UTC格式。
-注：此字段为北京时间（UTC+8时区）。
-                     * @param _certExpireTime 证书过期时间，UTC格式。
-注：此字段为北京时间（UTC+8时区）。
+                     * 设置<p>证书过期时间，UTC格式。<br>注：此字段为北京时间（UTC+8时区）。</p>
+                     * @param _certExpireTime <p>证书过期时间，UTC格式。<br>注：此字段为北京时间（UTC+8时区）。</p>
                      * 
                      */
                     void SetCertExpireTime(const std::string& _certExpireTime);
@@ -210,15 +194,15 @@ namespace TencentCloud
                     bool CertExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取使用此证书的域名名称。
-                     * @return DomainName 使用此证书的域名名称。
+                     * 获取<p>使用此证书的域名名称。</p>
+                     * @return DomainName <p>使用此证书的域名名称。</p>
                      * 
                      */
                     std::string GetDomainName() const;
 
                     /**
-                     * 设置使用此证书的域名名称。
-                     * @param _domainName 使用此证书的域名名称。
+                     * 设置<p>使用此证书的域名名称。</p>
+                     * @param _domainName <p>使用此证书的域名名称。</p>
                      * 
                      */
                     void SetDomainName(const std::string& _domainName);
@@ -231,15 +215,15 @@ namespace TencentCloud
                     bool DomainNameHasBeenSet() const;
 
                     /**
-                     * 获取证书状态。
-                     * @return Status 证书状态。
+                     * 获取<p>证书状态。</p>
+                     * @return Status <p>证书状态。</p>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置证书状态。
-                     * @param _status 证书状态。
+                     * 设置<p>证书状态。</p>
+                     * @param _status <p>证书状态。</p>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -252,19 +236,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取证书本身标识的域名列表。
-比如: ["*.x.com"]
-                     * @return CertDomains 证书本身标识的域名列表。
-比如: ["*.x.com"]
+                     * 获取<p>证书本身标识的域名列表。<br>比如: [&quot;*.x.com&quot;]</p>
+                     * @return CertDomains <p>证书本身标识的域名列表。<br>比如: [&quot;*.x.com&quot;]</p>
                      * 
                      */
                     std::vector<std::string> GetCertDomains() const;
 
                     /**
-                     * 设置证书本身标识的域名列表。
-比如: ["*.x.com"]
-                     * @param _certDomains 证书本身标识的域名列表。
-比如: ["*.x.com"]
+                     * 设置<p>证书本身标识的域名列表。<br>比如: [&quot;*.x.com&quot;]</p>
+                     * @param _certDomains <p>证书本身标识的域名列表。<br>比如: [&quot;*.x.com&quot;]</p>
                      * 
                      */
                     void SetCertDomains(const std::vector<std::string>& _certDomains);
@@ -277,15 +257,15 @@ namespace TencentCloud
                     bool CertDomainsHasBeenSet() const;
 
                     /**
-                     * 获取腾讯云ssl的证书Id
-                     * @return CloudCertId 腾讯云ssl的证书Id
+                     * 获取<p>腾讯云ssl的证书Id</p>
+                     * @return CloudCertId <p>腾讯云ssl的证书Id</p>
                      * 
                      */
                     std::string GetCloudCertId() const;
 
                     /**
-                     * 设置腾讯云ssl的证书Id
-                     * @param _cloudCertId 腾讯云ssl的证书Id
+                     * 设置<p>腾讯云ssl的证书Id</p>
+                     * @param _cloudCertId <p>腾讯云ssl的证书Id</p>
                      * 
                      */
                     void SetCloudCertId(const std::string& _cloudCertId);
@@ -300,72 +280,67 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 证书Id。
+                     * <p>证书Id。</p>
                      */
                     int64_t m_certId;
                     bool m_certIdHasBeenSet;
 
                     /**
-                     * 证书名称。
+                     * <p>证书名称。</p>
                      */
                     std::string m_certName;
                     bool m_certNameHasBeenSet;
 
                     /**
-                     * 描述信息。
+                     * <p>描述信息。</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 创建时间，UTC格式。
-注：此字段为北京时间（UTC+8时区）。
+                     * <p>创建时间，UTC格式。<br>注：此字段为北京时间（UTC+8时区）。</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 证书内容。
+                     * <p>证书内容。</p>
                      */
                     std::string m_httpsCrt;
                     bool m_httpsCrtHasBeenSet;
 
                     /**
-                     * 证书类型。
-0：用户添加证书，
-1：腾讯云托管证书。
+                     * <p>证书类型。<br>0：用户添加证书，<br>1：腾讯云托管证书。</p>
                      */
                     int64_t m_certType;
                     bool m_certTypeHasBeenSet;
 
                     /**
-                     * 证书过期时间，UTC格式。
-注：此字段为北京时间（UTC+8时区）。
+                     * <p>证书过期时间，UTC格式。<br>注：此字段为北京时间（UTC+8时区）。</p>
                      */
                     std::string m_certExpireTime;
                     bool m_certExpireTimeHasBeenSet;
 
                     /**
-                     * 使用此证书的域名名称。
+                     * <p>使用此证书的域名名称。</p>
                      */
                     std::string m_domainName;
                     bool m_domainNameHasBeenSet;
 
                     /**
-                     * 证书状态。
+                     * <p>证书状态。</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 证书本身标识的域名列表。
-比如: ["*.x.com"]
+                     * <p>证书本身标识的域名列表。<br>比如: [&quot;*.x.com&quot;]</p>
                      */
                     std::vector<std::string> m_certDomains;
                     bool m_certDomainsHasBeenSet;
 
                     /**
-                     * 腾讯云ssl的证书Id
+                     * <p>腾讯云ssl的证书Id</p>
                      */
                     std::string m_cloudCertId;
                     bool m_cloudCertIdHasBeenSet;

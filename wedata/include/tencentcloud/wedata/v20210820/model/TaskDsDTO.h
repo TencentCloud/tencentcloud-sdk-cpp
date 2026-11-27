@@ -20,6 +20,7 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <memory>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
@@ -27,14 +28,11 @@
 #include <tencentcloud/wedata/v20210820/model/TaskTypeDsVO.h>
 #include <tencentcloud/wedata/v20210820/model/TaskExtDsVO.h>
 #include <tencentcloud/wedata/v20210820/model/AlarmDsVO.h>
-#include <tencentcloud/wedata/v20210820/model/TaskDsDTO.h>
-#include <tencentcloud/wedata/v20210820/model/DependencyConfigDsDTO.h>
 #include <tencentcloud/wedata/v20210820/model/ParameterTaskDsDto.h>
 #include <tencentcloud/wedata/v20210820/model/TaskLinkDsDTO.h>
 #include <tencentcloud/wedata/v20210820/model/ParameterTaskInDsDto.h>
 #include <tencentcloud/wedata/v20210820/model/ParameterTaskOutDsDto.h>
 #include <tencentcloud/wedata/v20210820/model/TaskDataRegistryDTO.h>
-#include <tencentcloud/wedata/v20210820/model/TaskCycleLinkDTO.h>
 
 
 namespace TencentCloud
@@ -45,6 +43,9 @@ namespace TencentCloud
         {
             namespace Model
             {
+                class TaskDsDTO;
+                class DependencyConfigDsDTO;
+                class TaskCycleLinkDTO;
                 /**
                 * 任务信息
                 */
@@ -1414,7 +1415,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::vector<TaskDsDTO> GetTasks() const;
+                    std::vector<std::shared_ptr<TaskDsDTO>> GetTasks() const;
 
                     /**
                      * 设置<p>父子节点树</p>
@@ -1423,7 +1424,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetTasks(const std::vector<TaskDsDTO>& _tasks);
+                    void SetTasks(const std::vector<std::shared_ptr<TaskDsDTO>>& _tasks);
 
                     /**
                      * 判断参数 Tasks 是否已赋值
@@ -1564,7 +1565,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::vector<DependencyConfigDsDTO> GetDependencyConfigList() const;
+                    std::vector<std::shared_ptr<DependencyConfigDsDTO>> GetDependencyConfigList() const;
 
                     /**
                      * 设置<p>依赖配置</p>
@@ -1573,7 +1574,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetDependencyConfigList(const std::vector<DependencyConfigDsDTO>& _dependencyConfigList);
+                    void SetDependencyConfigList(const std::vector<std::shared_ptr<DependencyConfigDsDTO>>& _dependencyConfigList);
 
                     /**
                      * 判断参数 DependencyConfigList 是否已赋值
@@ -2414,7 +2415,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::vector<TaskCycleLinkDTO> GetCycleDependencyConfigList() const;
+                    std::vector<std::shared_ptr<TaskCycleLinkDTO>> GetCycleDependencyConfigList() const;
 
                     /**
                      * 设置<p>循环依赖配置</p>
@@ -2423,7 +2424,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetCycleDependencyConfigList(const std::vector<TaskCycleLinkDTO>& _cycleDependencyConfigList);
+                    void SetCycleDependencyConfigList(const std::vector<std::shared_ptr<TaskCycleLinkDTO>>& _cycleDependencyConfigList);
 
                     /**
                      * 判断参数 CycleDependencyConfigList 是否已赋值
@@ -3141,7 +3142,7 @@ namespace TencentCloud
                      * <p>父子节点树</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<TaskDsDTO> m_tasks;
+                    std::vector<std::shared_ptr<TaskDsDTO>> m_tasks;
                     bool m_tasksHasBeenSet;
 
                     /**
@@ -3183,7 +3184,7 @@ namespace TencentCloud
                      * <p>依赖配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<DependencyConfigDsDTO> m_dependencyConfigList;
+                    std::vector<std::shared_ptr<DependencyConfigDsDTO>> m_dependencyConfigList;
                     bool m_dependencyConfigListHasBeenSet;
 
                     /**
@@ -3421,7 +3422,7 @@ namespace TencentCloud
                      * <p>循环依赖配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<TaskCycleLinkDTO> m_cycleDependencyConfigList;
+                    std::vector<std::shared_ptr<TaskCycleLinkDTO>> m_cycleDependencyConfigList;
                     bool m_cycleDependencyConfigListHasBeenSet;
 
                     /**

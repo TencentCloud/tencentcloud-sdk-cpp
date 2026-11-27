@@ -20,12 +20,12 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <memory>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ocr/v20181119/model/CoordList.h>
-#include <tencentcloud/ocr/v20181119/model/SubItemGroup.h>
 
 
 namespace TencentCloud
@@ -36,6 +36,7 @@ namespace TencentCloud
         {
             namespace Model
             {
+                class SubItemGroup;
                 /**
                 * 用于展示抽取出的信息
                 */
@@ -158,14 +159,14 @@ namespace TencentCloud
                      * @return SubItems <p>嵌套FieldsInfo结构，仅当KeyType=1时有效。</p>
                      * 
                      */
-                    std::vector<SubItemGroup> GetSubItems() const;
+                    std::vector<std::shared_ptr<SubItemGroup>> GetSubItems() const;
 
                     /**
                      * 设置<p>嵌套FieldsInfo结构，仅当KeyType=1时有效。</p>
                      * @param _subItems <p>嵌套FieldsInfo结构，仅当KeyType=1时有效。</p>
                      * 
                      */
-                    void SetSubItems(const std::vector<SubItemGroup>& _subItems);
+                    void SetSubItems(const std::vector<std::shared_ptr<SubItemGroup>>& _subItems);
 
                     /**
                      * 判断参数 SubItems 是否已赋值
@@ -209,7 +210,7 @@ namespace TencentCloud
                     /**
                      * <p>嵌套FieldsInfo结构，仅当KeyType=1时有效。</p>
                      */
-                    std::vector<SubItemGroup> m_subItems;
+                    std::vector<std::shared_ptr<SubItemGroup>> m_subItems;
                     bool m_subItemsHasBeenSet;
 
                 };

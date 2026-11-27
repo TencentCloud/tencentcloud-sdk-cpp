@@ -64,6 +64,7 @@ InstanceInfo::InstanceInfo() :
     m_zoneIdHasBeenSet(false),
     m_instanceNodesHasBeenSet(false),
     m_tagListHasBeenSet(false),
+    m_cageIdHasBeenSet(false),
     m_engineTypeHasBeenSet(false),
     m_maxDelayTimeHasBeenSet(false),
     m_diskTypeHasBeenSet(false),
@@ -562,6 +563,16 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
             m_tagList.push_back(item);
         }
         m_tagListHasBeenSet = true;
+    }
+
+    if (value.HasMember("CageId") && !value["CageId"].IsNull())
+    {
+        if (!value["CageId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.CageId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cageId = string(value["CageId"].GetString());
+        m_cageIdHasBeenSet = true;
     }
 
     if (value.HasMember("EngineType") && !value["EngineType"].IsNull())
@@ -1074,6 +1085,14 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_cageIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CageId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cageId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_engineTypeHasBeenSet)
@@ -1868,6 +1887,22 @@ void InstanceInfo::SetTagList(const vector<TagInfoItem>& _tagList)
 bool InstanceInfo::TagListHasBeenSet() const
 {
     return m_tagListHasBeenSet;
+}
+
+string InstanceInfo::GetCageId() const
+{
+    return m_cageId;
+}
+
+void InstanceInfo::SetCageId(const string& _cageId)
+{
+    m_cageId = _cageId;
+    m_cageIdHasBeenSet = true;
+}
+
+bool InstanceInfo::CageIdHasBeenSet() const
+{
+    return m_cageIdHasBeenSet;
 }
 
 string InstanceInfo::GetEngineType() const

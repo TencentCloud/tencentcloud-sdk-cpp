@@ -74,8 +74,8 @@ CoreInternalOutcome AgentToolRspParam::Deserialize(const rapidjson::Value &value
         const rapidjson::Value &tmpValue = value["SubParams"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            AgentToolRspParam item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<AgentToolRspParam>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -158,7 +158,10 @@ void AgentToolRspParam::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         for (auto itr = m_subParams.begin(); itr != m_subParams.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -237,12 +240,12 @@ bool AgentToolRspParam::TypeHasBeenSet() const
     return m_typeHasBeenSet;
 }
 
-vector<AgentToolRspParam> AgentToolRspParam::GetSubParams() const
+vector<shared_ptr<AgentToolRspParam>> AgentToolRspParam::GetSubParams() const
 {
     return m_subParams;
 }
 
-void AgentToolRspParam::SetSubParams(const vector<AgentToolRspParam>& _subParams)
+void AgentToolRspParam::SetSubParams(const vector<shared_ptr<AgentToolRspParam>>& _subParams)
 {
     m_subParams = _subParams;
     m_subParamsHasBeenSet = true;

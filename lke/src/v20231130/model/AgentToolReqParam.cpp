@@ -98,8 +98,8 @@ CoreInternalOutcome AgentToolReqParam::Deserialize(const rapidjson::Value &value
         const rapidjson::Value &tmpValue = value["SubParams"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            AgentToolReqParam item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<AgentToolReqParam>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -138,8 +138,8 @@ CoreInternalOutcome AgentToolReqParam::Deserialize(const rapidjson::Value &value
         const rapidjson::Value &tmpValue = value["AnyOf"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            AgentToolReqParam item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<AgentToolReqParam>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -158,8 +158,8 @@ CoreInternalOutcome AgentToolReqParam::Deserialize(const rapidjson::Value &value
         const rapidjson::Value &tmpValue = value["OneOf"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            AgentToolReqParam item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<AgentToolReqParam>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -245,7 +245,10 @@ void AgentToolReqParam::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         for (auto itr = m_subParams.begin(); itr != m_subParams.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -276,7 +279,10 @@ void AgentToolReqParam::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         for (auto itr = m_anyOf.begin(); itr != m_anyOf.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -291,7 +297,10 @@ void AgentToolReqParam::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         for (auto itr = m_oneOf.begin(); itr != m_oneOf.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -387,12 +396,12 @@ bool AgentToolReqParam::DefaultValueHasBeenSet() const
     return m_defaultValueHasBeenSet;
 }
 
-vector<AgentToolReqParam> AgentToolReqParam::GetSubParams() const
+vector<shared_ptr<AgentToolReqParam>> AgentToolReqParam::GetSubParams() const
 {
     return m_subParams;
 }
 
-void AgentToolReqParam::SetSubParams(const vector<AgentToolReqParam>& _subParams)
+void AgentToolReqParam::SetSubParams(const vector<shared_ptr<AgentToolReqParam>>& _subParams)
 {
     m_subParams = _subParams;
     m_subParamsHasBeenSet = true;
@@ -435,12 +444,12 @@ bool AgentToolReqParam::AgentHiddenHasBeenSet() const
     return m_agentHiddenHasBeenSet;
 }
 
-vector<AgentToolReqParam> AgentToolReqParam::GetAnyOf() const
+vector<shared_ptr<AgentToolReqParam>> AgentToolReqParam::GetAnyOf() const
 {
     return m_anyOf;
 }
 
-void AgentToolReqParam::SetAnyOf(const vector<AgentToolReqParam>& _anyOf)
+void AgentToolReqParam::SetAnyOf(const vector<shared_ptr<AgentToolReqParam>>& _anyOf)
 {
     m_anyOf = _anyOf;
     m_anyOfHasBeenSet = true;
@@ -451,12 +460,12 @@ bool AgentToolReqParam::AnyOfHasBeenSet() const
     return m_anyOfHasBeenSet;
 }
 
-vector<AgentToolReqParam> AgentToolReqParam::GetOneOf() const
+vector<shared_ptr<AgentToolReqParam>> AgentToolReqParam::GetOneOf() const
 {
     return m_oneOf;
 }
 
-void AgentToolReqParam::SetOneOf(const vector<AgentToolReqParam>& _oneOf)
+void AgentToolReqParam::SetOneOf(const vector<shared_ptr<AgentToolReqParam>>& _oneOf)
 {
     m_oneOf = _oneOf;
     m_oneOfHasBeenSet = true;

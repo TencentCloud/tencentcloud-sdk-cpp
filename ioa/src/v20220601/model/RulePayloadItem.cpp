@@ -76,8 +76,8 @@ CoreInternalOutcome RulePayloadItem::Deserialize(const rapidjson::Value &value)
         const rapidjson::Value &tmpValue = value["Groups"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            RulePayloadItem item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<RulePayloadItem>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -155,7 +155,10 @@ void RulePayloadItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         for (auto itr = m_groups.begin(); itr != m_groups.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -226,12 +229,12 @@ bool RulePayloadItem::ValueHasBeenSet() const
     return m_valueHasBeenSet;
 }
 
-vector<RulePayloadItem> RulePayloadItem::GetGroups() const
+vector<shared_ptr<RulePayloadItem>> RulePayloadItem::GetGroups() const
 {
     return m_groups;
 }
 
-void RulePayloadItem::SetGroups(const vector<RulePayloadItem>& _groups)
+void RulePayloadItem::SetGroups(const vector<shared_ptr<RulePayloadItem>>& _groups)
 {
     m_groups = _groups;
     m_groupsHasBeenSet = true;

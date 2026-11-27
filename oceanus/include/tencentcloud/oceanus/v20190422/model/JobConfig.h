@@ -20,6 +20,7 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <memory>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
@@ -30,7 +31,6 @@
 #include <tencentcloud/oceanus/v20190422/model/ExpertModeConfiguration.h>
 #include <tencentcloud/oceanus/v20190422/model/TraceModeConfiguration.h>
 #include <tencentcloud/oceanus/v20190422/model/JobGraph.h>
-#include <tencentcloud/oceanus/v20190422/model/JobConfig.h>
 
 
 namespace TencentCloud
@@ -41,6 +41,7 @@ namespace TencentCloud
         {
             namespace Model
             {
+                class JobConfig;
                 /**
                 * 作业配置详情
                 */
@@ -994,7 +995,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    JobConfig GetJobConfigItem() const;
+                    std::shared_ptr<JobConfig> GetJobConfigItem() const;
 
                     /**
                      * 设置<p>运行中配置</p>
@@ -1003,7 +1004,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetJobConfigItem(const JobConfig& _jobConfigItem);
+                    void SetJobConfigItem(const std::shared_ptr<JobConfig>& _jobConfigItem);
 
                     /**
                      * 判断参数 JobConfigItem 是否已赋值
@@ -1414,7 +1415,7 @@ namespace TencentCloud
                      * <p>运行中配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    JobConfig m_jobConfigItem;
+                    std::shared_ptr<JobConfig> m_jobConfigItem;
                     bool m_jobConfigItemHasBeenSet;
 
                     /**

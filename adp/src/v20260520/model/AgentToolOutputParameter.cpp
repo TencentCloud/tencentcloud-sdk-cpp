@@ -72,8 +72,8 @@ CoreInternalOutcome AgentToolOutputParameter::Deserialize(const rapidjson::Value
         const rapidjson::Value &tmpValue = value["SubParameterList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            AgentToolOutputParameter item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<AgentToolOutputParameter>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -136,7 +136,10 @@ void AgentToolOutputParameter::ToJsonObject(rapidjson::Value &value, rapidjson::
         for (auto itr = m_subParameterList.begin(); itr != m_subParameterList.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -199,12 +202,12 @@ bool AgentToolOutputParameter::TypeHasBeenSet() const
     return m_typeHasBeenSet;
 }
 
-vector<AgentToolOutputParameter> AgentToolOutputParameter::GetSubParameterList() const
+vector<shared_ptr<AgentToolOutputParameter>> AgentToolOutputParameter::GetSubParameterList() const
 {
     return m_subParameterList;
 }
 
-void AgentToolOutputParameter::SetSubParameterList(const vector<AgentToolOutputParameter>& _subParameterList)
+void AgentToolOutputParameter::SetSubParameterList(const vector<shared_ptr<AgentToolOutputParameter>>& _subParameterList)
 {
     m_subParameterList = _subParameterList;
     m_subParameterListHasBeenSet = true;

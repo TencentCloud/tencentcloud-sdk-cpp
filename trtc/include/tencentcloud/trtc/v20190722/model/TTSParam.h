@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>tts模型参数，仅支持填写&quot;flow_02_turbo&quot;。</p>
-                     * @return Model <p>tts模型参数，仅支持填写&quot;flow_02_turbo&quot;。</p>
+                     * 获取<p>tts模型参数，当前支持填写&quot;flow_02_turbo&quot;。</p>
+                     * @return Model <p>tts模型参数，当前支持填写&quot;flow_02_turbo&quot;。</p>
                      * 
                      */
                     std::string GetModel() const;
 
                     /**
-                     * 设置<p>tts模型参数，仅支持填写&quot;flow_02_turbo&quot;。</p>
-                     * @param _model <p>tts模型参数，仅支持填写&quot;flow_02_turbo&quot;。</p>
+                     * 设置<p>tts模型参数，当前支持填写&quot;flow_02_turbo&quot;。</p>
+                     * @param _model <p>tts模型参数，当前支持填写&quot;flow_02_turbo&quot;。</p>
                      * 
                      */
                     void SetModel(const std::string& _model);
@@ -153,10 +153,31 @@ namespace TencentCloud
                      */
                     bool VoiceHasBeenSet() const;
 
+                    /**
+                     * 获取<p>TTS高级扩展参数，使用需要联系我们支持</p><p>参数格式：{"Type":"xxx", "Data":{}}</p>
+                     * @return ExtraParams <p>TTS高级扩展参数，使用需要联系我们支持</p><p>参数格式：{"Type":"xxx", "Data":{}}</p>
+                     * 
+                     */
+                    std::string GetExtraParams() const;
+
+                    /**
+                     * 设置<p>TTS高级扩展参数，使用需要联系我们支持</p><p>参数格式：{"Type":"xxx", "Data":{}}</p>
+                     * @param _extraParams <p>TTS高级扩展参数，使用需要联系我们支持</p><p>参数格式：{"Type":"xxx", "Data":{}}</p>
+                     * 
+                     */
+                    void SetExtraParams(const std::string& _extraParams);
+
+                    /**
+                     * 判断参数 ExtraParams 是否已赋值
+                     * @return ExtraParams 是否已赋值
+                     * 
+                     */
+                    bool ExtraParamsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * <p>tts模型参数，仅支持填写&quot;flow_02_turbo&quot;。</p>
+                     * <p>tts模型参数，当前支持填写&quot;flow_02_turbo&quot;。</p>
                      */
                     std::string m_model;
                     bool m_modelHasBeenSet;
@@ -184,6 +205,12 @@ namespace TencentCloud
                      */
                     TTSVoice m_voice;
                     bool m_voiceHasBeenSet;
+
+                    /**
+                     * <p>TTS高级扩展参数，使用需要联系我们支持</p><p>参数格式：{"Type":"xxx", "Data":{}}</p>
+                     */
+                    std::string m_extraParams;
+                    bool m_extraParamsHasBeenSet;
 
                 };
             }

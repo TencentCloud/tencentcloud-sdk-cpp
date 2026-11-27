@@ -20,13 +20,13 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <memory>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/wedata/v20210820/model/LineageResouce.h>
 #include <tencentcloud/wedata/v20210820/model/LineageRelationVO.h>
-#include <tencentcloud/wedata/v20210820/model/LineageNodeInfoVO.h>
 
 
 namespace TencentCloud
@@ -37,6 +37,7 @@ namespace TencentCloud
         {
             namespace Model
             {
+                class LineageNodeInfoVO;
                 /**
                 * LineageNodeInfoVo
                 */
@@ -156,7 +157,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::vector<LineageNodeInfoVO> GetParentSet() const;
+                    std::vector<std::shared_ptr<LineageNodeInfoVO>> GetParentSet() const;
 
                     /**
                      * 设置上游节点
@@ -165,7 +166,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetParentSet(const std::vector<LineageNodeInfoVO>& _parentSet);
+                    void SetParentSet(const std::vector<std::shared_ptr<LineageNodeInfoVO>>& _parentSet);
 
                     /**
                      * 判断参数 ParentSet 是否已赋值
@@ -181,7 +182,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::vector<LineageNodeInfoVO> GetChildSet() const;
+                    std::vector<std::shared_ptr<LineageNodeInfoVO>> GetChildSet() const;
 
                     /**
                      * 设置下游节点
@@ -190,7 +191,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetChildSet(const std::vector<LineageNodeInfoVO>& _childSet);
+                    void SetChildSet(const std::vector<std::shared_ptr<LineageNodeInfoVO>>& _childSet);
 
                     /**
                      * 判断参数 ChildSet 是否已赋值
@@ -258,14 +259,14 @@ namespace TencentCloud
                      * 上游节点
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<LineageNodeInfoVO> m_parentSet;
+                    std::vector<std::shared_ptr<LineageNodeInfoVO>> m_parentSet;
                     bool m_parentSetHasBeenSet;
 
                     /**
                      * 下游节点
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<LineageNodeInfoVO> m_childSet;
+                    std::vector<std::shared_ptr<LineageNodeInfoVO>> m_childSet;
                     bool m_childSetHasBeenSet;
 
                     /**

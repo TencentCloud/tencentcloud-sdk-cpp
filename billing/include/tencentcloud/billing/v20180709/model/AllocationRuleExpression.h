@@ -20,11 +20,11 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <memory>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/billing/v20180709/model/AllocationRuleExpression.h>
 
 
 namespace TencentCloud
@@ -35,6 +35,7 @@ namespace TencentCloud
         {
             namespace Model
             {
+                class AllocationRuleExpression;
                 /**
                 * 分账规则表达式
                 */
@@ -208,14 +209,14 @@ or - 或
                      * @return Children 嵌套规则
                      * 
                      */
-                    std::vector<AllocationRuleExpression> GetChildren() const;
+                    std::vector<std::shared_ptr<AllocationRuleExpression>> GetChildren() const;
 
                     /**
                      * 设置嵌套规则
                      * @param _children 嵌套规则
                      * 
                      */
-                    void SetChildren(const std::vector<AllocationRuleExpression>& _children);
+                    void SetChildren(const std::vector<std::shared_ptr<AllocationRuleExpression>>& _children);
 
                     /**
                      * 判断参数 Children 是否已赋值
@@ -271,7 +272,7 @@ or - 或
                     /**
                      * 嵌套规则
                      */
-                    std::vector<AllocationRuleExpression> m_children;
+                    std::vector<std::shared_ptr<AllocationRuleExpression>> m_children;
                     bool m_childrenHasBeenSet;
 
                 };

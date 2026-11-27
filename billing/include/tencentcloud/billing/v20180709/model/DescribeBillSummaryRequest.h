@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>账单月份，格式为2023-04</p>
-                     * @return Month <p>账单月份，格式为2023-04</p>
+                     * 获取<p>月份，格式为yyyy-mm，不能早于2021-01  示例值：2026-11</p>
+                     * @return Month <p>月份，格式为yyyy-mm，不能早于2021-01  示例值：2026-11</p>
                      * 
                      */
                     std::string GetMonth() const;
 
                     /**
-                     * 设置<p>账单月份，格式为2023-04</p>
-                     * @param _month <p>账单月份，格式为2023-04</p>
+                     * 设置<p>月份，格式为yyyy-mm，不能早于2021-01  示例值：2026-11</p>
+                     * @param _month <p>月份，格式为yyyy-mm，不能早于2021-01  示例值：2026-11</p>
                      * 
                      */
                     void SetMonth(const std::string& _month);
@@ -150,7 +150,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>账单月份，格式为2023-04</p>
+                     * <p>月份，格式为yyyy-mm，不能早于2021-01  示例值：2026-11</p>
                      */
                     std::string m_month;
                     bool m_monthHasBeenSet;

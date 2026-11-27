@@ -20,12 +20,12 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <memory>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/weilingwith/v20230427/model/ElementProfile.h>
-#include <tencentcloud/weilingwith/v20230427/model/ElementProfileTreeNode.h>
 
 
 namespace TencentCloud
@@ -36,6 +36,7 @@ namespace TencentCloud
         {
             namespace Model
             {
+                class ElementProfileTreeNode;
                 /**
                 * 构件树节点信息
                 */
@@ -74,14 +75,14 @@ namespace TencentCloud
                      * @return Children 子节点信息
                      * 
                      */
-                    std::vector<ElementProfileTreeNode> GetChildren() const;
+                    std::vector<std::shared_ptr<ElementProfileTreeNode>> GetChildren() const;
 
                     /**
                      * 设置子节点信息
                      * @param _children 子节点信息
                      * 
                      */
-                    void SetChildren(const std::vector<ElementProfileTreeNode>& _children);
+                    void SetChildren(const std::vector<std::shared_ptr<ElementProfileTreeNode>>& _children);
 
                     /**
                      * 判断参数 Children 是否已赋值
@@ -101,7 +102,7 @@ namespace TencentCloud
                     /**
                      * 子节点信息
                      */
-                    std::vector<ElementProfileTreeNode> m_children;
+                    std::vector<std::shared_ptr<ElementProfileTreeNode>> m_children;
                     bool m_childrenHasBeenSet;
 
                 };

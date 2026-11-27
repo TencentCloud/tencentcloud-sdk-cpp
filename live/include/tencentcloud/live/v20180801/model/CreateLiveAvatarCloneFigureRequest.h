@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool MaterialUrlHasBeenSet() const;
 
                     /**
-                     * 获取<p>克隆的形象的性别</p><p>枚举值：</p><ul><li>MALE： 男</li><li>FEMALE： 女</li><li>UNHNOWN： 不知道</li></ul>
-                     * @return Gender <p>克隆的形象的性别</p><p>枚举值：</p><ul><li>MALE： 男</li><li>FEMALE： 女</li><li>UNHNOWN： 不知道</li></ul>
+                     * 获取<p>克隆的形象的性别</p><p>枚举值：</p><ul><li>MALE： 男</li><li>FEMALE： 女</li><li>UNKNOWN： 不知道</li></ul>
+                     * @return Gender <p>克隆的形象的性别</p><p>枚举值：</p><ul><li>MALE： 男</li><li>FEMALE： 女</li><li>UNKNOWN： 不知道</li></ul>
                      * 
                      */
                     std::string GetGender() const;
 
                     /**
-                     * 设置<p>克隆的形象的性别</p><p>枚举值：</p><ul><li>MALE： 男</li><li>FEMALE： 女</li><li>UNHNOWN： 不知道</li></ul>
-                     * @param _gender <p>克隆的形象的性别</p><p>枚举值：</p><ul><li>MALE： 男</li><li>FEMALE： 女</li><li>UNHNOWN： 不知道</li></ul>
+                     * 设置<p>克隆的形象的性别</p><p>枚举值：</p><ul><li>MALE： 男</li><li>FEMALE： 女</li><li>UNKNOWN： 不知道</li></ul>
+                     * @param _gender <p>克隆的形象的性别</p><p>枚举值：</p><ul><li>MALE： 男</li><li>FEMALE： 女</li><li>UNKNOWN： 不知道</li></ul>
                      * 
                      */
                     void SetGender(const std::string& _gender);
@@ -210,7 +210,7 @@ namespace TencentCloud
                     bool m_materialUrlHasBeenSet;
 
                     /**
-                     * <p>克隆的形象的性别</p><p>枚举值：</p><ul><li>MALE： 男</li><li>FEMALE： 女</li><li>UNHNOWN： 不知道</li></ul>
+                     * <p>克隆的形象的性别</p><p>枚举值：</p><ul><li>MALE： 男</li><li>FEMALE： 女</li><li>UNKNOWN： 不知道</li></ul>
                      */
                     std::string m_gender;
                     bool m_genderHasBeenSet;

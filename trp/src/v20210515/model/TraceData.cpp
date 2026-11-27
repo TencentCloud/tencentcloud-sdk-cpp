@@ -15,6 +15,7 @@
  */
 
 #include <tencentcloud/trp/v20210515/model/TraceData.h>
+#include <tencentcloud/trp/v20210515/model/TraceItem.h>
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Trp::V20210515::Model;
@@ -206,8 +207,8 @@ CoreInternalOutcome TraceData::Deserialize(const rapidjson::Value &value)
         const rapidjson::Value &tmpValue = value["TraceItems"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            TraceItem item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<TraceItem>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -350,7 +351,10 @@ void TraceData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         for (auto itr = m_traceItems.begin(); itr != m_traceItems.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -581,12 +585,12 @@ bool TraceData::StatusHasBeenSet() const
     return m_statusHasBeenSet;
 }
 
-vector<TraceItem> TraceData::GetTraceItems() const
+vector<shared_ptr<TraceItem>> TraceData::GetTraceItems() const
 {
     return m_traceItems;
 }
 
-void TraceData::SetTraceItems(const vector<TraceItem>& _traceItems)
+void TraceData::SetTraceItems(const vector<shared_ptr<TraceItem>>& _traceItems)
 {
     m_traceItems = _traceItems;
     m_traceItemsHasBeenSet = true;

@@ -71,8 +71,8 @@ CoreInternalOutcome AppTriggerParamSchema::Deserialize(const rapidjson::Value &v
         const rapidjson::Value &tmpValue = value["SubParamList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            AppTriggerParamSchema item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<AppTriggerParamSchema>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -125,7 +125,10 @@ void AppTriggerParamSchema::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         for (auto itr = m_subParamList.begin(); itr != m_subParamList.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -180,12 +183,12 @@ bool AppTriggerParamSchema::RequiredHasBeenSet() const
     return m_requiredHasBeenSet;
 }
 
-vector<AppTriggerParamSchema> AppTriggerParamSchema::GetSubParamList() const
+vector<shared_ptr<AppTriggerParamSchema>> AppTriggerParamSchema::GetSubParamList() const
 {
     return m_subParamList;
 }
 
-void AppTriggerParamSchema::SetSubParamList(const vector<AppTriggerParamSchema>& _subParamList)
+void AppTriggerParamSchema::SetSubParamList(const vector<shared_ptr<AppTriggerParamSchema>>& _subParamList)
 {
     m_subParamList = _subParamList;
     m_subParamListHasBeenSet = true;

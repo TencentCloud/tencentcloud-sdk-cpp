@@ -43,35 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取账单类型，枚举值
-billOverview=L0-PDF账单
-billSummary=L1-汇总账单	
-billResource=L2-资源账单	
-billDetail=L3-明细账单	
-billPack=账单包
-                     * @return FileType 账单类型，枚举值
-billOverview=L0-PDF账单
-billSummary=L1-汇总账单	
-billResource=L2-资源账单	
-billDetail=L3-明细账单	
-billPack=账单包
+                     * 获取<p>账单类型，枚举值<br>billOverview=L0-PDF账单<br>billSummary=L1-汇总账单<br>billResource=L2-资源账单<br>billDetail=L3-明细账单<br>billPack=账单包</p>
+                     * @return FileType <p>账单类型，枚举值<br>billOverview=L0-PDF账单<br>billSummary=L1-汇总账单<br>billResource=L2-资源账单<br>billDetail=L3-明细账单<br>billPack=账单包</p>
                      * 
                      */
                     std::string GetFileType() const;
 
                     /**
-                     * 设置账单类型，枚举值
-billOverview=L0-PDF账单
-billSummary=L1-汇总账单	
-billResource=L2-资源账单	
-billDetail=L3-明细账单	
-billPack=账单包
-                     * @param _fileType 账单类型，枚举值
-billOverview=L0-PDF账单
-billSummary=L1-汇总账单	
-billResource=L2-资源账单	
-billDetail=L3-明细账单	
-billPack=账单包
+                     * 设置<p>账单类型，枚举值<br>billOverview=L0-PDF账单<br>billSummary=L1-汇总账单<br>billResource=L2-资源账单<br>billDetail=L3-明细账单<br>billPack=账单包</p>
+                     * @param _fileType <p>账单类型，枚举值<br>billOverview=L0-PDF账单<br>billSummary=L1-汇总账单<br>billResource=L2-资源账单<br>billDetail=L3-明细账单<br>billPack=账单包</p>
                      * 
                      */
                     void SetFileType(const std::string& _fileType);
@@ -84,23 +64,15 @@ billPack=账单包
                     bool FileTypeHasBeenSet() const;
 
                     /**
-                     * 获取账单月份
-支持的最早开始月份为2021-01
-L0-PDF&账单包不支持当月下载，当月账单请在次月1号19:00出账后下载
-                     * @return Month 账单月份
-支持的最早开始月份为2021-01
-L0-PDF&账单包不支持当月下载，当月账单请在次月1号19:00出账后下载
+                     * 获取<p>月份，格式为yyyy-mm，不能早于2021-01  示例值：2026-11</p>
+                     * @return Month <p>月份，格式为yyyy-mm，不能早于2021-01  示例值：2026-11</p>
                      * 
                      */
                     std::string GetMonth() const;
 
                     /**
-                     * 设置账单月份
-支持的最早开始月份为2021-01
-L0-PDF&账单包不支持当月下载，当月账单请在次月1号19:00出账后下载
-                     * @param _month 账单月份
-支持的最早开始月份为2021-01
-L0-PDF&账单包不支持当月下载，当月账单请在次月1号19:00出账后下载
+                     * 设置<p>月份，格式为yyyy-mm，不能早于2021-01  示例值：2026-11</p>
+                     * @param _month <p>月份，格式为yyyy-mm，不能早于2021-01  示例值：2026-11</p>
                      * 
                      */
                     void SetMonth(const std::string& _month);
@@ -113,15 +85,15 @@ L0-PDF&账单包不支持当月下载，当月账单请在次月1号19:00出账�
                     bool MonthHasBeenSet() const;
 
                     /**
-                     * 获取下载的账号 ID列表，默认查询本账号账单，如集团管理账号需下载成员账号自付的账单，该字段需入参成员账号UIN
-                     * @return ChildUin 下载的账号 ID列表，默认查询本账号账单，如集团管理账号需下载成员账号自付的账单，该字段需入参成员账号UIN
+                     * 获取<p>下载的账号 ID列表，默认查询本账号账单，如集团管理账号需下载成员账号自付的账单，该字段需入参成员账号UIN</p>
+                     * @return ChildUin <p>下载的账号 ID列表，默认查询本账号账单，如集团管理账号需下载成员账号自付的账单，该字段需入参成员账号UIN</p>
                      * 
                      */
                     std::vector<std::string> GetChildUin() const;
 
                     /**
-                     * 设置下载的账号 ID列表，默认查询本账号账单，如集团管理账号需下载成员账号自付的账单，该字段需入参成员账号UIN
-                     * @param _childUin 下载的账号 ID列表，默认查询本账号账单，如集团管理账号需下载成员账号自付的账单，该字段需入参成员账号UIN
+                     * 设置<p>下载的账号 ID列表，默认查询本账号账单，如集团管理账号需下载成员账号自付的账单，该字段需入参成员账号UIN</p>
+                     * @param _childUin <p>下载的账号 ID列表，默认查询本账号账单，如集团管理账号需下载成员账号自付的账单，该字段需入参成员账号UIN</p>
                      * 
                      */
                     void SetChildUin(const std::vector<std::string>& _childUin);
@@ -136,26 +108,19 @@ L0-PDF&账单包不支持当月下载，当月账单请在次月1号19:00出账�
                 private:
 
                     /**
-                     * 账单类型，枚举值
-billOverview=L0-PDF账单
-billSummary=L1-汇总账单	
-billResource=L2-资源账单	
-billDetail=L3-明细账单	
-billPack=账单包
+                     * <p>账单类型，枚举值<br>billOverview=L0-PDF账单<br>billSummary=L1-汇总账单<br>billResource=L2-资源账单<br>billDetail=L3-明细账单<br>billPack=账单包</p>
                      */
                     std::string m_fileType;
                     bool m_fileTypeHasBeenSet;
 
                     /**
-                     * 账单月份
-支持的最早开始月份为2021-01
-L0-PDF&账单包不支持当月下载，当月账单请在次月1号19:00出账后下载
+                     * <p>月份，格式为yyyy-mm，不能早于2021-01  示例值：2026-11</p>
                      */
                     std::string m_month;
                     bool m_monthHasBeenSet;
 
                     /**
-                     * 下载的账号 ID列表，默认查询本账号账单，如集团管理账号需下载成员账号自付的账单，该字段需入参成员账号UIN
+                     * <p>下载的账号 ID列表，默认查询本账号账单，如集团管理账号需下载成员账号自付的账单，该字段需入参成员账号UIN</p>
                      */
                     std::vector<std::string> m_childUin;
                     bool m_childUinHasBeenSet;

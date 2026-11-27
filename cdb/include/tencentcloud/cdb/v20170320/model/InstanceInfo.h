@@ -959,6 +959,27 @@ namespace TencentCloud
                     bool TagListHasBeenSet() const;
 
                     /**
+                     * 获取<p>金融围拢 ID 。</p>
+                     * @return CageId <p>金融围拢 ID 。</p>
+                     * 
+                     */
+                    std::string GetCageId() const;
+
+                    /**
+                     * 设置<p>金融围拢 ID 。</p>
+                     * @param _cageId <p>金融围拢 ID 。</p>
+                     * 
+                     */
+                    void SetCageId(const std::string& _cageId);
+
+                    /**
+                     * 判断参数 CageId 是否已赋值
+                     * @return CageId 是否已赋值
+                     * 
+                     */
+                    bool CageIdHasBeenSet() const;
+
+                    /**
                      * 获取<p>引擎类型</p>
                      * @return EngineType <p>引擎类型</p>
                      * 
@@ -1452,6 +1473,12 @@ namespace TencentCloud
                      */
                     std::vector<TagInfoItem> m_tagList;
                     bool m_tagListHasBeenSet;
+
+                    /**
+                     * <p>金融围拢 ID 。</p>
+                     */
+                    std::string m_cageId;
+                    bool m_cageIdHasBeenSet;
 
                     /**
                      * <p>引擎类型</p>

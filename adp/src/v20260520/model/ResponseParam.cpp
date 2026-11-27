@@ -72,8 +72,8 @@ CoreInternalOutcome ResponseParam::Deserialize(const rapidjson::Value &value)
         const rapidjson::Value &tmpValue = value["SubParams"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            ResponseParam item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<ResponseParam>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -136,7 +136,10 @@ void ResponseParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         for (auto itr = m_subParams.begin(); itr != m_subParams.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -199,12 +202,12 @@ bool ResponseParam::RenderModeHasBeenSet() const
     return m_renderModeHasBeenSet;
 }
 
-vector<ResponseParam> ResponseParam::GetSubParams() const
+vector<shared_ptr<ResponseParam>> ResponseParam::GetSubParams() const
 {
     return m_subParams;
 }
 
-void ResponseParam::SetSubParams(const vector<ResponseParam>& _subParams)
+void ResponseParam::SetSubParams(const vector<shared_ptr<ResponseParam>>& _subParams)
 {
     m_subParams = _subParams;
     m_subParamsHasBeenSet = true;

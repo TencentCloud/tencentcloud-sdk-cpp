@@ -149,8 +149,8 @@ CoreInternalOutcome CodeFolderNode::Deserialize(const rapidjson::Value &value)
         const rapidjson::Value &tmpValue = value["Children"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            CodeFolderNode item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<CodeFolderNode>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -269,7 +269,10 @@ void CodeFolderNode::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         for (auto itr = m_children.begin(); itr != m_children.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -444,12 +447,12 @@ bool CodeFolderNode::NodePermissionHasBeenSet() const
     return m_nodePermissionHasBeenSet;
 }
 
-vector<CodeFolderNode> CodeFolderNode::GetChildren() const
+vector<shared_ptr<CodeFolderNode>> CodeFolderNode::GetChildren() const
 {
     return m_children;
 }
 
-void CodeFolderNode::SetChildren(const vector<CodeFolderNode>& _children)
+void CodeFolderNode::SetChildren(const vector<shared_ptr<CodeFolderNode>>& _children)
 {
     m_children = _children;
     m_childrenHasBeenSet = true;

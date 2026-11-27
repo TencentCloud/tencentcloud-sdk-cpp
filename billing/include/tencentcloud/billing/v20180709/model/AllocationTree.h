@@ -20,11 +20,11 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <memory>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/billing/v20180709/model/AllocationTree.h>
 
 
 namespace TencentCloud
@@ -35,6 +35,7 @@ namespace TencentCloud
         {
             namespace Model
             {
+                class AllocationTree;
                 /**
                 * 分账目录树
                 */
@@ -115,14 +116,14 @@ namespace TencentCloud
                      * @return Children 子树
                      * 
                      */
-                    std::vector<AllocationTree> GetChildren() const;
+                    std::vector<std::shared_ptr<AllocationTree>> GetChildren() const;
 
                     /**
                      * 设置子树
                      * @param _children 子树
                      * 
                      */
-                    void SetChildren(const std::vector<AllocationTree>& _children);
+                    void SetChildren(const std::vector<std::shared_ptr<AllocationTree>>& _children);
 
                     /**
                      * 判断参数 Children 是否已赋值
@@ -154,7 +155,7 @@ namespace TencentCloud
                     /**
                      * 子树
                      */
-                    std::vector<AllocationTree> m_children;
+                    std::vector<std::shared_ptr<AllocationTree>> m_children;
                     bool m_childrenHasBeenSet;
 
                 };

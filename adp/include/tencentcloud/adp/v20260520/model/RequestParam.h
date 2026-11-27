@@ -20,11 +20,11 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <memory>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/adp/v20260520/model/RequestParam.h>
 
 
 namespace TencentCloud
@@ -35,6 +35,7 @@ namespace TencentCloud
         {
             namespace Model
             {
+                class RequestParam;
                 /**
                 * RequestParam
                 */
@@ -52,14 +53,14 @@ namespace TencentCloud
                      * @return AnyOf <p>AnyOf类型的参数</p>
                      * 
                      */
-                    std::vector<RequestParam> GetAnyOf() const;
+                    std::vector<std::shared_ptr<RequestParam>> GetAnyOf() const;
 
                     /**
                      * 设置<p>AnyOf类型的参数</p>
                      * @param _anyOf <p>AnyOf类型的参数</p>
                      * 
                      */
-                    void SetAnyOf(const std::vector<RequestParam>& _anyOf);
+                    void SetAnyOf(const std::vector<std::shared_ptr<RequestParam>>& _anyOf);
 
                     /**
                      * 判断参数 AnyOf 是否已赋值
@@ -178,14 +179,14 @@ namespace TencentCloud
                      * @return OneOf <p>OneOf类型的参数</p>
                      * 
                      */
-                    std::vector<RequestParam> GetOneOf() const;
+                    std::vector<std::shared_ptr<RequestParam>> GetOneOf() const;
 
                     /**
                      * 设置<p>OneOf类型的参数</p>
                      * @param _oneOf <p>OneOf类型的参数</p>
                      * 
                      */
-                    void SetOneOf(const std::vector<RequestParam>& _oneOf);
+                    void SetOneOf(const std::vector<std::shared_ptr<RequestParam>>& _oneOf);
 
                     /**
                      * 判断参数 OneOf 是否已赋值
@@ -199,14 +200,14 @@ namespace TencentCloud
                      * @return SubParams <p>子参数,ParamType 是OBJECT 或 ARRAY&lt;&gt;类型有用</p>
                      * 
                      */
-                    std::vector<RequestParam> GetSubParams() const;
+                    std::vector<std::shared_ptr<RequestParam>> GetSubParams() const;
 
                     /**
                      * 设置<p>子参数,ParamType 是OBJECT 或 ARRAY&lt;&gt;类型有用</p>
                      * @param _subParams <p>子参数,ParamType 是OBJECT 或 ARRAY&lt;&gt;类型有用</p>
                      * 
                      */
-                    void SetSubParams(const std::vector<RequestParam>& _subParams);
+                    void SetSubParams(const std::vector<std::shared_ptr<RequestParam>>& _subParams);
 
                     /**
                      * 判断参数 SubParams 是否已赋值
@@ -241,7 +242,7 @@ namespace TencentCloud
                     /**
                      * <p>AnyOf类型的参数</p>
                      */
-                    std::vector<RequestParam> m_anyOf;
+                    std::vector<std::shared_ptr<RequestParam>> m_anyOf;
                     bool m_anyOfHasBeenSet;
 
                     /**
@@ -277,13 +278,13 @@ namespace TencentCloud
                     /**
                      * <p>OneOf类型的参数</p>
                      */
-                    std::vector<RequestParam> m_oneOf;
+                    std::vector<std::shared_ptr<RequestParam>> m_oneOf;
                     bool m_oneOfHasBeenSet;
 
                     /**
                      * <p>子参数,ParamType 是OBJECT 或 ARRAY&lt;&gt;类型有用</p>
                      */
-                    std::vector<RequestParam> m_subParams;
+                    std::vector<std::shared_ptr<RequestParam>> m_subParams;
                     bool m_subParamsHasBeenSet;
 
                     /**

@@ -20,11 +20,11 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <memory>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/ocr/v20181119/model/Element.h>
 #include <tencentcloud/ocr/v20181119/model/Polygon.h>
 
 
@@ -36,6 +36,7 @@ namespace TencentCloud
         {
             namespace Model
             {
+                class Element;
                 /**
                 * 结果列表
                 */
@@ -55,7 +56,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::vector<Element> GetQuestion() const;
+                    std::vector<std::shared_ptr<Element>> GetQuestion() const;
 
                     /**
                      * 设置<p>题干</p>
@@ -64,7 +65,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetQuestion(const std::vector<Element>& _question);
+                    void SetQuestion(const std::vector<std::shared_ptr<Element>>& _question);
 
                     /**
                      * 判断参数 Question 是否已赋值
@@ -80,7 +81,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::vector<Element> GetOption() const;
+                    std::vector<std::shared_ptr<Element>> GetOption() const;
 
                     /**
                      * 设置<p>选项</p>
@@ -89,7 +90,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetOption(const std::vector<Element>& _option);
+                    void SetOption(const std::vector<std::shared_ptr<Element>>& _option);
 
                     /**
                      * 判断参数 Option 是否已赋值
@@ -105,7 +106,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::vector<Element> GetFigure() const;
+                    std::vector<std::shared_ptr<Element>> GetFigure() const;
 
                     /**
                      * 设置<p>插图</p>
@@ -114,7 +115,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetFigure(const std::vector<Element>& _figure);
+                    void SetFigure(const std::vector<std::shared_ptr<Element>>& _figure);
 
                     /**
                      * 判断参数 Figure 是否已赋值
@@ -130,7 +131,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::vector<Element> GetTable() const;
+                    std::vector<std::shared_ptr<Element>> GetTable() const;
 
                     /**
                      * 设置<p>表格</p>
@@ -139,7 +140,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetTable(const std::vector<Element>& _table);
+                    void SetTable(const std::vector<std::shared_ptr<Element>>& _table);
 
                     /**
                      * 判断参数 Table 是否已赋值
@@ -155,7 +156,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::vector<Element> GetAnswer() const;
+                    std::vector<std::shared_ptr<Element>> GetAnswer() const;
 
                     /**
                      * 设置<p>答案</p>
@@ -164,7 +165,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetAnswer(const std::vector<Element>& _answer);
+                    void SetAnswer(const std::vector<std::shared_ptr<Element>>& _answer);
 
                     /**
                      * 判断参数 Answer 是否已赋值
@@ -178,14 +179,14 @@ namespace TencentCloud
                      * @return Parse <p>解析</p>
                      * 
                      */
-                    std::vector<Element> GetParse() const;
+                    std::vector<std::shared_ptr<Element>> GetParse() const;
 
                     /**
                      * 设置<p>解析</p>
                      * @param _parse <p>解析</p>
                      * 
                      */
-                    void SetParse(const std::vector<Element>& _parse);
+                    void SetParse(const std::vector<std::shared_ptr<Element>>& _parse);
 
                     /**
                      * 判断参数 Parse 是否已赋值
@@ -372,41 +373,41 @@ namespace TencentCloud
                      * <p>题干</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<Element> m_question;
+                    std::vector<std::shared_ptr<Element>> m_question;
                     bool m_questionHasBeenSet;
 
                     /**
                      * <p>选项</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<Element> m_option;
+                    std::vector<std::shared_ptr<Element>> m_option;
                     bool m_optionHasBeenSet;
 
                     /**
                      * <p>插图</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<Element> m_figure;
+                    std::vector<std::shared_ptr<Element>> m_figure;
                     bool m_figureHasBeenSet;
 
                     /**
                      * <p>表格</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<Element> m_table;
+                    std::vector<std::shared_ptr<Element>> m_table;
                     bool m_tableHasBeenSet;
 
                     /**
                      * <p>答案</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<Element> m_answer;
+                    std::vector<std::shared_ptr<Element>> m_answer;
                     bool m_answerHasBeenSet;
 
                     /**
                      * <p>解析</p>
                      */
-                    std::vector<Element> m_parse;
+                    std::vector<std::shared_ptr<Element>> m_parse;
                     bool m_parseHasBeenSet;
 
                     /**

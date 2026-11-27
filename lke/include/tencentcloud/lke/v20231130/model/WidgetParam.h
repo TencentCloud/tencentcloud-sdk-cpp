@@ -20,11 +20,11 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <memory>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/lke/v20231130/model/WidgetParam.h>
 #include <tencentcloud/lke/v20231130/model/AgentInput.h>
 
 
@@ -36,6 +36,7 @@ namespace TencentCloud
         {
             namespace Model
             {
+                class WidgetParam;
                 /**
                 * Widget参数配置
                 */
@@ -95,14 +96,14 @@ namespace TencentCloud
                      * @return SubParams <p>子参数</p>
                      * 
                      */
-                    std::vector<WidgetParam> GetSubParams() const;
+                    std::vector<std::shared_ptr<WidgetParam>> GetSubParams() const;
 
                     /**
                      * 设置<p>子参数</p>
                      * @param _subParams <p>子参数</p>
                      * 
                      */
-                    void SetSubParams(const std::vector<WidgetParam>& _subParams);
+                    void SetSubParams(const std::vector<std::shared_ptr<WidgetParam>>& _subParams);
 
                     /**
                      * 判断参数 SubParams 是否已赋值
@@ -170,7 +171,7 @@ namespace TencentCloud
                     /**
                      * <p>子参数</p>
                      */
-                    std::vector<WidgetParam> m_subParams;
+                    std::vector<std::shared_ptr<WidgetParam>> m_subParams;
                     bool m_subParamsHasBeenSet;
 
                     /**

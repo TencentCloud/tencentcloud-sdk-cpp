@@ -512,7 +512,8 @@ CoreInternalOutcome JobConfig::Deserialize(const rapidjson::Value &value)
             return CoreInternalOutcome(Core::Error("response `JobConfig.JobConfigItem` is not object type").SetRequestId(requestId));
         }
 
-        CoreInternalOutcome outcome = m_jobConfigItem.Deserialize(value["JobConfigItem"]);
+        m_jobConfigItem = std::make_shared<JobConfig>();
+        CoreInternalOutcome outcome = m_jobConfigItem->Deserialize(value["JobConfigItem"]);
         if (!outcome.IsSuccess())
         {
             outcome.GetError().SetRequestId(requestId);
@@ -923,7 +924,10 @@ void JobConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "JobConfigItem";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_jobConfigItem.ToJsonObject(value[key.c_str()], allocator);
+        if (m_jobConfigItem)
+        {
+            m_jobConfigItem->ToJsonObject(value[key.c_str()], allocator);
+        }
     }
 
     if (m_checkpointTimeoutSecondHasBeenSet)
@@ -1585,12 +1589,12 @@ bool JobConfig::TaskManagerMemHasBeenSet() const
     return m_taskManagerMemHasBeenSet;
 }
 
-JobConfig JobConfig::GetJobConfigItem() const
+shared_ptr<JobConfig> JobConfig::GetJobConfigItem() const
 {
     return m_jobConfigItem;
 }
 
-void JobConfig::SetJobConfigItem(const JobConfig& _jobConfigItem)
+void JobConfig::SetJobConfigItem(const shared_ptr<JobConfig>& _jobConfigItem)
 {
     m_jobConfigItem = _jobConfigItem;
     m_jobConfigItemHasBeenSet = true;

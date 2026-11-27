@@ -15,6 +15,7 @@
  */
 
 #include <tencentcloud/ocr/v20181119/model/ResultList.h>
+#include <tencentcloud/ocr/v20181119/model/Element.h>
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ocr::V20181119::Model;
@@ -51,8 +52,8 @@ CoreInternalOutcome ResultList::Deserialize(const rapidjson::Value &value)
         const rapidjson::Value &tmpValue = value["Question"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            Element item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<Element>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -71,8 +72,8 @@ CoreInternalOutcome ResultList::Deserialize(const rapidjson::Value &value)
         const rapidjson::Value &tmpValue = value["Option"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            Element item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<Element>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -91,8 +92,8 @@ CoreInternalOutcome ResultList::Deserialize(const rapidjson::Value &value)
         const rapidjson::Value &tmpValue = value["Figure"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            Element item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<Element>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -111,8 +112,8 @@ CoreInternalOutcome ResultList::Deserialize(const rapidjson::Value &value)
         const rapidjson::Value &tmpValue = value["Table"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            Element item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<Element>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -131,8 +132,8 @@ CoreInternalOutcome ResultList::Deserialize(const rapidjson::Value &value)
         const rapidjson::Value &tmpValue = value["Answer"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            Element item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<Element>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -151,8 +152,8 @@ CoreInternalOutcome ResultList::Deserialize(const rapidjson::Value &value)
         const rapidjson::Value &tmpValue = value["Parse"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            Element item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<Element>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -277,7 +278,10 @@ void ResultList::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         for (auto itr = m_question.begin(); itr != m_question.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -292,7 +296,10 @@ void ResultList::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         for (auto itr = m_option.begin(); itr != m_option.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -307,7 +314,10 @@ void ResultList::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         for (auto itr = m_figure.begin(); itr != m_figure.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -322,7 +332,10 @@ void ResultList::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         for (auto itr = m_table.begin(); itr != m_table.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -337,7 +350,10 @@ void ResultList::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         for (auto itr = m_answer.begin(); itr != m_answer.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -352,7 +368,10 @@ void ResultList::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         for (auto itr = m_parse.begin(); itr != m_parse.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -440,12 +459,12 @@ void ResultList::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
 }
 
 
-vector<Element> ResultList::GetQuestion() const
+vector<shared_ptr<Element>> ResultList::GetQuestion() const
 {
     return m_question;
 }
 
-void ResultList::SetQuestion(const vector<Element>& _question)
+void ResultList::SetQuestion(const vector<shared_ptr<Element>>& _question)
 {
     m_question = _question;
     m_questionHasBeenSet = true;
@@ -456,12 +475,12 @@ bool ResultList::QuestionHasBeenSet() const
     return m_questionHasBeenSet;
 }
 
-vector<Element> ResultList::GetOption() const
+vector<shared_ptr<Element>> ResultList::GetOption() const
 {
     return m_option;
 }
 
-void ResultList::SetOption(const vector<Element>& _option)
+void ResultList::SetOption(const vector<shared_ptr<Element>>& _option)
 {
     m_option = _option;
     m_optionHasBeenSet = true;
@@ -472,12 +491,12 @@ bool ResultList::OptionHasBeenSet() const
     return m_optionHasBeenSet;
 }
 
-vector<Element> ResultList::GetFigure() const
+vector<shared_ptr<Element>> ResultList::GetFigure() const
 {
     return m_figure;
 }
 
-void ResultList::SetFigure(const vector<Element>& _figure)
+void ResultList::SetFigure(const vector<shared_ptr<Element>>& _figure)
 {
     m_figure = _figure;
     m_figureHasBeenSet = true;
@@ -488,12 +507,12 @@ bool ResultList::FigureHasBeenSet() const
     return m_figureHasBeenSet;
 }
 
-vector<Element> ResultList::GetTable() const
+vector<shared_ptr<Element>> ResultList::GetTable() const
 {
     return m_table;
 }
 
-void ResultList::SetTable(const vector<Element>& _table)
+void ResultList::SetTable(const vector<shared_ptr<Element>>& _table)
 {
     m_table = _table;
     m_tableHasBeenSet = true;
@@ -504,12 +523,12 @@ bool ResultList::TableHasBeenSet() const
     return m_tableHasBeenSet;
 }
 
-vector<Element> ResultList::GetAnswer() const
+vector<shared_ptr<Element>> ResultList::GetAnswer() const
 {
     return m_answer;
 }
 
-void ResultList::SetAnswer(const vector<Element>& _answer)
+void ResultList::SetAnswer(const vector<shared_ptr<Element>>& _answer)
 {
     m_answer = _answer;
     m_answerHasBeenSet = true;
@@ -520,12 +539,12 @@ bool ResultList::AnswerHasBeenSet() const
     return m_answerHasBeenSet;
 }
 
-vector<Element> ResultList::GetParse() const
+vector<shared_ptr<Element>> ResultList::GetParse() const
 {
     return m_parse;
 }
 
-void ResultList::SetParse(const vector<Element>& _parse)
+void ResultList::SetParse(const vector<shared_ptr<Element>>& _parse)
 {
     m_parse = _parse;
     m_parseHasBeenSet = true;

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取域名日志信息
-                     * @return LogList 域名日志信息
+                     * 获取<p>域名日志信息</p>
+                     * @return LogList <p>域名日志信息</p>
                      * 
                      */
                     std::vector<std::string> GetLogList() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool LogListHasBeenSet() const;
 
                     /**
-                     * 获取分页大小
-                     * @return PageSize 分页大小
+                     * 获取<p>分页大小</p>
+                     * @return PageSize <p>分页大小</p>
                      * 
                      */
                     uint64_t GetPageSize() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取日志总条数
-                     * @return TotalCount 日志总条数
+                     * 获取<p>日志总条数</p>
+                     * @return TotalCount <p>日志总条数</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -88,19 +88,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 域名日志信息
+                     * <p>域名日志信息</p>
                      */
                     std::vector<std::string> m_logList;
                     bool m_logListHasBeenSet;
 
                     /**
-                     * 分页大小
+                     * <p>分页大小</p>
                      */
                     uint64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 日志总条数
+                     * <p>日志总条数</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

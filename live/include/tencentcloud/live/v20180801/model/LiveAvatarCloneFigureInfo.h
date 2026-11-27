@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool FigureNameHasBeenSet() const;
 
                     /**
-                     * 获取<p>性别：男或者女</p>
-                     * @return Gender <p>性别：男或者女</p>
+                     * 获取<p>性别：男或者女或者UNKNOWN</p>
+                     * @return Gender <p>性别：男或者女或者UNKNOWN</p>
                      * 
                      */
                     std::string GetGender() const;
 
                     /**
-                     * 设置<p>性别：男或者女</p>
-                     * @param _gender <p>性别：男或者女</p>
+                     * 设置<p>性别：男或者女或者UNKNOWN</p>
+                     * @param _gender <p>性别：男或者女或者UNKNOWN</p>
                      * 
                      */
                     void SetGender(const std::string& _gender);
@@ -466,7 +466,7 @@ namespace TencentCloud
                     bool m_figureNameHasBeenSet;
 
                     /**
-                     * <p>性别：男或者女</p>
+                     * <p>性别：男或者女或者UNKNOWN</p>
                      */
                     std::string m_gender;
                     bool m_genderHasBeenSet;

@@ -85,8 +85,8 @@ CoreInternalOutcome SearchFilter::Deserialize(const rapidjson::Value &value)
         const rapidjson::Value &tmpValue = value["SearchFilterList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            SearchFilter item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<SearchFilter>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -152,7 +152,10 @@ void SearchFilter::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         for (auto itr = m_searchFilterList.begin(); itr != m_searchFilterList.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -223,12 +226,12 @@ bool SearchFilter::LogicOpHasBeenSet() const
     return m_logicOpHasBeenSet;
 }
 
-vector<SearchFilter> SearchFilter::GetSearchFilterList() const
+vector<shared_ptr<SearchFilter>> SearchFilter::GetSearchFilterList() const
 {
     return m_searchFilterList;
 }
 
-void SearchFilter::SetSearchFilterList(const vector<SearchFilter>& _searchFilterList)
+void SearchFilter::SetSearchFilterList(const vector<shared_ptr<SearchFilter>>& _searchFilterList)
 {
     m_searchFilterList = _searchFilterList;
     m_searchFilterListHasBeenSet = true;

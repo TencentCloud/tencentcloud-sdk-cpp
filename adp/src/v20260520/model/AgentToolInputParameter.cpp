@@ -86,8 +86,8 @@ CoreInternalOutcome AgentToolInputParameter::Deserialize(const rapidjson::Value 
         const rapidjson::Value &tmpValue = value["SubParameterList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            AgentToolInputParameter item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<AgentToolInputParameter>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -116,8 +116,8 @@ CoreInternalOutcome AgentToolInputParameter::Deserialize(const rapidjson::Value 
         const rapidjson::Value &tmpValue = value["OneOfList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            AgentToolInputParameter item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<AgentToolInputParameter>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -136,8 +136,8 @@ CoreInternalOutcome AgentToolInputParameter::Deserialize(const rapidjson::Value 
         const rapidjson::Value &tmpValue = value["AnyOfList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            AgentToolInputParameter item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<AgentToolInputParameter>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -215,7 +215,10 @@ void AgentToolInputParameter::ToJsonObject(rapidjson::Value &value, rapidjson::D
         for (auto itr = m_subParameterList.begin(); itr != m_subParameterList.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -238,7 +241,10 @@ void AgentToolInputParameter::ToJsonObject(rapidjson::Value &value, rapidjson::D
         for (auto itr = m_oneOfList.begin(); itr != m_oneOfList.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -253,7 +259,10 @@ void AgentToolInputParameter::ToJsonObject(rapidjson::Value &value, rapidjson::D
         for (auto itr = m_anyOfList.begin(); itr != m_anyOfList.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -333,12 +342,12 @@ bool AgentToolInputParameter::IsRequiredHasBeenSet() const
     return m_isRequiredHasBeenSet;
 }
 
-vector<AgentToolInputParameter> AgentToolInputParameter::GetSubParameterList() const
+vector<shared_ptr<AgentToolInputParameter>> AgentToolInputParameter::GetSubParameterList() const
 {
     return m_subParameterList;
 }
 
-void AgentToolInputParameter::SetSubParameterList(const vector<AgentToolInputParameter>& _subParameterList)
+void AgentToolInputParameter::SetSubParameterList(const vector<shared_ptr<AgentToolInputParameter>>& _subParameterList)
 {
     m_subParameterList = _subParameterList;
     m_subParameterListHasBeenSet = true;
@@ -365,12 +374,12 @@ bool AgentToolInputParameter::IsHiddenHasBeenSet() const
     return m_isHiddenHasBeenSet;
 }
 
-vector<AgentToolInputParameter> AgentToolInputParameter::GetOneOfList() const
+vector<shared_ptr<AgentToolInputParameter>> AgentToolInputParameter::GetOneOfList() const
 {
     return m_oneOfList;
 }
 
-void AgentToolInputParameter::SetOneOfList(const vector<AgentToolInputParameter>& _oneOfList)
+void AgentToolInputParameter::SetOneOfList(const vector<shared_ptr<AgentToolInputParameter>>& _oneOfList)
 {
     m_oneOfList = _oneOfList;
     m_oneOfListHasBeenSet = true;
@@ -381,12 +390,12 @@ bool AgentToolInputParameter::OneOfListHasBeenSet() const
     return m_oneOfListHasBeenSet;
 }
 
-vector<AgentToolInputParameter> AgentToolInputParameter::GetAnyOfList() const
+vector<shared_ptr<AgentToolInputParameter>> AgentToolInputParameter::GetAnyOfList() const
 {
     return m_anyOfList;
 }
 
-void AgentToolInputParameter::SetAnyOfList(const vector<AgentToolInputParameter>& _anyOfList)
+void AgentToolInputParameter::SetAnyOfList(const vector<shared_ptr<AgentToolInputParameter>>& _anyOfList)
 {
     m_anyOfList = _anyOfList;
     m_anyOfListHasBeenSet = true;

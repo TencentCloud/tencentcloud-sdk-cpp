@@ -15,6 +15,7 @@
  */
 
 #include <tencentcloud/cls/v20201016/model/ValueInfo.h>
+#include <tencentcloud/cls/v20201016/model/KeyValueInfo.h>
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cls::V20201016::Model;
@@ -104,8 +105,8 @@ CoreInternalOutcome ValueInfo::Deserialize(const rapidjson::Value &value)
         const rapidjson::Value &tmpValue = value["ChildNode"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            KeyValueInfo item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<KeyValueInfo>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -182,7 +183,10 @@ void ValueInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         for (auto itr = m_childNode.begin(); itr != m_childNode.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -285,12 +289,12 @@ bool ValueInfo::OpenIndexForChildOnlyHasBeenSet() const
     return m_openIndexForChildOnlyHasBeenSet;
 }
 
-vector<KeyValueInfo> ValueInfo::GetChildNode() const
+vector<shared_ptr<KeyValueInfo>> ValueInfo::GetChildNode() const
 {
     return m_childNode;
 }
 
-void ValueInfo::SetChildNode(const vector<KeyValueInfo>& _childNode)
+void ValueInfo::SetChildNode(const vector<shared_ptr<KeyValueInfo>>& _childNode)
 {
     m_childNode = _childNode;
     m_childNodeHasBeenSet = true;

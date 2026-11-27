@@ -44,19 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取要绑定证书的播放域名/状态 信息列表。
-如果CloudCertId和证书公钥私钥对均不传，且域名列表已有绑定规则，只批量更新域名https规则的启用状态，并把未上传至腾讯云ssl的已有自有证书上传。
-                     * @return DomainInfos 要绑定证书的播放域名/状态 信息列表。
-如果CloudCertId和证书公钥私钥对均不传，且域名列表已有绑定规则，只批量更新域名https规则的启用状态，并把未上传至腾讯云ssl的已有自有证书上传。
+                     * 获取<p>要绑定证书的播放域名/状态 信息列表。<br>如果CloudCertId和证书公钥私钥对均不传，且域名列表已有绑定规则，只批量更新域名https规则的启用状态，并把未上传至腾讯云ssl的已有自有证书上传。</p>
+                     * @return DomainInfos <p>要绑定证书的播放域名/状态 信息列表。<br>如果CloudCertId和证书公钥私钥对均不传，且域名列表已有绑定规则，只批量更新域名https规则的启用状态，并把未上传至腾讯云ssl的已有自有证书上传。</p>
                      * 
                      */
                     std::vector<LiveCertDomainInfo> GetDomainInfos() const;
 
                     /**
-                     * 设置要绑定证书的播放域名/状态 信息列表。
-如果CloudCertId和证书公钥私钥对均不传，且域名列表已有绑定规则，只批量更新域名https规则的启用状态，并把未上传至腾讯云ssl的已有自有证书上传。
-                     * @param _domainInfos 要绑定证书的播放域名/状态 信息列表。
-如果CloudCertId和证书公钥私钥对均不传，且域名列表已有绑定规则，只批量更新域名https规则的启用状态，并把未上传至腾讯云ssl的已有自有证书上传。
+                     * 设置<p>要绑定证书的播放域名/状态 信息列表。<br>如果CloudCertId和证书公钥私钥对均不传，且域名列表已有绑定规则，只批量更新域名https规则的启用状态，并把未上传至腾讯云ssl的已有自有证书上传。</p>
+                     * @param _domainInfos <p>要绑定证书的播放域名/状态 信息列表。<br>如果CloudCertId和证书公钥私钥对均不传，且域名列表已有绑定规则，只批量更新域名https规则的启用状态，并把未上传至腾讯云ssl的已有自有证书上传。</p>
                      * 
                      */
                     void SetDomainInfos(const std::vector<LiveCertDomainInfo>& _domainInfos);
@@ -69,19 +65,15 @@ namespace TencentCloud
                     bool DomainInfosHasBeenSet() const;
 
                     /**
-                     * 获取腾讯云ssl的证书Id。
-见 https://cloud.tencent.com/document/api/400/41665
-                     * @return CloudCertId 腾讯云ssl的证书Id。
-见 https://cloud.tencent.com/document/api/400/41665
+                     * 获取<p>腾讯云ssl的证书Id。<br>见 https://cloud.tencent.com/document/api/400/41665</p>
+                     * @return CloudCertId <p>腾讯云ssl的证书Id。<br>见 https://cloud.tencent.com/document/api/400/41665</p>
                      * 
                      */
                     std::string GetCloudCertId() const;
 
                     /**
-                     * 设置腾讯云ssl的证书Id。
-见 https://cloud.tencent.com/document/api/400/41665
-                     * @param _cloudCertId 腾讯云ssl的证书Id。
-见 https://cloud.tencent.com/document/api/400/41665
+                     * 设置<p>腾讯云ssl的证书Id。<br>见 https://cloud.tencent.com/document/api/400/41665</p>
+                     * @param _cloudCertId <p>腾讯云ssl的证书Id。<br>见 https://cloud.tencent.com/document/api/400/41665</p>
                      * 
                      */
                     void SetCloudCertId(const std::string& _cloudCertId);
@@ -94,19 +86,15 @@ namespace TencentCloud
                     bool CloudCertIdHasBeenSet() const;
 
                     /**
-                     * 获取证书公钥。
-CloudCertId和公钥私钥对二选一，若CloudCertId将会舍弃公钥和私钥参数，否则将自动先把公钥私钥对上传至ssl新建证书，并使用上传成功后返回的CloudCertId。
-                     * @return CertificatePublicKey 证书公钥。
-CloudCertId和公钥私钥对二选一，若CloudCertId将会舍弃公钥和私钥参数，否则将自动先把公钥私钥对上传至ssl新建证书，并使用上传成功后返回的CloudCertId。
+                     * 获取<p>证书公钥。<br>CloudCertId和公钥私钥对二选一，若CloudCertId将会舍弃公钥和私钥参数，否则将自动先把公钥私钥对上传至ssl新建证书，并使用上传成功后返回的CloudCertId。</p>
+                     * @return CertificatePublicKey <p>证书公钥。<br>CloudCertId和公钥私钥对二选一，若CloudCertId将会舍弃公钥和私钥参数，否则将自动先把公钥私钥对上传至ssl新建证书，并使用上传成功后返回的CloudCertId。</p>
                      * 
                      */
                     std::string GetCertificatePublicKey() const;
 
                     /**
-                     * 设置证书公钥。
-CloudCertId和公钥私钥对二选一，若CloudCertId将会舍弃公钥和私钥参数，否则将自动先把公钥私钥对上传至ssl新建证书，并使用上传成功后返回的CloudCertId。
-                     * @param _certificatePublicKey 证书公钥。
-CloudCertId和公钥私钥对二选一，若CloudCertId将会舍弃公钥和私钥参数，否则将自动先把公钥私钥对上传至ssl新建证书，并使用上传成功后返回的CloudCertId。
+                     * 设置<p>证书公钥。<br>CloudCertId和公钥私钥对二选一，若CloudCertId将会舍弃公钥和私钥参数，否则将自动先把公钥私钥对上传至ssl新建证书，并使用上传成功后返回的CloudCertId。</p>
+                     * @param _certificatePublicKey <p>证书公钥。<br>CloudCertId和公钥私钥对二选一，若CloudCertId将会舍弃公钥和私钥参数，否则将自动先把公钥私钥对上传至ssl新建证书，并使用上传成功后返回的CloudCertId。</p>
                      * 
                      */
                     void SetCertificatePublicKey(const std::string& _certificatePublicKey);
@@ -119,19 +107,15 @@ CloudCertId和公钥私钥对二选一，若CloudCertId将会舍弃公钥和私�
                     bool CertificatePublicKeyHasBeenSet() const;
 
                     /**
-                     * 获取证书私钥。
-CloudCertId和公钥私钥对二选一，若传CloudCertId将会舍弃公钥和私钥参数，否则将自动先把公钥私钥对上传至ssl新建证书，并使用上传成功后返回的CloudCertId。
-                     * @return CertificatePrivateKey 证书私钥。
-CloudCertId和公钥私钥对二选一，若传CloudCertId将会舍弃公钥和私钥参数，否则将自动先把公钥私钥对上传至ssl新建证书，并使用上传成功后返回的CloudCertId。
+                     * 获取<p>证书私钥。<br>CloudCertId和公钥私钥对二选一，若传CloudCertId将会舍弃公钥和私钥参数，否则将自动先把公钥私钥对上传至ssl新建证书，并使用上传成功后返回的CloudCertId。</p>
+                     * @return CertificatePrivateKey <p>证书私钥。<br>CloudCertId和公钥私钥对二选一，若传CloudCertId将会舍弃公钥和私钥参数，否则将自动先把公钥私钥对上传至ssl新建证书，并使用上传成功后返回的CloudCertId。</p>
                      * 
                      */
                     std::string GetCertificatePrivateKey() const;
 
                     /**
-                     * 设置证书私钥。
-CloudCertId和公钥私钥对二选一，若传CloudCertId将会舍弃公钥和私钥参数，否则将自动先把公钥私钥对上传至ssl新建证书，并使用上传成功后返回的CloudCertId。
-                     * @param _certificatePrivateKey 证书私钥。
-CloudCertId和公钥私钥对二选一，若传CloudCertId将会舍弃公钥和私钥参数，否则将自动先把公钥私钥对上传至ssl新建证书，并使用上传成功后返回的CloudCertId。
+                     * 设置<p>证书私钥。<br>CloudCertId和公钥私钥对二选一，若传CloudCertId将会舍弃公钥和私钥参数，否则将自动先把公钥私钥对上传至ssl新建证书，并使用上传成功后返回的CloudCertId。</p>
+                     * @param _certificatePrivateKey <p>证书私钥。<br>CloudCertId和公钥私钥对二选一，若传CloudCertId将会舍弃公钥和私钥参数，否则将自动先把公钥私钥对上传至ssl新建证书，并使用上传成功后返回的CloudCertId。</p>
                      * 
                      */
                     void SetCertificatePrivateKey(const std::string& _certificatePrivateKey);
@@ -144,15 +128,15 @@ CloudCertId和公钥私钥对二选一，若传CloudCertId将会舍弃公钥和�
                     bool CertificatePrivateKeyHasBeenSet() const;
 
                     /**
-                     * 获取上传至ssl证书中心的备注信息，只有新建证书时有效。传CloudCertId时会忽略。
-                     * @return CertificateAlias 上传至ssl证书中心的备注信息，只有新建证书时有效。传CloudCertId时会忽略。
+                     * 获取<p>上传至ssl证书中心的备注信息，只有新建证书时有效。传CloudCertId时会忽略。</p>
+                     * @return CertificateAlias <p>上传至ssl证书中心的备注信息，只有新建证书时有效。传CloudCertId时会忽略。</p>
                      * 
                      */
                     std::string GetCertificateAlias() const;
 
                     /**
-                     * 设置上传至ssl证书中心的备注信息，只有新建证书时有效。传CloudCertId时会忽略。
-                     * @param _certificateAlias 上传至ssl证书中心的备注信息，只有新建证书时有效。传CloudCertId时会忽略。
+                     * 设置<p>上传至ssl证书中心的备注信息，只有新建证书时有效。传CloudCertId时会忽略。</p>
+                     * @param _certificateAlias <p>上传至ssl证书中心的备注信息，只有新建证书时有效。传CloudCertId时会忽略。</p>
                      * 
                      */
                     void SetCertificateAlias(const std::string& _certificateAlias);
@@ -167,35 +151,31 @@ CloudCertId和公钥私钥对二选一，若传CloudCertId将会舍弃公钥和�
                 private:
 
                     /**
-                     * 要绑定证书的播放域名/状态 信息列表。
-如果CloudCertId和证书公钥私钥对均不传，且域名列表已有绑定规则，只批量更新域名https规则的启用状态，并把未上传至腾讯云ssl的已有自有证书上传。
+                     * <p>要绑定证书的播放域名/状态 信息列表。<br>如果CloudCertId和证书公钥私钥对均不传，且域名列表已有绑定规则，只批量更新域名https规则的启用状态，并把未上传至腾讯云ssl的已有自有证书上传。</p>
                      */
                     std::vector<LiveCertDomainInfo> m_domainInfos;
                     bool m_domainInfosHasBeenSet;
 
                     /**
-                     * 腾讯云ssl的证书Id。
-见 https://cloud.tencent.com/document/api/400/41665
+                     * <p>腾讯云ssl的证书Id。<br>见 https://cloud.tencent.com/document/api/400/41665</p>
                      */
                     std::string m_cloudCertId;
                     bool m_cloudCertIdHasBeenSet;
 
                     /**
-                     * 证书公钥。
-CloudCertId和公钥私钥对二选一，若CloudCertId将会舍弃公钥和私钥参数，否则将自动先把公钥私钥对上传至ssl新建证书，并使用上传成功后返回的CloudCertId。
+                     * <p>证书公钥。<br>CloudCertId和公钥私钥对二选一，若CloudCertId将会舍弃公钥和私钥参数，否则将自动先把公钥私钥对上传至ssl新建证书，并使用上传成功后返回的CloudCertId。</p>
                      */
                     std::string m_certificatePublicKey;
                     bool m_certificatePublicKeyHasBeenSet;
 
                     /**
-                     * 证书私钥。
-CloudCertId和公钥私钥对二选一，若传CloudCertId将会舍弃公钥和私钥参数，否则将自动先把公钥私钥对上传至ssl新建证书，并使用上传成功后返回的CloudCertId。
+                     * <p>证书私钥。<br>CloudCertId和公钥私钥对二选一，若传CloudCertId将会舍弃公钥和私钥参数，否则将自动先把公钥私钥对上传至ssl新建证书，并使用上传成功后返回的CloudCertId。</p>
                      */
                     std::string m_certificatePrivateKey;
                     bool m_certificatePrivateKeyHasBeenSet;
 
                     /**
-                     * 上传至ssl证书中心的备注信息，只有新建证书时有效。传CloudCertId时会忽略。
+                     * <p>上传至ssl证书中心的备注信息，只有新建证书时有效。传CloudCertId时会忽略。</p>
                      */
                     std::string m_certificateAlias;
                     bool m_certificateAliasHasBeenSet;

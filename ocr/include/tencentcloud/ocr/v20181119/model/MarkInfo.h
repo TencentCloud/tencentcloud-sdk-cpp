@@ -20,12 +20,12 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <memory>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ocr/v20181119/model/AnswerInfo.h>
-#include <tencentcloud/ocr/v20181119/model/MarkInfo.h>
 #include <tencentcloud/ocr/v20181119/model/Positions.h>
 
 
@@ -37,6 +37,7 @@ namespace TencentCloud
         {
             namespace Model
             {
+                class MarkInfo;
                 /**
                 * 整张试卷所有题目批改信息
                 */
@@ -96,14 +97,14 @@ namespace TencentCloud
                      * @return MarkInfos <p>嵌套题目结构（如果有多层嵌套则会返回子题信息，如果没有嵌套题目则返回空）</p>
                      * 
                      */
-                    std::vector<MarkInfo> GetMarkInfos() const;
+                    std::vector<std::shared_ptr<MarkInfo>> GetMarkInfos() const;
 
                     /**
                      * 设置<p>嵌套题目结构（如果有多层嵌套则会返回子题信息，如果没有嵌套题目则返回空）</p>
                      * @param _markInfos <p>嵌套题目结构（如果有多层嵌套则会返回子题信息，如果没有嵌套题目则返回空）</p>
                      * 
                      */
-                    void SetMarkInfos(const std::vector<MarkInfo>& _markInfos);
+                    void SetMarkInfos(const std::vector<std::shared_ptr<MarkInfo>>& _markInfos);
 
                     /**
                      * 判断参数 MarkInfos 是否已赋值
@@ -234,7 +235,7 @@ namespace TencentCloud
                     /**
                      * <p>嵌套题目结构（如果有多层嵌套则会返回子题信息，如果没有嵌套题目则返回空）</p>
                      */
-                    std::vector<MarkInfo> m_markInfos;
+                    std::vector<std::shared_ptr<MarkInfo>> m_markInfos;
                     bool m_markInfosHasBeenSet;
 
                     /**

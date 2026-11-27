@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志名称。
-                     * @return LogName 日志名称。
+                     * 获取<p>日志名称。</p>
+                     * @return LogName <p>日志名称。</p>
                      * 
                      */
                     std::string GetLogName() const;
 
                     /**
-                     * 设置日志名称。
-                     * @param _logName 日志名称。
+                     * 设置<p>日志名称。</p>
+                     * @param _logName <p>日志名称。</p>
                      * 
                      */
                     void SetLogName(const std::string& _logName);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool LogNameHasBeenSet() const;
 
                     /**
-                     * 获取日志 URL。
-                     * @return LogUrl 日志 URL。
+                     * 获取<p>日志 URL。</p>
+                     * @return LogUrl <p>日志 URL。</p>
                      * 
                      */
                     std::string GetLogUrl() const;
 
                     /**
-                     * 设置日志 URL。
-                     * @param _logUrl 日志 URL。
+                     * 设置<p>日志 URL。</p>
+                     * @param _logUrl <p>日志 URL。</p>
                      * 
                      */
                     void SetLogUrl(const std::string& _logUrl);
@@ -89,19 +89,15 @@ namespace TencentCloud
                     bool LogUrlHasBeenSet() const;
 
                     /**
-                     * 获取日志生成时间。
-注：此字段为北京时间（UTC+8时区）。
-                     * @return LogTime 日志生成时间。
-注：此字段为北京时间（UTC+8时区）。
+                     * 获取<p>日志生成时间。<br>注：此字段为北京时间（UTC+8时区）。</p>
+                     * @return LogTime <p>日志生成时间。<br>注：此字段为北京时间（UTC+8时区）。</p>
                      * 
                      */
                     std::string GetLogTime() const;
 
                     /**
-                     * 设置日志生成时间。
-注：此字段为北京时间（UTC+8时区）。
-                     * @param _logTime 日志生成时间。
-注：此字段为北京时间（UTC+8时区）。
+                     * 设置<p>日志生成时间。<br>注：此字段为北京时间（UTC+8时区）。</p>
+                     * @param _logTime <p>日志生成时间。<br>注：此字段为北京时间（UTC+8时区）。</p>
                      * 
                      */
                     void SetLogTime(const std::string& _logTime);
@@ -114,15 +110,15 @@ namespace TencentCloud
                     bool LogTimeHasBeenSet() const;
 
                     /**
-                     * 获取文件大小。
-                     * @return FileSize 文件大小。
+                     * 获取<p>文件大小，单位字节。</p>
+                     * @return FileSize <p>文件大小，单位字节。</p>
                      * 
                      */
                     int64_t GetFileSize() const;
 
                     /**
-                     * 设置文件大小。
-                     * @param _fileSize 文件大小。
+                     * 设置<p>文件大小，单位字节。</p>
+                     * @param _fileSize <p>文件大小，单位字节。</p>
                      * 
                      */
                     void SetFileSize(const int64_t& _fileSize);
@@ -137,26 +133,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 日志名称。
+                     * <p>日志名称。</p>
                      */
                     std::string m_logName;
                     bool m_logNameHasBeenSet;
 
                     /**
-                     * 日志 URL。
+                     * <p>日志 URL。</p>
                      */
                     std::string m_logUrl;
                     bool m_logUrlHasBeenSet;
 
                     /**
-                     * 日志生成时间。
-注：此字段为北京时间（UTC+8时区）。
+                     * <p>日志生成时间。<br>注：此字段为北京时间（UTC+8时区）。</p>
                      */
                     std::string m_logTime;
                     bool m_logTimeHasBeenSet;
 
                     /**
-                     * 文件大小。
+                     * <p>文件大小，单位字节。</p>
                      */
                     int64_t m_fileSize;
                     bool m_fileSizeHasBeenSet;

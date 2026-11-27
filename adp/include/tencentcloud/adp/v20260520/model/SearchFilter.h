@@ -20,11 +20,11 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <memory>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/adp/v20260520/model/SearchFilter.h>
 
 
 namespace TencentCloud
@@ -35,6 +35,7 @@ namespace TencentCloud
         {
             namespace Model
             {
+                class SearchFilter;
                 /**
                 * 检索过滤
                 */
@@ -136,14 +137,14 @@ namespace TencentCloud
                      * @return SearchFilterList <p>嵌套检索过滤</p>
                      * 
                      */
-                    std::vector<SearchFilter> GetSearchFilterList() const;
+                    std::vector<std::shared_ptr<SearchFilter>> GetSearchFilterList() const;
 
                     /**
                      * 设置<p>嵌套检索过滤</p>
                      * @param _searchFilterList <p>嵌套检索过滤</p>
                      * 
                      */
-                    void SetSearchFilterList(const std::vector<SearchFilter>& _searchFilterList);
+                    void SetSearchFilterList(const std::vector<std::shared_ptr<SearchFilter>>& _searchFilterList);
 
                     /**
                      * 判断参数 SearchFilterList 是否已赋值
@@ -181,7 +182,7 @@ namespace TencentCloud
                     /**
                      * <p>嵌套检索过滤</p>
                      */
-                    std::vector<SearchFilter> m_searchFilterList;
+                    std::vector<std::shared_ptr<SearchFilter>> m_searchFilterList;
                     bool m_searchFilterListHasBeenSet;
 
                 };

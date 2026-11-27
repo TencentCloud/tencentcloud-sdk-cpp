@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
-                     * @return BeginTime 目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
+                     * 获取<p>目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2026-11，EndTime 为 2026-11，查询结果是 2026 年 11 月数据。格式为yyyy-mm，不能早于2021-01</p>
+                     * @return BeginTime <p>目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2026-11，EndTime 为 2026-11，查询结果是 2026 年 11 月数据。格式为yyyy-mm，不能早于2021-01</p>
                      * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
-                     * 设置目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
-                     * @param _beginTime 目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
+                     * 设置<p>目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2026-11，EndTime 为 2026-11，查询结果是 2026 年 11 月数据。格式为yyyy-mm，不能早于2021-01</p>
+                     * @param _beginTime <p>目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2026-11，EndTime 为 2026-11，查询结果是 2026 年 11 月数据。格式为yyyy-mm，不能早于2021-01</p>
                      * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool BeginTimeHasBeenSet() const;
 
                     /**
-                     * 获取目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
-                     * @return EndTime 目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
+                     * 获取<p>目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2026-11，EndTime 为 2026-11，查询结果是 2026 年 11 月数据。格式为yyyy-mm，不能早于2021-01</p>
+                     * @return EndTime <p>目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2026-11，EndTime 为 2026-11，查询结果是 2026 年 11 月数据。格式为yyyy-mm，不能早于2021-01</p>
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
-                     * @param _endTime 目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
+                     * 设置<p>目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2026-11，EndTime 为 2026-11，查询结果是 2026 年 11 月数据。格式为yyyy-mm，不能早于2021-01</p>
+                     * @param _endTime <p>目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2026-11，EndTime 为 2026-11，查询结果是 2026 年 11 月数据。格式为yyyy-mm，不能早于2021-01</p>
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取查询账单数据的用户UIN
-                     * @return PayerUin 查询账单数据的用户UIN
+                     * 获取<p>查询账单数据的用户UIN</p>
+                     * @return PayerUin <p>查询账单数据的用户UIN</p>
                      * 
                      */
                     std::string GetPayerUin() const;
 
                     /**
-                     * 设置查询账单数据的用户UIN
-                     * @param _payerUin 查询账单数据的用户UIN
+                     * 设置<p>查询账单数据的用户UIN</p>
+                     * @param _payerUin <p>查询账单数据的用户UIN</p>
                      * 
                      */
                     void SetPayerUin(const std::string& _payerUin);
@@ -106,35 +106,15 @@ namespace TencentCloud
                     bool PayerUinHasBeenSet() const;
 
                     /**
-                     * 获取款项类别，与L0账单上的汇总类别对应。
-此参数自账单3.0（即2021-05）之后开始生效。
-枚举值：
-consume-消费
-refund-退款
-adjustment-调账
-                     * @return PayType 款项类别，与L0账单上的汇总类别对应。
-此参数自账单3.0（即2021-05）之后开始生效。
-枚举值：
-consume-消费
-refund-退款
-adjustment-调账
+                     * 获取<p>款项类别，与L0账单上的汇总类别对应。 此参数自账单3.0（即2021-01）之后开始生效。</p><p>枚举值：</p><ul><li>consume： 消费</li><li>refund： 退款</li><li>adjustment： 调账</li></ul>
+                     * @return PayType <p>款项类别，与L0账单上的汇总类别对应。 此参数自账单3.0（即2021-01）之后开始生效。</p><p>枚举值：</p><ul><li>consume： 消费</li><li>refund： 退款</li><li>adjustment： 调账</li></ul>
                      * 
                      */
                     std::string GetPayType() const;
 
                     /**
-                     * 设置款项类别，与L0账单上的汇总类别对应。
-此参数自账单3.0（即2021-05）之后开始生效。
-枚举值：
-consume-消费
-refund-退款
-adjustment-调账
-                     * @param _payType 款项类别，与L0账单上的汇总类别对应。
-此参数自账单3.0（即2021-05）之后开始生效。
-枚举值：
-consume-消费
-refund-退款
-adjustment-调账
+                     * 设置<p>款项类别，与L0账单上的汇总类别对应。 此参数自账单3.0（即2021-01）之后开始生效。</p><p>枚举值：</p><ul><li>consume： 消费</li><li>refund： 退款</li><li>adjustment： 调账</li></ul>
+                     * @param _payType <p>款项类别，与L0账单上的汇总类别对应。 此参数自账单3.0（即2021-01）之后开始生效。</p><p>枚举值：</p><ul><li>consume： 消费</li><li>refund： 退款</li><li>adjustment： 调账</li></ul>
                      * 
                      */
                     void SetPayType(const std::string& _payType);
@@ -149,30 +129,25 @@ adjustment-调账
                 private:
 
                     /**
-                     * 目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
+                     * <p>目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2026-11，EndTime 为 2026-11，查询结果是 2026 年 11 月数据。格式为yyyy-mm，不能早于2021-01</p>
                      */
                     std::string m_beginTime;
                     bool m_beginTimeHasBeenSet;
 
                     /**
-                     * 目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
+                     * <p>目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2026-11，EndTime 为 2026-11，查询结果是 2026 年 11 月数据。格式为yyyy-mm，不能早于2021-01</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 查询账单数据的用户UIN
+                     * <p>查询账单数据的用户UIN</p>
                      */
                     std::string m_payerUin;
                     bool m_payerUinHasBeenSet;
 
                     /**
-                     * 款项类别，与L0账单上的汇总类别对应。
-此参数自账单3.0（即2021-05）之后开始生效。
-枚举值：
-consume-消费
-refund-退款
-adjustment-调账
+                     * <p>款项类别，与L0账单上的汇总类别对应。 此参数自账单3.0（即2021-01）之后开始生效。</p><p>枚举值：</p><ul><li>consume： 消费</li><li>refund： 退款</li><li>adjustment： 调账</li></ul>
                      */
                     std::string m_payType;
                     bool m_payTypeHasBeenSet;

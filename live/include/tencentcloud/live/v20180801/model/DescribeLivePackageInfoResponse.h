@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取套餐包信息。
-                     * @return LivePackageInfoList 套餐包信息。
+                     * 获取<p>套餐包信息。</p>
+                     * @return LivePackageInfoList <p>套餐包信息。</p>
                      * 
                      */
                     std::vector<LivePackageInfo> GetLivePackageInfoList() const;
@@ -59,26 +59,8 @@ namespace TencentCloud
                     bool LivePackageInfoListHasBeenSet() const;
 
                     /**
-                     * 获取套餐包当前计费方式:
--1: 无计费方式或获取失败
-0: 无计费方式
-201: 月结带宽
-202: 月结流量
-203: 日结带宽
-204: 日结流量
-205: 日结时长
-206: 月结时长
-304: 日结流量。
-                     * @return PackageBillMode 套餐包当前计费方式:
--1: 无计费方式或获取失败
-0: 无计费方式
-201: 月结带宽
-202: 月结流量
-203: 日结带宽
-204: 日结流量
-205: 日结时长
-206: 月结时长
-304: 日结流量。
+                     * 获取<p>套餐包当前计费方式:<br>-1: 无计费方式或获取失败<br>0: 无计费方式<br>201: 月结带宽<br>202: 月结流量<br>203: 日结带宽<br>204: 日结流量<br>205: 日结时长<br>206: 月结时长<br>304: 日结流量。</p>
+                     * @return PackageBillMode <p>套餐包当前计费方式:<br>-1: 无计费方式或获取失败<br>0: 无计费方式<br>201: 月结带宽<br>202: 月结流量<br>203: 日结带宽<br>204: 日结流量<br>205: 日结时长<br>206: 月结时长<br>304: 日结流量。</p>
                      * 
                      */
                     int64_t GetPackageBillMode() const;
@@ -91,9 +73,9 @@ namespace TencentCloud
                     bool PackageBillModeHasBeenSet() const;
 
                     /**
-                     * 获取总页数。
+                     * 获取<p>总页数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TotalPage 总页数。
+                     * @return TotalPage <p>总页数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -107,9 +89,9 @@ namespace TencentCloud
                     bool TotalPageHasBeenSet() const;
 
                     /**
-                     * 获取数据总条数。
+                     * 获取<p>数据总条数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TotalNum 数据总条数。
+                     * @return TotalNum <p>数据总条数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -123,9 +105,9 @@ namespace TencentCloud
                     bool TotalNumHasBeenSet() const;
 
                     /**
-                     * 获取当前页数。
+                     * 获取<p>当前页数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PageNum 当前页数。
+                     * @return PageNum <p>当前页数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -139,9 +121,9 @@ namespace TencentCloud
                     bool PageNumHasBeenSet() const;
 
                     /**
-                     * 获取当前每页数量。
+                     * 获取<p>当前每页数量。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PageSize 当前每页数量。
+                     * @return PageSize <p>当前每页数量。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -155,16 +137,8 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取当请求参数 PackageType = 0 时生效，逗号分隔，从第一个到最后一个分别表示：
-标准直播，中国大陆（境内全地区）计费方式。
-标准直播，国际/港澳台（境外多地区）计费方式。
-快直播，中国大陆（境内全地区）计费方式。
-快直播，国际/港澳台（境外多地区）计费方式。
-                     * @return FluxPackageBillMode 当请求参数 PackageType = 0 时生效，逗号分隔，从第一个到最后一个分别表示：
-标准直播，中国大陆（境内全地区）计费方式。
-标准直播，国际/港澳台（境外多地区）计费方式。
-快直播，中国大陆（境内全地区）计费方式。
-快直播，国际/港澳台（境外多地区）计费方式。
+                     * 获取<p>当请求参数 PackageType = 0 时生效，逗号分隔，从第一个到最后一个分别表示：<br>标准直播，中国大陆（境内全地区）计费方式。<br>标准直播，国际/港澳台（境外多地区）计费方式。<br>快直播，中国大陆（境内全地区）计费方式。<br>快直播，国际/港澳台（境外多地区）计费方式。</p>
+                     * @return FluxPackageBillMode <p>当请求参数 PackageType = 0 时生效，逗号分隔，从第一个到最后一个分别表示：<br>标准直播，中国大陆（境内全地区）计费方式。<br>标准直播，国际/港澳台（境外多地区）计费方式。<br>快直播，中国大陆（境内全地区）计费方式。<br>快直播，国际/港澳台（境外多地区）计费方式。</p>
                      * 
                      */
                     std::string GetFluxPackageBillMode() const;
@@ -179,60 +153,47 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 套餐包信息。
+                     * <p>套餐包信息。</p>
                      */
                     std::vector<LivePackageInfo> m_livePackageInfoList;
                     bool m_livePackageInfoListHasBeenSet;
 
                     /**
-                     * 套餐包当前计费方式:
--1: 无计费方式或获取失败
-0: 无计费方式
-201: 月结带宽
-202: 月结流量
-203: 日结带宽
-204: 日结流量
-205: 日结时长
-206: 月结时长
-304: 日结流量。
+                     * <p>套餐包当前计费方式:<br>-1: 无计费方式或获取失败<br>0: 无计费方式<br>201: 月结带宽<br>202: 月结流量<br>203: 日结带宽<br>204: 日结流量<br>205: 日结时长<br>206: 月结时长<br>304: 日结流量。</p>
                      */
                     int64_t m_packageBillMode;
                     bool m_packageBillModeHasBeenSet;
 
                     /**
-                     * 总页数。
+                     * <p>总页数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalPage;
                     bool m_totalPageHasBeenSet;
 
                     /**
-                     * 数据总条数。
+                     * <p>数据总条数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalNum;
                     bool m_totalNumHasBeenSet;
 
                     /**
-                     * 当前页数。
+                     * <p>当前页数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_pageNum;
                     bool m_pageNumHasBeenSet;
 
                     /**
-                     * 当前每页数量。
+                     * <p>当前每页数量。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 当请求参数 PackageType = 0 时生效，逗号分隔，从第一个到最后一个分别表示：
-标准直播，中国大陆（境内全地区）计费方式。
-标准直播，国际/港澳台（境外多地区）计费方式。
-快直播，中国大陆（境内全地区）计费方式。
-快直播，国际/港澳台（境外多地区）计费方式。
+                     * <p>当请求参数 PackageType = 0 时生效，逗号分隔，从第一个到最后一个分别表示：<br>标准直播，中国大陆（境内全地区）计费方式。<br>标准直播，国际/港澳台（境外多地区）计费方式。<br>快直播，中国大陆（境内全地区）计费方式。<br>快直播，国际/港澳台（境外多地区）计费方式。</p>
                      */
                     std::string m_fluxPackageBillMode;
                     bool m_fluxPackageBillModeHasBeenSet;

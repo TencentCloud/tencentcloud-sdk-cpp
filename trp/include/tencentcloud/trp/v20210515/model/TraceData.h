@@ -20,13 +20,13 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <memory>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/trp/v20210515/model/ChainData.h>
 #include <tencentcloud/trp/v20210515/model/PhaseData.h>
-#include <tencentcloud/trp/v20210515/model/TraceItem.h>
 
 
 namespace TencentCloud
@@ -37,6 +37,7 @@ namespace TencentCloud
         {
             namespace Model
             {
+                class TraceItem;
                 /**
                 * 溯源数据
                 */
@@ -348,14 +349,14 @@ namespace TencentCloud
                      * @return TraceItems 无
                      * 
                      */
-                    std::vector<TraceItem> GetTraceItems() const;
+                    std::vector<std::shared_ptr<TraceItem>> GetTraceItems() const;
 
                     /**
                      * 设置无
                      * @param _traceItems 无
                      * 
                      */
-                    void SetTraceItems(const std::vector<TraceItem>& _traceItems);
+                    void SetTraceItems(const std::vector<std::shared_ptr<TraceItem>>& _traceItems);
 
                     /**
                      * 判断参数 TraceItems 是否已赋值
@@ -453,7 +454,7 @@ namespace TencentCloud
                     /**
                      * 无
                      */
-                    std::vector<TraceItem> m_traceItems;
+                    std::vector<std::shared_ptr<TraceItem>> m_traceItems;
                     bool m_traceItemsHasBeenSet;
 
                 };

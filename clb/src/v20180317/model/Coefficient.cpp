@@ -28,7 +28,12 @@ Coefficient::Coefficient() :
     m_inputImageCoefficientHasBeenSet(false),
     m_inputVideoSecondCoefficientHasBeenSet(false),
     m_outputVideoSecondCoefficientHasBeenSet(false),
-    m_outputImageCoefficientHasBeenSet(false)
+    m_outputImageCoefficientHasBeenSet(false),
+    m_inputAudioTokenCoefficientHasBeenSet(false),
+    m_inputCachedAudioTokenCoefficientHasBeenSet(false),
+    m_inputImageTokenCoefficientHasBeenSet(false),
+    m_inputCachedImageTokenCoefficientHasBeenSet(false),
+    m_outputAudioTokenCoefficientHasBeenSet(false)
 {
 }
 
@@ -117,6 +122,56 @@ CoreInternalOutcome Coefficient::Deserialize(const rapidjson::Value &value)
         m_outputImageCoefficientHasBeenSet = true;
     }
 
+    if (value.HasMember("InputAudioTokenCoefficient") && !value["InputAudioTokenCoefficient"].IsNull())
+    {
+        if (!value["InputAudioTokenCoefficient"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `Coefficient.InputAudioTokenCoefficient` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_inputAudioTokenCoefficient = value["InputAudioTokenCoefficient"].GetDouble();
+        m_inputAudioTokenCoefficientHasBeenSet = true;
+    }
+
+    if (value.HasMember("InputCachedAudioTokenCoefficient") && !value["InputCachedAudioTokenCoefficient"].IsNull())
+    {
+        if (!value["InputCachedAudioTokenCoefficient"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `Coefficient.InputCachedAudioTokenCoefficient` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_inputCachedAudioTokenCoefficient = value["InputCachedAudioTokenCoefficient"].GetDouble();
+        m_inputCachedAudioTokenCoefficientHasBeenSet = true;
+    }
+
+    if (value.HasMember("InputImageTokenCoefficient") && !value["InputImageTokenCoefficient"].IsNull())
+    {
+        if (!value["InputImageTokenCoefficient"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `Coefficient.InputImageTokenCoefficient` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_inputImageTokenCoefficient = value["InputImageTokenCoefficient"].GetDouble();
+        m_inputImageTokenCoefficientHasBeenSet = true;
+    }
+
+    if (value.HasMember("InputCachedImageTokenCoefficient") && !value["InputCachedImageTokenCoefficient"].IsNull())
+    {
+        if (!value["InputCachedImageTokenCoefficient"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `Coefficient.InputCachedImageTokenCoefficient` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_inputCachedImageTokenCoefficient = value["InputCachedImageTokenCoefficient"].GetDouble();
+        m_inputCachedImageTokenCoefficientHasBeenSet = true;
+    }
+
+    if (value.HasMember("OutputAudioTokenCoefficient") && !value["OutputAudioTokenCoefficient"].IsNull())
+    {
+        if (!value["OutputAudioTokenCoefficient"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `Coefficient.OutputAudioTokenCoefficient` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_outputAudioTokenCoefficient = value["OutputAudioTokenCoefficient"].GetDouble();
+        m_outputAudioTokenCoefficientHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +241,46 @@ void Coefficient::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "OutputImageCoefficient";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_outputImageCoefficient, allocator);
+    }
+
+    if (m_inputAudioTokenCoefficientHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InputAudioTokenCoefficient";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_inputAudioTokenCoefficient, allocator);
+    }
+
+    if (m_inputCachedAudioTokenCoefficientHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InputCachedAudioTokenCoefficient";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_inputCachedAudioTokenCoefficient, allocator);
+    }
+
+    if (m_inputImageTokenCoefficientHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InputImageTokenCoefficient";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_inputImageTokenCoefficient, allocator);
+    }
+
+    if (m_inputCachedImageTokenCoefficientHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InputCachedImageTokenCoefficient";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_inputCachedImageTokenCoefficient, allocator);
+    }
+
+    if (m_outputAudioTokenCoefficientHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputAudioTokenCoefficient";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_outputAudioTokenCoefficient, allocator);
     }
 
 }
@@ -317,5 +412,85 @@ void Coefficient::SetOutputImageCoefficient(const double& _outputImageCoefficien
 bool Coefficient::OutputImageCoefficientHasBeenSet() const
 {
     return m_outputImageCoefficientHasBeenSet;
+}
+
+double Coefficient::GetInputAudioTokenCoefficient() const
+{
+    return m_inputAudioTokenCoefficient;
+}
+
+void Coefficient::SetInputAudioTokenCoefficient(const double& _inputAudioTokenCoefficient)
+{
+    m_inputAudioTokenCoefficient = _inputAudioTokenCoefficient;
+    m_inputAudioTokenCoefficientHasBeenSet = true;
+}
+
+bool Coefficient::InputAudioTokenCoefficientHasBeenSet() const
+{
+    return m_inputAudioTokenCoefficientHasBeenSet;
+}
+
+double Coefficient::GetInputCachedAudioTokenCoefficient() const
+{
+    return m_inputCachedAudioTokenCoefficient;
+}
+
+void Coefficient::SetInputCachedAudioTokenCoefficient(const double& _inputCachedAudioTokenCoefficient)
+{
+    m_inputCachedAudioTokenCoefficient = _inputCachedAudioTokenCoefficient;
+    m_inputCachedAudioTokenCoefficientHasBeenSet = true;
+}
+
+bool Coefficient::InputCachedAudioTokenCoefficientHasBeenSet() const
+{
+    return m_inputCachedAudioTokenCoefficientHasBeenSet;
+}
+
+double Coefficient::GetInputImageTokenCoefficient() const
+{
+    return m_inputImageTokenCoefficient;
+}
+
+void Coefficient::SetInputImageTokenCoefficient(const double& _inputImageTokenCoefficient)
+{
+    m_inputImageTokenCoefficient = _inputImageTokenCoefficient;
+    m_inputImageTokenCoefficientHasBeenSet = true;
+}
+
+bool Coefficient::InputImageTokenCoefficientHasBeenSet() const
+{
+    return m_inputImageTokenCoefficientHasBeenSet;
+}
+
+double Coefficient::GetInputCachedImageTokenCoefficient() const
+{
+    return m_inputCachedImageTokenCoefficient;
+}
+
+void Coefficient::SetInputCachedImageTokenCoefficient(const double& _inputCachedImageTokenCoefficient)
+{
+    m_inputCachedImageTokenCoefficient = _inputCachedImageTokenCoefficient;
+    m_inputCachedImageTokenCoefficientHasBeenSet = true;
+}
+
+bool Coefficient::InputCachedImageTokenCoefficientHasBeenSet() const
+{
+    return m_inputCachedImageTokenCoefficientHasBeenSet;
+}
+
+double Coefficient::GetOutputAudioTokenCoefficient() const
+{
+    return m_outputAudioTokenCoefficient;
+}
+
+void Coefficient::SetOutputAudioTokenCoefficient(const double& _outputAudioTokenCoefficient)
+{
+    m_outputAudioTokenCoefficient = _outputAudioTokenCoefficient;
+    m_outputAudioTokenCoefficientHasBeenSet = true;
+}
+
+bool Coefficient::OutputAudioTokenCoefficientHasBeenSet() const
+{
+    return m_outputAudioTokenCoefficientHasBeenSet;
 }
 

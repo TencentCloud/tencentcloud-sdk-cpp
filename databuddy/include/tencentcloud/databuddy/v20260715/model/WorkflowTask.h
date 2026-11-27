@@ -20,6 +20,7 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <memory>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
@@ -31,7 +32,6 @@
 #include <tencentcloud/databuddy/v20260715/model/MonitorMetricBrief.h>
 #include <tencentcloud/databuddy/v20260715/model/TaskRetryStrategy.h>
 #include <tencentcloud/databuddy/v20260715/model/AdvancedDependencyConfig.h>
-#include <tencentcloud/databuddy/v20260715/model/WorkflowTask.h>
 
 
 namespace TencentCloud
@@ -42,6 +42,7 @@ namespace TencentCloud
         {
             namespace Model
             {
+                class WorkflowTask;
                 /**
                 * 工作流任务信息。 注意：本结构同时用于入参（CreateWorkflow / UpdateWorkflow）与出参（GetWorkflow）， 其中 CreateTime / UpdateTime / CreateUserUin 为系统生成字段，仅在出参中有值， 入参传值不生效（服务端忽略且不报错）。
                 */
@@ -411,7 +412,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    WorkflowTask GetInnerTask() const;
+                    std::shared_ptr<WorkflowTask> GetInnerTask() const;
 
                     /**
                      * 设置<p>内嵌任务（FOR_EACH任务的子任务）</p>
@@ -420,7 +421,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetInnerTask(const WorkflowTask& _innerTask);
+                    void SetInnerTask(const std::shared_ptr<WorkflowTask>& _innerTask);
 
                     /**
                      * 判断参数 InnerTask 是否已赋值
@@ -608,7 +609,7 @@ namespace TencentCloud
                      * <p>内嵌任务（FOR_EACH任务的子任务）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    WorkflowTask m_innerTask;
+                    std::shared_ptr<WorkflowTask> m_innerTask;
                     bool m_innerTaskHasBeenSet;
 
                     /**

@@ -148,8 +148,8 @@ CoreInternalOutcome Permission::Deserialize(const rapidjson::Value &value)
         const rapidjson::Value &tmpValue = value["Children"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            Permission item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<Permission>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -258,7 +258,10 @@ void Permission::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         for (auto itr = m_children.begin(); itr != m_children.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -425,12 +428,12 @@ bool Permission::IsCheckedHasBeenSet() const
     return m_isCheckedHasBeenSet;
 }
 
-vector<Permission> Permission::GetChildren() const
+vector<shared_ptr<Permission>> Permission::GetChildren() const
 {
     return m_children;
 }
 
-void Permission::SetChildren(const vector<Permission>& _children)
+void Permission::SetChildren(const vector<shared_ptr<Permission>>& _children)
 {
     m_children = _children;
     m_childrenHasBeenSet = true;

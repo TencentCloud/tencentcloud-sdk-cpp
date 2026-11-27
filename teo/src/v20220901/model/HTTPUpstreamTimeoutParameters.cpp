@@ -21,7 +21,9 @@ using namespace TencentCloud::Teo::V20220901::Model;
 using namespace std;
 
 HTTPUpstreamTimeoutParameters::HTTPUpstreamTimeoutParameters() :
-    m_responseTimeoutHasBeenSet(false)
+    m_responseTimeoutHasBeenSet(false),
+    m_tCPConnectTimeoutHasBeenSet(false),
+    m_keepaliveTimeoutHasBeenSet(false)
 {
 }
 
@@ -40,6 +42,26 @@ CoreInternalOutcome HTTPUpstreamTimeoutParameters::Deserialize(const rapidjson::
         m_responseTimeoutHasBeenSet = true;
     }
 
+    if (value.HasMember("TCPConnectTimeout") && !value["TCPConnectTimeout"].IsNull())
+    {
+        if (!value["TCPConnectTimeout"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `HTTPUpstreamTimeoutParameters.TCPConnectTimeout` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_tCPConnectTimeout = value["TCPConnectTimeout"].GetInt64();
+        m_tCPConnectTimeoutHasBeenSet = true;
+    }
+
+    if (value.HasMember("KeepaliveTimeout") && !value["KeepaliveTimeout"].IsNull())
+    {
+        if (!value["KeepaliveTimeout"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `HTTPUpstreamTimeoutParameters.KeepaliveTimeout` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_keepaliveTimeout = value["KeepaliveTimeout"].GetInt64();
+        m_keepaliveTimeoutHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +75,22 @@ void HTTPUpstreamTimeoutParameters::ToJsonObject(rapidjson::Value &value, rapidj
         string key = "ResponseTimeout";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_responseTimeout, allocator);
+    }
+
+    if (m_tCPConnectTimeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TCPConnectTimeout";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tCPConnectTimeout, allocator);
+    }
+
+    if (m_keepaliveTimeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeepaliveTimeout";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_keepaliveTimeout, allocator);
     }
 
 }
@@ -72,5 +110,37 @@ void HTTPUpstreamTimeoutParameters::SetResponseTimeout(const int64_t& _responseT
 bool HTTPUpstreamTimeoutParameters::ResponseTimeoutHasBeenSet() const
 {
     return m_responseTimeoutHasBeenSet;
+}
+
+int64_t HTTPUpstreamTimeoutParameters::GetTCPConnectTimeout() const
+{
+    return m_tCPConnectTimeout;
+}
+
+void HTTPUpstreamTimeoutParameters::SetTCPConnectTimeout(const int64_t& _tCPConnectTimeout)
+{
+    m_tCPConnectTimeout = _tCPConnectTimeout;
+    m_tCPConnectTimeoutHasBeenSet = true;
+}
+
+bool HTTPUpstreamTimeoutParameters::TCPConnectTimeoutHasBeenSet() const
+{
+    return m_tCPConnectTimeoutHasBeenSet;
+}
+
+int64_t HTTPUpstreamTimeoutParameters::GetKeepaliveTimeout() const
+{
+    return m_keepaliveTimeout;
+}
+
+void HTTPUpstreamTimeoutParameters::SetKeepaliveTimeout(const int64_t& _keepaliveTimeout)
+{
+    m_keepaliveTimeout = _keepaliveTimeout;
+    m_keepaliveTimeoutHasBeenSet = true;
+}
+
+bool HTTPUpstreamTimeoutParameters::KeepaliveTimeoutHasBeenSet() const
+{
+    return m_keepaliveTimeoutHasBeenSet;
 }
 

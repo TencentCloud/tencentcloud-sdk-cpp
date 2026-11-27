@@ -149,8 +149,8 @@ CoreInternalOutcome FolderDsDto::Deserialize(const rapidjson::Value &value)
         const rapidjson::Value &tmpValue = value["Folders"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            FolderDsDto item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<FolderDsDto>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -278,7 +278,10 @@ void FolderDsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         for (auto itr = m_folders.begin(); itr != m_folders.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -445,12 +448,12 @@ bool FolderDsDto::TotalFoldersHasBeenSet() const
     return m_totalFoldersHasBeenSet;
 }
 
-vector<FolderDsDto> FolderDsDto::GetFolders() const
+vector<shared_ptr<FolderDsDto>> FolderDsDto::GetFolders() const
 {
     return m_folders;
 }
 
-void FolderDsDto::SetFolders(const vector<FolderDsDto>& _folders)
+void FolderDsDto::SetFolders(const vector<shared_ptr<FolderDsDto>>& _folders)
 {
     m_folders = _folders;
     m_foldersHasBeenSet = true;

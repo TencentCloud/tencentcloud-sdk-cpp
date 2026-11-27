@@ -23,7 +23,8 @@ using namespace TencentCloud::Cfw::V20190904::Model;
 using namespace std;
 
 ModifyEnterpriseSecurityDispatchStatusRequest::ModifyEnterpriseSecurityDispatchStatusRequest() :
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_bindFallbackOnceHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string ModifyEnterpriseSecurityDispatchStatusRequest::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_bindFallbackOnceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BindFallbackOnce";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_bindFallbackOnce, allocator);
     }
 
 
@@ -64,6 +73,22 @@ void ModifyEnterpriseSecurityDispatchStatusRequest::SetStatus(const uint64_t& _s
 bool ModifyEnterpriseSecurityDispatchStatusRequest::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+int64_t ModifyEnterpriseSecurityDispatchStatusRequest::GetBindFallbackOnce() const
+{
+    return m_bindFallbackOnce;
+}
+
+void ModifyEnterpriseSecurityDispatchStatusRequest::SetBindFallbackOnce(const int64_t& _bindFallbackOnce)
+{
+    m_bindFallbackOnce = _bindFallbackOnce;
+    m_bindFallbackOnceHasBeenSet = true;
+}
+
+bool ModifyEnterpriseSecurityDispatchStatusRequest::BindFallbackOnceHasBeenSet() const
+{
+    return m_bindFallbackOnceHasBeenSet;
 }
 
 

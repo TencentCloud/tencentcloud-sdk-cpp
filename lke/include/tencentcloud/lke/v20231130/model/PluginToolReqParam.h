@@ -20,11 +20,11 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <memory>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/lke/v20231130/model/PluginToolReqParam.h>
 
 
 namespace TencentCloud
@@ -35,6 +35,7 @@ namespace TencentCloud
         {
             namespace Model
             {
+                class PluginToolReqParam;
                 /**
                 * 插件参数请求结构
                 */
@@ -52,14 +53,14 @@ namespace TencentCloud
                      * @return AnyOf AnyOf类型参数
                      * 
                      */
-                    std::vector<PluginToolReqParam> GetAnyOf() const;
+                    std::vector<std::shared_ptr<PluginToolReqParam>> GetAnyOf() const;
 
                     /**
                      * 设置AnyOf类型参数
                      * @param _anyOf AnyOf类型参数
                      * 
                      */
-                    void SetAnyOf(const std::vector<PluginToolReqParam>& _anyOf);
+                    void SetAnyOf(const std::vector<std::shared_ptr<PluginToolReqParam>>& _anyOf);
 
                     /**
                      * 判断参数 AnyOf 是否已赋值
@@ -178,14 +179,14 @@ namespace TencentCloud
                      * @return OneOf OneOf类型参数
                      * 
                      */
-                    std::vector<PluginToolReqParam> GetOneOf() const;
+                    std::vector<std::shared_ptr<PluginToolReqParam>> GetOneOf() const;
 
                     /**
                      * 设置OneOf类型参数
                      * @param _oneOf OneOf类型参数
                      * 
                      */
-                    void SetOneOf(const std::vector<PluginToolReqParam>& _oneOf);
+                    void SetOneOf(const std::vector<std::shared_ptr<PluginToolReqParam>>& _oneOf);
 
                     /**
                      * 判断参数 OneOf 是否已赋值
@@ -199,14 +200,14 @@ namespace TencentCloud
                      * @return SubParams 子参数,ParamType 是OBJECT 或 ARRAY<>类型有用
                      * 
                      */
-                    std::vector<PluginToolReqParam> GetSubParams() const;
+                    std::vector<std::shared_ptr<PluginToolReqParam>> GetSubParams() const;
 
                     /**
                      * 设置子参数,ParamType 是OBJECT 或 ARRAY<>类型有用
                      * @param _subParams 子参数,ParamType 是OBJECT 或 ARRAY<>类型有用
                      * 
                      */
-                    void SetSubParams(const std::vector<PluginToolReqParam>& _subParams);
+                    void SetSubParams(const std::vector<std::shared_ptr<PluginToolReqParam>>& _subParams);
 
                     /**
                      * 判断参数 SubParams 是否已赋值
@@ -241,7 +242,7 @@ namespace TencentCloud
                     /**
                      * AnyOf类型参数
                      */
-                    std::vector<PluginToolReqParam> m_anyOf;
+                    std::vector<std::shared_ptr<PluginToolReqParam>> m_anyOf;
                     bool m_anyOfHasBeenSet;
 
                     /**
@@ -277,13 +278,13 @@ namespace TencentCloud
                     /**
                      * OneOf类型参数
                      */
-                    std::vector<PluginToolReqParam> m_oneOf;
+                    std::vector<std::shared_ptr<PluginToolReqParam>> m_oneOf;
                     bool m_oneOfHasBeenSet;
 
                     /**
                      * 子参数,ParamType 是OBJECT 或 ARRAY<>类型有用
                      */
-                    std::vector<PluginToolReqParam> m_subParams;
+                    std::vector<std::shared_ptr<PluginToolReqParam>> m_subParams;
                     bool m_subParamsHasBeenSet;
 
                     /**

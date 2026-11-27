@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取账单文件是否准备就绪，0文件生成中，1文件已生成
-                     * @return Ready 账单文件是否准备就绪，0文件生成中，1文件已生成
+                     * 获取<p>账单文件是否准备就绪，0文件生成中，1文件已生成</p>
+                     * @return Ready <p>账单文件是否准备就绪，0文件生成中，1文件已生成</p>
                      * 
                      */
                     int64_t GetReady() const;
@@ -58,9 +58,9 @@ namespace TencentCloud
                     bool ReadyHasBeenSet() const;
 
                     /**
-                     * 获取账单文件下载链接，有效时长为一天
+                     * 获取<p>账单文件下载链接，有效时长为一天</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DownloadUrl 账单文件下载链接，有效时长为一天
+                     * @return DownloadUrl <p>账单文件下载链接，有效时长为一天</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -76,13 +76,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 账单文件是否准备就绪，0文件生成中，1文件已生成
+                     * <p>账单文件是否准备就绪，0文件生成中，1文件已生成</p>
                      */
                     int64_t m_ready;
                     bool m_readyHasBeenSet;
 
                     /**
-                     * 账单文件下载链接，有效时长为一天
+                     * <p>账单文件下载链接，有效时长为一天</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_downloadUrl;

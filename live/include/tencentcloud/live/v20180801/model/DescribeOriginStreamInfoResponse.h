@@ -225,9 +225,9 @@ namespace TencentCloud
                     bool PassThroughHttpHeaderHasBeenSet() const;
 
                     /**
-                     * 获取<p>是否透传相应，可取值：on、off。<br>当原站播放协议为 hls 时，传递该字段才会生效。</p>
+                     * 获取<p>是否透传响应，可取值：on、off。当原站播放协议为 hls 时，传递该字段才会生效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PassThroughResponse <p>是否透传相应，可取值：on、off。<br>当原站播放协议为 hls 时，传递该字段才会生效。</p>
+                     * @return PassThroughResponse <p>是否透传响应，可取值：on、off。当原站播放协议为 hls 时，传递该字段才会生效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -653,7 +653,7 @@ namespace TencentCloud
                     bool m_passThroughHttpHeaderHasBeenSet;
 
                     /**
-                     * <p>是否透传相应，可取值：on、off。<br>当原站播放协议为 hls 时，传递该字段才会生效。</p>
+                     * <p>是否透传响应，可取值：on、off。当原站播放协议为 hls 时，传递该字段才会生效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_passThroughResponse;

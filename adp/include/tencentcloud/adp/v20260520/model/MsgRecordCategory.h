@@ -20,11 +20,11 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <memory>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/adp/v20260520/model/MsgRecordCategory.h>
 #include <tencentcloud/adp/v20260520/model/CategoryPermission.h>
 
 
@@ -36,6 +36,7 @@ namespace TencentCloud
         {
             namespace Model
             {
+                class MsgRecordCategory;
                 /**
                 * MsgRecordCategory
                 */
@@ -74,14 +75,14 @@ namespace TencentCloud
                      * @return Children <p>子分类列表，树形嵌套</p>
                      * 
                      */
-                    std::vector<MsgRecordCategory> GetChildren() const;
+                    std::vector<std::shared_ptr<MsgRecordCategory>> GetChildren() const;
 
                     /**
                      * 设置<p>子分类列表，树形嵌套</p>
                      * @param _children <p>子分类列表，树形嵌套</p>
                      * 
                      */
-                    void SetChildren(const std::vector<MsgRecordCategory>& _children);
+                    void SetChildren(const std::vector<std::shared_ptr<MsgRecordCategory>>& _children);
 
                     /**
                      * 判断参数 Children 是否已赋值
@@ -164,7 +165,7 @@ namespace TencentCloud
                     /**
                      * <p>子分类列表，树形嵌套</p>
                      */
-                    std::vector<MsgRecordCategory> m_children;
+                    std::vector<std::shared_ptr<MsgRecordCategory>> m_children;
                     bool m_childrenHasBeenSet;
 
                     /**

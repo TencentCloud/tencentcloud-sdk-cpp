@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取<p>月份，格式为yyyy-mm。不能早于开通账单2.0的月份</p>
-                     * @return Month <p>月份，格式为yyyy-mm。不能早于开通账单2.0的月份</p>
+                     * 获取<p>月份，格式为yyyy-mm，不能早于2021-01  示例值：2026-11</p>
+                     * @return Month <p>月份，格式为yyyy-mm，不能早于2021-01  示例值：2026-11</p>
                      * 
                      */
                     std::string GetMonth() const;
 
                     /**
-                     * 设置<p>月份，格式为yyyy-mm。不能早于开通账单2.0的月份</p>
-                     * @param _month <p>月份，格式为yyyy-mm。不能早于开通账单2.0的月份</p>
+                     * 设置<p>月份，格式为yyyy-mm，不能早于2021-01  示例值：2026-11</p>
+                     * @param _month <p>月份，格式为yyyy-mm，不能早于2021-01  示例值：2026-11</p>
                      * 
                      */
                     void SetMonth(const std::string& _month);
@@ -309,7 +309,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * <p>月份，格式为yyyy-mm。不能早于开通账单2.0的月份</p>
+                     * <p>月份，格式为yyyy-mm，不能早于2021-01  示例值：2026-11</p>
                      */
                     std::string m_month;
                     bool m_monthHasBeenSet;

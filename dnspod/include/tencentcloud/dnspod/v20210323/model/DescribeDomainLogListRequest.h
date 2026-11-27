@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取域名
-                     * @return Domain 域名
+                     * 获取<p>域名</p>
+                     * @return Domain <p>域名</p>
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置域名
-                     * @param _domain 域名
+                     * 设置<p>域名</p>
+                     * @param _domain <p>域名</p>
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
-                     * @return DomainId 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
+                     * 获取<p>域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId</p>
+                     * @return DomainId <p>域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId</p>
                      * 
                      */
                     uint64_t GetDomainId() const;
 
                     /**
-                     * 设置域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
-                     * @param _domainId 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
+                     * 设置<p>域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId</p>
+                     * @param _domainId <p>域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId</p>
                      * 
                      */
                     void SetDomainId(const uint64_t& _domainId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool DomainIdHasBeenSet() const;
 
                     /**
-                     * 获取记录开始的偏移，第一条记录为 0，依次类推，默认为0
-                     * @return Offset 记录开始的偏移，第一条记录为 0，依次类推，默认为0
+                     * 获取<p>记录开始的偏移，第一条记录为 0，依次类推，默认为0</p>
+                     * @return Offset <p>记录开始的偏移，第一条记录为 0，依次类推，默认为0</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置记录开始的偏移，第一条记录为 0，依次类推，默认为0
-                     * @param _offset 记录开始的偏移，第一条记录为 0，依次类推，默认为0
+                     * 设置<p>记录开始的偏移，第一条记录为 0，依次类推，默认为0</p>
+                     * @param _offset <p>记录开始的偏移，第一条记录为 0，依次类推，默认为0</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取共要获取的日志条数，比如获取20条，则为20，默认为500条，单次最多获取500条。
-                     * @return Limit 共要获取的日志条数，比如获取20条，则为20，默认为500条，单次最多获取500条。
+                     * 获取<p>共要获取的日志条数，比如获取20条，则为20，默认为500条，单次最多获取500条。</p>
+                     * @return Limit <p>共要获取的日志条数，比如获取20条，则为20，默认为500条，单次最多获取500条。</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置共要获取的日志条数，比如获取20条，则为20，默认为500条，单次最多获取500条。
-                     * @param _limit 共要获取的日志条数，比如获取20条，则为20，默认为500条，单次最多获取500条。
+                     * 设置<p>共要获取的日志条数，比如获取20条，则为20，默认为500条，单次最多获取500条。</p>
+                     * @param _limit <p>共要获取的日志条数，比如获取20条，则为20，默认为500条，单次最多获取500条。</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -129,25 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 域名
+                     * <p>域名</p>
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
+                     * <p>域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId</p>
                      */
                     uint64_t m_domainId;
                     bool m_domainIdHasBeenSet;
 
                     /**
-                     * 记录开始的偏移，第一条记录为 0，依次类推，默认为0
+                     * <p>记录开始的偏移，第一条记录为 0，依次类推，默认为0</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 共要获取的日志条数，比如获取20条，则为20，默认为500条，单次最多获取500条。
+                     * <p>共要获取的日志条数，比如获取20条，则为20，默认为500条，单次最多获取500条。</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

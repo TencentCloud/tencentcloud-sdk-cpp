@@ -15,6 +15,8 @@
  */
 
 #include <tencentcloud/wedata/v20210820/model/TaskDsDTO.h>
+#include <tencentcloud/wedata/v20210820/model/DependencyConfigDsDTO.h>
+#include <tencentcloud/wedata/v20210820/model/TaskCycleLinkDTO.h>
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Wedata::V20210820::Model;
@@ -709,8 +711,8 @@ CoreInternalOutcome TaskDsDTO::Deserialize(const rapidjson::Value &value)
         const rapidjson::Value &tmpValue = value["Tasks"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            TaskDsDTO item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<TaskDsDTO>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -779,8 +781,8 @@ CoreInternalOutcome TaskDsDTO::Deserialize(const rapidjson::Value &value)
         const rapidjson::Value &tmpValue = value["DependencyConfigList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            DependencyConfigDsDTO item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<DependencyConfigDsDTO>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -1179,8 +1181,8 @@ CoreInternalOutcome TaskDsDTO::Deserialize(const rapidjson::Value &value)
         const rapidjson::Value &tmpValue = value["CycleDependencyConfigList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            TaskCycleLinkDTO item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<TaskCycleLinkDTO>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -1780,7 +1782,10 @@ void TaskDsDTO::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         for (auto itr = m_tasks.begin(); itr != m_tasks.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -1835,7 +1840,10 @@ void TaskDsDTO::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         for (auto itr = m_dependencyConfigList.begin(); itr != m_dependencyConfigList.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -2149,7 +2157,10 @@ void TaskDsDTO::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         for (auto itr = m_cycleDependencyConfigList.begin(); itr != m_cycleDependencyConfigList.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -3124,12 +3135,12 @@ bool TaskDsDTO::TargetServerHasBeenSet() const
     return m_targetServerHasBeenSet;
 }
 
-vector<TaskDsDTO> TaskDsDTO::GetTasks() const
+vector<shared_ptr<TaskDsDTO>> TaskDsDTO::GetTasks() const
 {
     return m_tasks;
 }
 
-void TaskDsDTO::SetTasks(const vector<TaskDsDTO>& _tasks)
+void TaskDsDTO::SetTasks(const vector<shared_ptr<TaskDsDTO>>& _tasks)
 {
     m_tasks = _tasks;
     m_tasksHasBeenSet = true;
@@ -3220,12 +3231,12 @@ bool TaskDsDTO::EventPublisherConfigHasBeenSet() const
     return m_eventPublisherConfigHasBeenSet;
 }
 
-vector<DependencyConfigDsDTO> TaskDsDTO::GetDependencyConfigList() const
+vector<shared_ptr<DependencyConfigDsDTO>> TaskDsDTO::GetDependencyConfigList() const
 {
     return m_dependencyConfigList;
 }
 
-void TaskDsDTO::SetDependencyConfigList(const vector<DependencyConfigDsDTO>& _dependencyConfigList)
+void TaskDsDTO::SetDependencyConfigList(const vector<shared_ptr<DependencyConfigDsDTO>>& _dependencyConfigList)
 {
     m_dependencyConfigList = _dependencyConfigList;
     m_dependencyConfigListHasBeenSet = true;
@@ -3764,12 +3775,12 @@ bool TaskDsDTO::TaskRegisterOutputTableHasBeenSet() const
     return m_taskRegisterOutputTableHasBeenSet;
 }
 
-vector<TaskCycleLinkDTO> TaskDsDTO::GetCycleDependencyConfigList() const
+vector<shared_ptr<TaskCycleLinkDTO>> TaskDsDTO::GetCycleDependencyConfigList() const
 {
     return m_cycleDependencyConfigList;
 }
 
-void TaskDsDTO::SetCycleDependencyConfigList(const vector<TaskCycleLinkDTO>& _cycleDependencyConfigList)
+void TaskDsDTO::SetCycleDependencyConfigList(const vector<shared_ptr<TaskCycleLinkDTO>>& _cycleDependencyConfigList)
 {
     m_cycleDependencyConfigList = _cycleDependencyConfigList;
     m_cycleDependencyConfigListHasBeenSet = true;

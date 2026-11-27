@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取短信 SdkAppId 在 [短信控制台](https://console.cloud.tencent.com/smsv2/app-manage)  添加应用后生成的实际 SdkAppId，示例如1400006666。
-                     * @return SmsSdkAppId 短信 SdkAppId 在 [短信控制台](https://console.cloud.tencent.com/smsv2/app-manage)  添加应用后生成的实际 SdkAppId，示例如1400006666。
+                     * 获取<p>短信 SdkAppId 在 <a href="https://console.cloud.tencent.com/smsv2/app-manage">短信控制台</a>  添加应用后生成的实际 SdkAppId，示例如1400006666。</p>
+                     * @return SmsSdkAppId <p>短信 SdkAppId 在 <a href="https://console.cloud.tencent.com/smsv2/app-manage">短信控制台</a>  添加应用后生成的实际 SdkAppId，示例如1400006666。</p>
                      * 
                      */
                     std::string GetSmsSdkAppId() const;
 
                     /**
-                     * 设置短信 SdkAppId 在 [短信控制台](https://console.cloud.tencent.com/smsv2/app-manage)  添加应用后生成的实际 SdkAppId，示例如1400006666。
-                     * @param _smsSdkAppId 短信 SdkAppId 在 [短信控制台](https://console.cloud.tencent.com/smsv2/app-manage)  添加应用后生成的实际 SdkAppId，示例如1400006666。
+                     * 设置<p>短信 SdkAppId 在 <a href="https://console.cloud.tencent.com/smsv2/app-manage">短信控制台</a>  添加应用后生成的实际 SdkAppId，示例如1400006666。</p>
+                     * @param _smsSdkAppId <p>短信 SdkAppId 在 <a href="https://console.cloud.tencent.com/smsv2/app-manage">短信控制台</a>  添加应用后生成的实际 SdkAppId，示例如1400006666。</p>
                      * 
                      */
                     void SetSmsSdkAppId(const std::string& _smsSdkAppId);
@@ -64,19 +64,15 @@ namespace TencentCloud
                     bool SmsSdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取最大上限(需要拉取的套餐包个数)。
-注：Limit默认最大值为500，可结合Offset实现分页查询。
-                     * @return Limit 最大上限(需要拉取的套餐包个数)。
-注：Limit默认最大值为500，可结合Offset实现分页查询。
+                     * 获取<p>最大上限(需要拉取的套餐包个数)。<br>注：Limit默认最大值为500，可结合Offset实现分页查询。</p>
+                     * @return Limit <p>最大上限(需要拉取的套餐包个数)。<br>注：Limit默认最大值为500，可结合Offset实现分页查询。</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置最大上限(需要拉取的套餐包个数)。
-注：Limit默认最大值为500，可结合Offset实现分页查询。
-                     * @param _limit 最大上限(需要拉取的套餐包个数)。
-注：Limit默认最大值为500，可结合Offset实现分页查询。
+                     * 设置<p>最大上限(需要拉取的套餐包个数)。<br>注：Limit默认最大值为500，可结合Offset实现分页查询。</p>
+                     * @param _limit <p>最大上限(需要拉取的套餐包个数)。<br>注：Limit默认最大值为500，可结合Offset实现分页查询。</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -89,15 +85,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量。
-                     * @return Offset 偏移量。
+                     * 获取<p>偏移量。</p>
+                     * @return Offset <p>偏移量。</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量。
-                     * @param _offset 偏移量。
+                     * 设置<p>偏移量。</p>
+                     * @param _offset <p>偏移量。</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -110,19 +106,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取起始时间，格式为yyyymmddhh，精确到小时，例如2024050113，表示2024年5月1号13时。
-注：接口会返回 BeginTime 到 EndTime 之间创建的套餐包的统计信息。
-                     * @return BeginTime 起始时间，格式为yyyymmddhh，精确到小时，例如2024050113，表示2024年5月1号13时。
-注：接口会返回 BeginTime 到 EndTime 之间创建的套餐包的统计信息。
+                     * 获取<p>起始时间，格式为yyyymmddhh，精确到小时，例如2024050113，表示2024年5月1号13时。<br>注：接口会返回 BeginTime 到 EndTime 之间创建的套餐包的统计信息。</p>
+                     * @return BeginTime <p>起始时间，格式为yyyymmddhh，精确到小时，例如2024050113，表示2024年5月1号13时。<br>注：接口会返回 BeginTime 到 EndTime 之间创建的套餐包的统计信息。</p>
                      * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
-                     * 设置起始时间，格式为yyyymmddhh，精确到小时，例如2024050113，表示2024年5月1号13时。
-注：接口会返回 BeginTime 到 EndTime 之间创建的套餐包的统计信息。
-                     * @param _beginTime 起始时间，格式为yyyymmddhh，精确到小时，例如2024050113，表示2024年5月1号13时。
-注：接口会返回 BeginTime 到 EndTime 之间创建的套餐包的统计信息。
+                     * 设置<p>起始时间，格式为yyyymmddhh，精确到小时，例如2024050113，表示2024年5月1号13时。<br>注：接口会返回 BeginTime 到 EndTime 之间创建的套餐包的统计信息。</p>
+                     * @param _beginTime <p>起始时间，格式为yyyymmddhh，精确到小时，例如2024050113，表示2024年5月1号13时。<br>注：接口会返回 BeginTime 到 EndTime 之间创建的套餐包的统计信息。</p>
                      * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
@@ -135,19 +127,15 @@ namespace TencentCloud
                     bool BeginTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间，格式为yyyymmddhh，精确到小时，例如2024050118，表示2024年5月1号18时。
-注：EndTime 必须大于 BeginTime 且小于当前时间。
-                     * @return EndTime 结束时间，格式为yyyymmddhh，精确到小时，例如2024050118，表示2024年5月1号18时。
-注：EndTime 必须大于 BeginTime 且小于当前时间。
+                     * 获取<p>结束时间，格式为yyyymmddhh，精确到小时，例如2024050118，表示2024年5月1号18时。<br>注：EndTime 必须大于 BeginTime 且小于当前时间。</p>
+                     * @return EndTime <p>结束时间，格式为yyyymmddhh，精确到小时，例如2024050118，表示2024年5月1号18时。<br>注：EndTime 必须大于 BeginTime 且小于当前时间。</p>
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间，格式为yyyymmddhh，精确到小时，例如2024050118，表示2024年5月1号18时。
-注：EndTime 必须大于 BeginTime 且小于当前时间。
-                     * @param _endTime 结束时间，格式为yyyymmddhh，精确到小时，例如2024050118，表示2024年5月1号18时。
-注：EndTime 必须大于 BeginTime 且小于当前时间。
+                     * 设置<p>结束时间，格式为yyyymmddhh，精确到小时，例如2024050118，表示2024年5月1号18时。<br>注：EndTime 必须大于 BeginTime 且小于当前时间。</p>
+                     * @param _endTime <p>结束时间，格式为yyyymmddhh，精确到小时，例如2024050118，表示2024年5月1号18时。<br>注：EndTime 必须大于 BeginTime 且小于当前时间。</p>
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -162,34 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 短信 SdkAppId 在 [短信控制台](https://console.cloud.tencent.com/smsv2/app-manage)  添加应用后生成的实际 SdkAppId，示例如1400006666。
+                     * <p>短信 SdkAppId 在 <a href="https://console.cloud.tencent.com/smsv2/app-manage">短信控制台</a>  添加应用后生成的实际 SdkAppId，示例如1400006666。</p>
                      */
                     std::string m_smsSdkAppId;
                     bool m_smsSdkAppIdHasBeenSet;
 
                     /**
-                     * 最大上限(需要拉取的套餐包个数)。
-注：Limit默认最大值为500，可结合Offset实现分页查询。
+                     * <p>最大上限(需要拉取的套餐包个数)。<br>注：Limit默认最大值为500，可结合Offset实现分页查询。</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量。
+                     * <p>偏移量。</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 起始时间，格式为yyyymmddhh，精确到小时，例如2024050113，表示2024年5月1号13时。
-注：接口会返回 BeginTime 到 EndTime 之间创建的套餐包的统计信息。
+                     * <p>起始时间，格式为yyyymmddhh，精确到小时，例如2024050113，表示2024年5月1号13时。<br>注：接口会返回 BeginTime 到 EndTime 之间创建的套餐包的统计信息。</p>
                      */
                     std::string m_beginTime;
                     bool m_beginTimeHasBeenSet;
 
                     /**
-                     * 结束时间，格式为yyyymmddhh，精确到小时，例如2024050118，表示2024年5月1号18时。
-注：EndTime 必须大于 BeginTime 且小于当前时间。
+                     * <p>结束时间，格式为yyyymmddhh，精确到小时，例如2024050118，表示2024年5月1号18时。<br>注：EndTime 必须大于 BeginTime 且小于当前时间。</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

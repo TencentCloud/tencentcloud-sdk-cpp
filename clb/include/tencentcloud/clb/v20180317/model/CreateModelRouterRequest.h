@@ -31,6 +31,7 @@
 #include <tencentcloud/clb/v20180317/model/RerankConfig.h>
 #include <tencentcloud/clb/v20180317/model/DecisionsConfig.h>
 #include <tencentcloud/clb/v20180317/model/ImageConfig.h>
+#include <tencentcloud/clb/v20180317/model/RealtimeConfig.h>
 
 
 namespace TencentCloud
@@ -514,6 +515,27 @@ namespace TencentCloud
                      */
                     bool ImageConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>可选的 Realtime 路由配置，提供此参数时预置 realtime 能力的路由策略。</p><p>支持 SimpleShuffle、LeastBusy、CostBasedRouting；省略配置子字段时默认 RoutingStrategy=SimpleShuffle、NumRetries=2。配置及子字段不接受 null。</p>
+                     * @return RealtimeConfig <p>可选的 Realtime 路由配置，提供此参数时预置 realtime 能力的路由策略。</p><p>支持 SimpleShuffle、LeastBusy、CostBasedRouting；省略配置子字段时默认 RoutingStrategy=SimpleShuffle、NumRetries=2。配置及子字段不接受 null。</p>
+                     * 
+                     */
+                    RealtimeConfig GetRealtimeConfig() const;
+
+                    /**
+                     * 设置<p>可选的 Realtime 路由配置，提供此参数时预置 realtime 能力的路由策略。</p><p>支持 SimpleShuffle、LeastBusy、CostBasedRouting；省略配置子字段时默认 RoutingStrategy=SimpleShuffle、NumRetries=2。配置及子字段不接受 null。</p>
+                     * @param _realtimeConfig <p>可选的 Realtime 路由配置，提供此参数时预置 realtime 能力的路由策略。</p><p>支持 SimpleShuffle、LeastBusy、CostBasedRouting；省略配置子字段时默认 RoutingStrategy=SimpleShuffle、NumRetries=2。配置及子字段不接受 null。</p>
+                     * 
+                     */
+                    void SetRealtimeConfig(const RealtimeConfig& _realtimeConfig);
+
+                    /**
+                     * 判断参数 RealtimeConfig 是否已赋值
+                     * @return RealtimeConfig 是否已赋值
+                     * 
+                     */
+                    bool RealtimeConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -647,6 +669,12 @@ namespace TencentCloud
                      */
                     ImageConfig m_imageConfig;
                     bool m_imageConfigHasBeenSet;
+
+                    /**
+                     * <p>可选的 Realtime 路由配置，提供此参数时预置 realtime 能力的路由策略。</p><p>支持 SimpleShuffle、LeastBusy、CostBasedRouting；省略配置子字段时默认 RoutingStrategy=SimpleShuffle、NumRetries=2。配置及子字段不接受 null。</p>
+                     */
+                    RealtimeConfig m_realtimeConfig;
+                    bool m_realtimeConfigHasBeenSet;
 
                 };
             }

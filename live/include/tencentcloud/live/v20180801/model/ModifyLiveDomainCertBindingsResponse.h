@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取DomainNames 入参中，与证书不匹配的域名列表，将会跳过处理。
-                     * @return MismatchedDomainNames DomainNames 入参中，与证书不匹配的域名列表，将会跳过处理。
+                     * 获取<p>DomainNames 入参中，与证书不匹配的域名列表，将会跳过处理。</p>
+                     * @return MismatchedDomainNames <p>DomainNames 入参中，与证书不匹配的域名列表，将会跳过处理。</p>
                      * 
                      */
                     std::vector<std::string> GetMismatchedDomainNames() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool MismatchedDomainNamesHasBeenSet() const;
 
                     /**
-                     * 获取操作失败的域名及错误码，错误信息，包括MismatchedDomainNames中的域名。
-                     * @return Errors 操作失败的域名及错误码，错误信息，包括MismatchedDomainNames中的域名。
+                     * 获取<p>操作失败的域名及错误码，错误信息，包括MismatchedDomainNames中的域名。</p>
+                     * @return Errors <p>操作失败的域名及错误码，错误信息，包括MismatchedDomainNames中的域名。</p>
                      * 
                      */
                     std::vector<BatchDomainOperateErrors> GetErrors() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * DomainNames 入参中，与证书不匹配的域名列表，将会跳过处理。
+                     * <p>DomainNames 入参中，与证书不匹配的域名列表，将会跳过处理。</p>
                      */
                     std::vector<std::string> m_mismatchedDomainNames;
                     bool m_mismatchedDomainNamesHasBeenSet;
 
                     /**
-                     * 操作失败的域名及错误码，错误信息，包括MismatchedDomainNames中的域名。
+                     * <p>操作失败的域名及错误码，错误信息，包括MismatchedDomainNames中的域名。</p>
                      */
                     std::vector<BatchDomainOperateErrors> m_errors;
                     bool m_errorsHasBeenSet;

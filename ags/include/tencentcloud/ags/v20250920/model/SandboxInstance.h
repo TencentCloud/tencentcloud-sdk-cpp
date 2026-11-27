@@ -386,6 +386,27 @@ namespace TencentCloud
                      */
                     bool AuthModeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>表示发起实例启动并取得该实例的账号 UIN</p>
+                     * @return SubAccountUin <p>表示发起实例启动并取得该实例的账号 UIN</p>
+                     * 
+                     */
+                    std::string GetSubAccountUin() const;
+
+                    /**
+                     * 设置<p>表示发起实例启动并取得该实例的账号 UIN</p>
+                     * @param _subAccountUin <p>表示发起实例启动并取得该实例的账号 UIN</p>
+                     * 
+                     */
+                    void SetSubAccountUin(const std::string& _subAccountUin);
+
+                    /**
+                     * 判断参数 SubAccountUin 是否已赋值
+                     * @return SubAccountUin 是否已赋值
+                     * 
+                     */
+                    bool SubAccountUinHasBeenSet() const;
+
                 private:
 
                     /**
@@ -483,6 +504,12 @@ namespace TencentCloud
                      */
                     std::string m_authMode;
                     bool m_authModeHasBeenSet;
+
+                    /**
+                     * <p>表示发起实例启动并取得该实例的账号 UIN</p>
+                     */
+                    std::string m_subAccountUin;
+                    bool m_subAccountUinHasBeenSet;
 
                 };
             }

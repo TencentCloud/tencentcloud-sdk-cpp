@@ -194,8 +194,8 @@ CoreInternalOutcome TaskTableMetricInfo::Deserialize(const rapidjson::Value &val
         const rapidjson::Value &tmpValue = value["TaskTableMetricInfos"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            TaskTableMetricInfo item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<TaskTableMetricInfo>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -458,7 +458,10 @@ void TaskTableMetricInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         for (auto itr = m_taskTableMetricInfos.begin(); itr != m_taskTableMetricInfos.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -777,12 +780,12 @@ bool TaskTableMetricInfo::LogicSchemaHasBeenSet() const
     return m_logicSchemaHasBeenSet;
 }
 
-vector<TaskTableMetricInfo> TaskTableMetricInfo::GetTaskTableMetricInfos() const
+vector<shared_ptr<TaskTableMetricInfo>> TaskTableMetricInfo::GetTaskTableMetricInfos() const
 {
     return m_taskTableMetricInfos;
 }
 
-void TaskTableMetricInfo::SetTaskTableMetricInfos(const vector<TaskTableMetricInfo>& _taskTableMetricInfos)
+void TaskTableMetricInfo::SetTaskTableMetricInfos(const vector<shared_ptr<TaskTableMetricInfo>>& _taskTableMetricInfos)
 {
     m_taskTableMetricInfos = _taskTableMetricInfos;
     m_taskTableMetricInfosHasBeenSet = true;

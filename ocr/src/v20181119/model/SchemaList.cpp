@@ -71,8 +71,8 @@ CoreInternalOutcome SchemaList::Deserialize(const rapidjson::Value &value)
         const rapidjson::Value &tmpValue = value["SubItems"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            SchemaList item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<SchemaList>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -125,7 +125,10 @@ void SchemaList::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         for (auto itr = m_subItems.begin(); itr != m_subItems.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -180,12 +183,12 @@ bool SchemaList::KeyPromptHasBeenSet() const
     return m_keyPromptHasBeenSet;
 }
 
-vector<SchemaList> SchemaList::GetSubItems() const
+vector<shared_ptr<SchemaList>> SchemaList::GetSubItems() const
 {
     return m_subItems;
 }
 
-void SchemaList::SetSubItems(const vector<SchemaList>& _subItems)
+void SchemaList::SetSubItems(const vector<shared_ptr<SchemaList>>& _subItems)
 {
     m_subItems = _subItems;
     m_subItemsHasBeenSet = true;

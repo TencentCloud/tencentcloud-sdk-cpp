@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取新增规则的摘要列表。
-                     * @return Rules 新增规则的摘要列表。
+                     * 获取<p>添加成功的规则详情</p>
+                     * @return Rules <p>添加成功的规则详情</p>
                      * 
                      */
                     std::vector<SecurityGroupSimplifyRule> GetRules() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool RulesHasBeenSet() const;
 
                     /**
-                     * 获取处理状态：0 表示成功。
-                     * @return Status 处理状态：0 表示成功。
+                     * 获取<p>状态值，0：添加成功，非0：添加失败</p>
+                     * @return Status <p>状态值，0：添加成功，非0：添加失败</p>
                      * 
                      */
                     uint64_t GetStatus() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 新增规则的摘要列表。
+                     * <p>添加成功的规则详情</p>
                      */
                     std::vector<SecurityGroupSimplifyRule> m_rules;
                     bool m_rulesHasBeenSet;
 
                     /**
-                     * 处理状态：0 表示成功。
+                     * <p>状态值，0：添加成功，非0：添加失败</p>
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;

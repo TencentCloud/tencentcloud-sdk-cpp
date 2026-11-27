@@ -20,6 +20,7 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <memory>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
@@ -27,7 +28,6 @@
 #include <tencentcloud/databuddy/v20260715/model/DependOnBrief.h>
 #include <tencentcloud/databuddy/v20260715/model/TaskRetryStrategy.h>
 #include <tencentcloud/databuddy/v20260715/model/AdvancedDependencyConfig.h>
-#include <tencentcloud/databuddy/v20260715/model/WorkflowTaskNodeBrief.h>
 
 
 namespace TencentCloud
@@ -38,6 +38,7 @@ namespace TencentCloud
         {
             namespace Model
             {
+                class WorkflowTaskNodeBrief;
                 /**
                 * 工作流列表项中的工作流任务节点简要信息
                 */
@@ -357,7 +358,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    WorkflowTaskNodeBrief GetInnerTask() const;
+                    std::shared_ptr<WorkflowTaskNodeBrief> GetInnerTask() const;
 
                     /**
                      * 设置<p>内嵌工作流任务节点</p>
@@ -366,7 +367,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetInnerTask(const WorkflowTaskNodeBrief& _innerTask);
+                    void SetInnerTask(const std::shared_ptr<WorkflowTaskNodeBrief>& _innerTask);
 
                     /**
                      * 判断参数 InnerTask 是否已赋值
@@ -465,7 +466,7 @@ namespace TencentCloud
                      * <p>内嵌工作流任务节点</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    WorkflowTaskNodeBrief m_innerTask;
+                    std::shared_ptr<WorkflowTaskNodeBrief> m_innerTask;
                     bool m_innerTaskHasBeenSet;
 
                 };

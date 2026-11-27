@@ -169,6 +169,8 @@
 #include <tencentcloud/es/v20180416/model/RestoreClusterSnapshotResponse.h>
 #include <tencentcloud/es/v20180416/model/SaveAndDeployLogstashPipelineRequest.h>
 #include <tencentcloud/es/v20180416/model/SaveAndDeployLogstashPipelineResponse.h>
+#include <tencentcloud/es/v20180416/model/SearchServerlessSpaceDataRequest.h>
+#include <tencentcloud/es/v20180416/model/SearchServerlessSpaceDataResponse.h>
 #include <tencentcloud/es/v20180416/model/StartLogstashPipelinesRequest.h>
 #include <tencentcloud/es/v20180416/model/StartLogstashPipelinesResponse.h>
 #include <tencentcloud/es/v20180416/model/StopLogstashPipelinesRequest.h>
@@ -436,6 +438,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SaveAndDeployLogstashPipelineResponse> SaveAndDeployLogstashPipelineOutcome;
                 typedef std::future<SaveAndDeployLogstashPipelineOutcome> SaveAndDeployLogstashPipelineOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::SaveAndDeployLogstashPipelineRequest&, SaveAndDeployLogstashPipelineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SaveAndDeployLogstashPipelineAsyncHandler;
+                typedef Outcome<Core::Error, Model::SearchServerlessSpaceDataResponse> SearchServerlessSpaceDataOutcome;
+                typedef std::future<SearchServerlessSpaceDataOutcome> SearchServerlessSpaceDataOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::SearchServerlessSpaceDataRequest&, SearchServerlessSpaceDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchServerlessSpaceDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::StartLogstashPipelinesResponse> StartLogstashPipelinesOutcome;
                 typedef std::future<StartLogstashPipelinesOutcome> StartLogstashPipelinesOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::StartLogstashPipelinesRequest&, StartLogstashPipelinesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartLogstashPipelinesAsyncHandler;
@@ -1147,6 +1152,15 @@ namespace TencentCloud
                 SaveAndDeployLogstashPipelineOutcome SaveAndDeployLogstashPipeline(const Model::SaveAndDeployLogstashPipelineRequest &request);
                 void SaveAndDeployLogstashPipelineAsync(const Model::SaveAndDeployLogstashPipelineRequest& request, const SaveAndDeployLogstashPipelineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SaveAndDeployLogstashPipelineOutcomeCallable SaveAndDeployLogstashPipelineCallable(const Model::SaveAndDeployLogstashPipelineRequest& request);
+
+                /**
+                 *用于查询serverless space中的数据
+                 * @param req SearchServerlessSpaceDataRequest
+                 * @return SearchServerlessSpaceDataOutcome
+                 */
+                SearchServerlessSpaceDataOutcome SearchServerlessSpaceData(const Model::SearchServerlessSpaceDataRequest &request);
+                void SearchServerlessSpaceDataAsync(const Model::SearchServerlessSpaceDataRequest& request, const SearchServerlessSpaceDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SearchServerlessSpaceDataOutcomeCallable SearchServerlessSpaceDataCallable(const Model::SearchServerlessSpaceDataRequest& request);
 
                 /**
                  *用于启动Logstash管道

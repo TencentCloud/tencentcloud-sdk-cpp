@@ -20,11 +20,11 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <memory>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/dbbrain/v20210527/model/BlockingChainNode.h>
 
 
 namespace TencentCloud
@@ -35,6 +35,7 @@ namespace TencentCloud
         {
             namespace Model
             {
+                class BlockingChainNode;
                 /**
                 * 阻塞树节点，表示一个被阻塞会话。若该会话又阻塞了其它会话，则通过children递归表达。
                 */
@@ -504,7 +505,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::vector<BlockingChainNode> GetChildren() const;
+                    std::vector<std::shared_ptr<BlockingChainNode>> GetChildren() const;
 
                     /**
                      * 设置<p>本节点又阻塞的下级会话（可能为空）。</p>
@@ -513,7 +514,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetChildren(const std::vector<BlockingChainNode>& _children);
+                    void SetChildren(const std::vector<std::shared_ptr<BlockingChainNode>>& _children);
 
                     /**
                      * 判断参数 Children 是否已赋值
@@ -654,7 +655,7 @@ namespace TencentCloud
                      * <p>本节点又阻塞的下级会话（可能为空）。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<BlockingChainNode> m_children;
+                    std::vector<std::shared_ptr<BlockingChainNode>> m_children;
                     bool m_childrenHasBeenSet;
 
                 };

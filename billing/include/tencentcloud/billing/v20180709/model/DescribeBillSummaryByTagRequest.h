@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
-                     * @return BeginTime 目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
+                     * 获取<p>目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2026-11，EndTime 为 2026-11，查询结果是 2026 年 11 月数据。格式为yyyy-mm，不能早于2021-01</p>
+                     * @return BeginTime <p>目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2026-11，EndTime 为 2026-11，查询结果是 2026 年 11 月数据。格式为yyyy-mm，不能早于2021-01</p>
                      * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
-                     * 设置目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
-                     * @param _beginTime 目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
+                     * 设置<p>目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2026-11，EndTime 为 2026-11，查询结果是 2026 年 11 月数据。格式为yyyy-mm，不能早于2021-01</p>
+                     * @param _beginTime <p>目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2026-11，EndTime 为 2026-11，查询结果是 2026 年 11 月数据。格式为yyyy-mm，不能早于2021-01</p>
                      * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool BeginTimeHasBeenSet() const;
 
                     /**
-                     * 获取目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
-                     * @return EndTime 目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
+                     * 获取<p>目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2026-11，EndTime 为 2026-11，查询结果是 2026 年 11 月数据。格式为yyyy-mm，不能早于2021-01</p>
+                     * @return EndTime <p>目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2026-11，EndTime 为 2026-11，查询结果是 2026 年 11 月数据。格式为yyyy-mm，不能早于2021-01</p>
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
-                     * @param _endTime 目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
+                     * 设置<p>目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2026-11，EndTime 为 2026-11，查询结果是 2026 年 11 月数据。格式为yyyy-mm，不能早于2021-01</p>
+                     * @param _endTime <p>目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2026-11，EndTime 为 2026-11，查询结果是 2026 年 11 月数据。格式为yyyy-mm，不能早于2021-01</p>
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取分账标签键，用户自定义
-                     * @return TagKey 分账标签键，用户自定义
+                     * 获取<p>分账标签键，用户自定义</p>
+                     * @return TagKey <p>分账标签键，用户自定义</p>
                      * 
                      */
                     std::string GetTagKey() const;
 
                     /**
-                     * 设置分账标签键，用户自定义
-                     * @param _tagKey 分账标签键，用户自定义
+                     * 设置<p>分账标签键，用户自定义</p>
+                     * @param _tagKey <p>分账标签键，用户自定义</p>
                      * 
                      */
                     void SetTagKey(const std::string& _tagKey);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool TagKeyHasBeenSet() const;
 
                     /**
-                     * 获取查询账单数据的用户UIN
-                     * @return PayerUin 查询账单数据的用户UIN
+                     * 获取<p>查询账单数据的用户UIN</p>
+                     * @return PayerUin <p>查询账单数据的用户UIN</p>
                      * 
                      */
                     std::string GetPayerUin() const;
 
                     /**
-                     * 设置查询账单数据的用户UIN
-                     * @param _payerUin 查询账单数据的用户UIN
+                     * 设置<p>查询账单数据的用户UIN</p>
+                     * @param _payerUin <p>查询账单数据的用户UIN</p>
                      * 
                      */
                     void SetPayerUin(const std::string& _payerUin);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool PayerUinHasBeenSet() const;
 
                     /**
-                     * 获取分账标签值
-                     * @return TagValue 分账标签值
+                     * 获取<p>分账标签值</p>
+                     * @return TagValue <p>分账标签值</p>
                      * 
                      */
                     std::string GetTagValue() const;
 
                     /**
-                     * 设置分账标签值
-                     * @param _tagValue 分账标签值
+                     * 设置<p>分账标签值</p>
+                     * @param _tagValue <p>分账标签值</p>
                      * 
                      */
                     void SetTagValue(const std::string& _tagValue);
@@ -150,31 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
+                     * <p>目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2026-11，EndTime 为 2026-11，查询结果是 2026 年 11 月数据。格式为yyyy-mm，不能早于2021-01</p>
                      */
                     std::string m_beginTime;
                     bool m_beginTimeHasBeenSet;
 
                     /**
-                     * 目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。
+                     * <p>目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2026-11，EndTime 为 2026-11，查询结果是 2026 年 11 月数据。格式为yyyy-mm，不能早于2021-01</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 分账标签键，用户自定义
+                     * <p>分账标签键，用户自定义</p>
                      */
                     std::string m_tagKey;
                     bool m_tagKeyHasBeenSet;
 
                     /**
-                     * 查询账单数据的用户UIN
+                     * <p>查询账单数据的用户UIN</p>
                      */
                     std::string m_payerUin;
                     bool m_payerUinHasBeenSet;
 
                     /**
-                     * 分账标签值
+                     * <p>分账标签值</p>
                      */
                     std::string m_tagValue;
                     bool m_tagValueHasBeenSet;

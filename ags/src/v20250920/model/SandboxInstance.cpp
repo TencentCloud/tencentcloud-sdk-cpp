@@ -36,7 +36,8 @@ SandboxInstance::SandboxInstance() :
     m_computerConfigurationHasBeenSet(false),
     m_networkModeHasBeenSet(false),
     m_metadataHasBeenSet(false),
-    m_authModeHasBeenSet(false)
+    m_authModeHasBeenSet(false),
+    m_subAccountUinHasBeenSet(false)
 {
 }
 
@@ -239,6 +240,16 @@ CoreInternalOutcome SandboxInstance::Deserialize(const rapidjson::Value &value)
         m_authModeHasBeenSet = true;
     }
 
+    if (value.HasMember("SubAccountUin") && !value["SubAccountUin"].IsNull())
+    {
+        if (!value["SubAccountUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SandboxInstance.SubAccountUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subAccountUin = string(value["SubAccountUin"].GetString());
+        m_subAccountUinHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -388,6 +399,14 @@ void SandboxInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "AuthMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_authMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subAccountUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAccountUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subAccountUin.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -647,5 +666,21 @@ void SandboxInstance::SetAuthMode(const string& _authMode)
 bool SandboxInstance::AuthModeHasBeenSet() const
 {
     return m_authModeHasBeenSet;
+}
+
+string SandboxInstance::GetSubAccountUin() const
+{
+    return m_subAccountUin;
+}
+
+void SandboxInstance::SetSubAccountUin(const string& _subAccountUin)
+{
+    m_subAccountUin = _subAccountUin;
+    m_subAccountUinHasBeenSet = true;
+}
+
+bool SandboxInstance::SubAccountUinHasBeenSet() const
+{
+    return m_subAccountUinHasBeenSet;
 }
 

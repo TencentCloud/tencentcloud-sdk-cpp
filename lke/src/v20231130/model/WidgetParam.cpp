@@ -62,8 +62,8 @@ CoreInternalOutcome WidgetParam::Deserialize(const rapidjson::Value &value)
         const rapidjson::Value &tmpValue = value["SubParams"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            WidgetParam item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<WidgetParam>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -135,7 +135,10 @@ void WidgetParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         for (auto itr = m_subParams.begin(); itr != m_subParams.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -191,12 +194,12 @@ bool WidgetParam::TypeHasBeenSet() const
     return m_typeHasBeenSet;
 }
 
-vector<WidgetParam> WidgetParam::GetSubParams() const
+vector<shared_ptr<WidgetParam>> WidgetParam::GetSubParams() const
 {
     return m_subParams;
 }
 
-void WidgetParam::SetSubParams(const vector<WidgetParam>& _subParams)
+void WidgetParam::SetSubParams(const vector<shared_ptr<WidgetParam>>& _subParams)
 {
     m_subParams = _subParams;
     m_subParamsHasBeenSet = true;

@@ -15,6 +15,7 @@
  */
 
 #include <tencentcloud/teo/v20220901/model/CustomVariableOperationRuleBranch.h>
+#include <tencentcloud/teo/v20220901/model/CustomVariableOperationSubRule.h>
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Teo::V20220901::Model;
@@ -70,8 +71,8 @@ CoreInternalOutcome CustomVariableOperationRuleBranch::Deserialize(const rapidjs
         const rapidjson::Value &tmpValue = value["SubRules"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            CustomVariableOperationSubRule item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<CustomVariableOperationSubRule>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -123,7 +124,10 @@ void CustomVariableOperationRuleBranch::ToJsonObject(rapidjson::Value &value, ra
         for (auto itr = m_subRules.begin(); itr != m_subRules.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -162,12 +166,12 @@ bool CustomVariableOperationRuleBranch::ActionsHasBeenSet() const
     return m_actionsHasBeenSet;
 }
 
-vector<CustomVariableOperationSubRule> CustomVariableOperationRuleBranch::GetSubRules() const
+vector<shared_ptr<CustomVariableOperationSubRule>> CustomVariableOperationRuleBranch::GetSubRules() const
 {
     return m_subRules;
 }
 
-void CustomVariableOperationRuleBranch::SetSubRules(const vector<CustomVariableOperationSubRule>& _subRules)
+void CustomVariableOperationRuleBranch::SetSubRules(const vector<shared_ptr<CustomVariableOperationSubRule>>& _subRules)
 {
     m_subRules = _subRules;
     m_subRulesHasBeenSet = true;

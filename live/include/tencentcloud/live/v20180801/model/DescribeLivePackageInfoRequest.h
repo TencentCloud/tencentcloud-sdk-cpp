@@ -43,27 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取包类型，可选值：
-0：流量包
-1：转码包
-2: 连麦包。
-                     * @return PackageType 包类型，可选值：
-0：流量包
-1：转码包
-2: 连麦包。
+                     * 获取<p>包类型，可选值：<br>0：流量包<br>1：转码包<br>2: 连麦包。</p>
+                     * @return PackageType <p>包类型，可选值：<br>0：流量包<br>1：转码包<br>2: 连麦包。</p>
                      * 
                      */
                     int64_t GetPackageType() const;
 
                     /**
-                     * 设置包类型，可选值：
-0：流量包
-1：转码包
-2: 连麦包。
-                     * @param _packageType 包类型，可选值：
-0：流量包
-1：转码包
-2: 连麦包。
+                     * 设置<p>包类型，可选值：<br>0：流量包<br>1：转码包<br>2: 连麦包。</p>
+                     * @param _packageType <p>包类型，可选值：<br>0：流量包<br>1：转码包<br>2: 连麦包。</p>
                      * 
                      */
                     void SetPackageType(const int64_t& _packageType);
@@ -76,43 +64,15 @@ namespace TencentCloud
                     bool PackageTypeHasBeenSet() const;
 
                     /**
-                     * 获取排序规则:
-1. BuyTimeDesc： 最新购买的排在最前面
-2. BuyTimeAsc： 最老购买的排在最前面
-3. ExpireTimeDesc： 最后过期的排在最前面
-4. ExpireTimeAsc：最先过期的排在最前面。
-
-注意：
-1. PackageType 为 2（连麦包） 的时候，不支持 3、4 排序。
-                     * @return OrderBy 排序规则:
-1. BuyTimeDesc： 最新购买的排在最前面
-2. BuyTimeAsc： 最老购买的排在最前面
-3. ExpireTimeDesc： 最后过期的排在最前面
-4. ExpireTimeAsc：最先过期的排在最前面。
-
-注意：
-1. PackageType 为 2（连麦包） 的时候，不支持 3、4 排序。
+                     * 获取<p>排序规则:</p><ol><li>BuyTimeDesc： 最新购买的排在最前面</li><li>BuyTimeAsc： 最老购买的排在最前面</li><li>ExpireTimeDesc： 最后过期的排在最前面</li><li>ExpireTimeAsc：最先过期的排在最前面。</li></ol><p>注意：</p><ol><li>PackageType 为 2（连麦包） 的时候，不支持 3、4 排序。</li></ol>
+                     * @return OrderBy <p>排序规则:</p><ol><li>BuyTimeDesc： 最新购买的排在最前面</li><li>BuyTimeAsc： 最老购买的排在最前面</li><li>ExpireTimeDesc： 最后过期的排在最前面</li><li>ExpireTimeAsc：最先过期的排在最前面。</li></ol><p>注意：</p><ol><li>PackageType 为 2（连麦包） 的时候，不支持 3、4 排序。</li></ol>
                      * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
-                     * 设置排序规则:
-1. BuyTimeDesc： 最新购买的排在最前面
-2. BuyTimeAsc： 最老购买的排在最前面
-3. ExpireTimeDesc： 最后过期的排在最前面
-4. ExpireTimeAsc：最先过期的排在最前面。
-
-注意：
-1. PackageType 为 2（连麦包） 的时候，不支持 3、4 排序。
-                     * @param _orderBy 排序规则:
-1. BuyTimeDesc： 最新购买的排在最前面
-2. BuyTimeAsc： 最老购买的排在最前面
-3. ExpireTimeDesc： 最后过期的排在最前面
-4. ExpireTimeAsc：最先过期的排在最前面。
-
-注意：
-1. PackageType 为 2（连麦包） 的时候，不支持 3、4 排序。
+                     * 设置<p>排序规则:</p><ol><li>BuyTimeDesc： 最新购买的排在最前面</li><li>BuyTimeAsc： 最老购买的排在最前面</li><li>ExpireTimeDesc： 最后过期的排在最前面</li><li>ExpireTimeAsc：最先过期的排在最前面。</li></ol><p>注意：</p><ol><li>PackageType 为 2（连麦包） 的时候，不支持 3、4 排序。</li></ol>
+                     * @param _orderBy <p>排序规则:</p><ol><li>BuyTimeDesc： 最新购买的排在最前面</li><li>BuyTimeAsc： 最老购买的排在最前面</li><li>ExpireTimeDesc： 最后过期的排在最前面</li><li>ExpireTimeAsc：最先过期的排在最前面。</li></ol><p>注意：</p><ol><li>PackageType 为 2（连麦包） 的时候，不支持 3、4 排序。</li></ol>
                      * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
@@ -125,15 +85,15 @@ namespace TencentCloud
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取取得第几页的数据，和 PageSize 同时传递才会生效。
-                     * @return PageNum 取得第几页的数据，和 PageSize 同时传递才会生效。
+                     * 获取<p>取得第几页的数据，和 PageSize 同时传递才会生效。</p>
+                     * @return PageNum <p>取得第几页的数据，和 PageSize 同时传递才会生效。</p>
                      * 
                      */
                     int64_t GetPageNum() const;
 
                     /**
-                     * 设置取得第几页的数据，和 PageSize 同时传递才会生效。
-                     * @param _pageNum 取得第几页的数据，和 PageSize 同时传递才会生效。
+                     * 设置<p>取得第几页的数据，和 PageSize 同时传递才会生效。</p>
+                     * @param _pageNum <p>取得第几页的数据，和 PageSize 同时传递才会生效。</p>
                      * 
                      */
                     void SetPageNum(const int64_t& _pageNum);
@@ -146,19 +106,15 @@ namespace TencentCloud
                     bool PageNumHasBeenSet() const;
 
                     /**
-                     * 获取分页大小，和 PageNum 同时传递才会生效。
-取值：10 ～ 100 之间的任意整数。
-                     * @return PageSize 分页大小，和 PageNum 同时传递才会生效。
-取值：10 ～ 100 之间的任意整数。
+                     * 获取<p>分页大小，和 PageNum 同时传递才会生效。<br>取值：10 ～ 100 之间的任意整数。</p>
+                     * @return PageSize <p>分页大小，和 PageNum 同时传递才会生效。<br>取值：10 ～ 100 之间的任意整数。</p>
                      * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
-                     * 设置分页大小，和 PageNum 同时传递才会生效。
-取值：10 ～ 100 之间的任意整数。
-                     * @param _pageSize 分页大小，和 PageNum 同时传递才会生效。
-取值：10 ～ 100 之间的任意整数。
+                     * 设置<p>分页大小，和 PageNum 同时传递才会生效。<br>取值：10 ～ 100 之间的任意整数。</p>
+                     * @param _pageSize <p>分页大小，和 PageNum 同时传递才会生效。<br>取值：10 ～ 100 之间的任意整数。</p>
                      * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
@@ -173,36 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 包类型，可选值：
-0：流量包
-1：转码包
-2: 连麦包。
+                     * <p>包类型，可选值：<br>0：流量包<br>1：转码包<br>2: 连麦包。</p>
                      */
                     int64_t m_packageType;
                     bool m_packageTypeHasBeenSet;
 
                     /**
-                     * 排序规则:
-1. BuyTimeDesc： 最新购买的排在最前面
-2. BuyTimeAsc： 最老购买的排在最前面
-3. ExpireTimeDesc： 最后过期的排在最前面
-4. ExpireTimeAsc：最先过期的排在最前面。
-
-注意：
-1. PackageType 为 2（连麦包） 的时候，不支持 3、4 排序。
+                     * <p>排序规则:</p><ol><li>BuyTimeDesc： 最新购买的排在最前面</li><li>BuyTimeAsc： 最老购买的排在最前面</li><li>ExpireTimeDesc： 最后过期的排在最前面</li><li>ExpireTimeAsc：最先过期的排在最前面。</li></ol><p>注意：</p><ol><li>PackageType 为 2（连麦包） 的时候，不支持 3、4 排序。</li></ol>
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * 取得第几页的数据，和 PageSize 同时传递才会生效。
+                     * <p>取得第几页的数据，和 PageSize 同时传递才会生效。</p>
                      */
                     int64_t m_pageNum;
                     bool m_pageNumHasBeenSet;
 
                     /**
-                     * 分页大小，和 PageNum 同时传递才会生效。
-取值：10 ～ 100 之间的任意整数。
+                     * <p>分页大小，和 PageNum 同时传递才会生效。<br>取值：10 ～ 100 之间的任意整数。</p>
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;

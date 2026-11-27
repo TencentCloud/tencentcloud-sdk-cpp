@@ -106,6 +106,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/ModelRouterLog.h
   include/tencentcloud/clb/v20180317/model/DescribeLoadBalancersRequest.h
   include/tencentcloud/clb/v20180317/model/RemoveModelKeyResponse.h
+  include/tencentcloud/clb/v20180317/model/RealtimeRoutingStrategyArgs.h
   include/tencentcloud/clb/v20180317/model/RegenerateKeysRequest.h
   include/tencentcloud/clb/v20180317/model/FallBackItem.h
   include/tencentcloud/clb/v20180317/model/BatchModifyTargetTagResponse.h
@@ -209,6 +210,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/RegisterModelsToServiceProviderResponse.h
   include/tencentcloud/clb/v20180317/model/DeleteUserGroupsRequest.h
   include/tencentcloud/clb/v20180317/model/BudgetResource.h
+  include/tencentcloud/clb/v20180317/model/RealtimeConfig.h
   include/tencentcloud/clb/v20180317/model/DescribeBudgetsResponse.h
   include/tencentcloud/clb/v20180317/model/InquiryPriceRefundLoadBalancerRequest.h
   include/tencentcloud/clb/v20180317/model/BudgetAssociation.h
@@ -586,6 +588,7 @@ set(clb_src
   src/v20180317/model/ModelRouterLog.cpp
   src/v20180317/model/DescribeLoadBalancersRequest.cpp
   src/v20180317/model/RemoveModelKeyResponse.cpp
+  src/v20180317/model/RealtimeRoutingStrategyArgs.cpp
   src/v20180317/model/RegenerateKeysRequest.cpp
   src/v20180317/model/FallBackItem.cpp
   src/v20180317/model/BatchModifyTargetTagResponse.cpp
@@ -689,6 +692,7 @@ set(clb_src
   src/v20180317/model/RegisterModelsToServiceProviderResponse.cpp
   src/v20180317/model/DeleteUserGroupsRequest.cpp
   src/v20180317/model/BudgetResource.cpp
+  src/v20180317/model/RealtimeConfig.cpp
   src/v20180317/model/DescribeBudgetsResponse.cpp
   src/v20180317/model/InquiryPriceRefundLoadBalancerRequest.cpp
   src/v20180317/model/BudgetAssociation.cpp

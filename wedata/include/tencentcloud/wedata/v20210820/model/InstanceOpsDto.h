@@ -20,12 +20,12 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <memory>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/wedata/v20210820/model/TaskTypeOpsDto.h>
-#include <tencentcloud/wedata/v20210820/model/InstanceOpsDto.h>
 #include <tencentcloud/wedata/v20210820/model/InstanceLifeCycleOpsDto.h>
 #include <tencentcloud/wedata/v20210820/model/StrToStrMap.h>
 #include <tencentcloud/wedata/v20210820/model/EventCaseAuditLogOptDto.h>
@@ -39,6 +39,7 @@ namespace TencentCloud
         {
             namespace Model
             {
+                class InstanceOpsDto;
                 /**
                 * 实例运维详情
                 */
@@ -1408,7 +1409,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::vector<InstanceOpsDto> GetRelatedInstanceList() const;
+                    std::vector<std::shared_ptr<InstanceOpsDto>> GetRelatedInstanceList() const;
 
                     /**
                      * 设置<p>关联实例信息。</p>
@@ -1417,7 +1418,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetRelatedInstanceList(const std::vector<InstanceOpsDto>& _relatedInstanceList);
+                    void SetRelatedInstanceList(const std::vector<std::shared_ptr<InstanceOpsDto>>& _relatedInstanceList);
 
                     /**
                      * 判断参数 RelatedInstanceList 是否已赋值
@@ -1583,7 +1584,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::vector<InstanceOpsDto> GetCirculateInstanceList() const;
+                    std::vector<std::shared_ptr<InstanceOpsDto>> GetCirculateInstanceList() const;
 
                     /**
                      * 设置<p>循环依赖关联的实例</p>
@@ -1592,7 +1593,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetCirculateInstanceList(const std::vector<InstanceOpsDto>& _circulateInstanceList);
+                    void SetCirculateInstanceList(const std::vector<std::shared_ptr<InstanceOpsDto>>& _circulateInstanceList);
 
                     /**
                      * 判断参数 CirculateInstanceList 是否已赋值
@@ -2444,7 +2445,7 @@ namespace TencentCloud
                      * <p>关联实例信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<InstanceOpsDto> m_relatedInstanceList;
+                    std::vector<std::shared_ptr<InstanceOpsDto>> m_relatedInstanceList;
                     bool m_relatedInstanceListHasBeenSet;
 
                     /**
@@ -2493,7 +2494,7 @@ namespace TencentCloud
                      * <p>循环依赖关联的实例</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<InstanceOpsDto> m_circulateInstanceList;
+                    std::vector<std::shared_ptr<InstanceOpsDto>> m_circulateInstanceList;
                     bool m_circulateInstanceListHasBeenSet;
 
                     /**

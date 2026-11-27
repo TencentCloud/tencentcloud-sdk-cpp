@@ -83,8 +83,8 @@ CoreInternalOutcome LineItem::Deserialize(const rapidjson::Value &value)
         const rapidjson::Value &tmpValue = value["SubGroup"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            LineItem item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            auto item = std::make_shared<LineItem>();
+            CoreInternalOutcome outcome = item->Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
@@ -158,7 +158,10 @@ void LineItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         for (auto itr = m_subGroup.begin(); itr != m_subGroup.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            if (*itr)
+            {
+                (*itr)->ToJsonObject(value[key.c_str()][i], allocator);
+            }
         }
     }
 
@@ -242,12 +245,12 @@ bool LineItem::GradeHasBeenSet() const
     return m_gradeHasBeenSet;
 }
 
-vector<LineItem> LineItem::GetSubGroup() const
+vector<shared_ptr<LineItem>> LineItem::GetSubGroup() const
 {
     return m_subGroup;
 }
 
-void LineItem::SetSubGroup(const vector<LineItem>& _subGroup)
+void LineItem::SetSubGroup(const vector<shared_ptr<LineItem>>& _subGroup)
 {
     m_subGroup = _subGroup;
     m_subGroupHasBeenSet = true;
